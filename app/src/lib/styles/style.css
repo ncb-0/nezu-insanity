@@ -21,7 +21,6 @@ html {
 	--border-color: inherit;
 
 	--font-sans: "Helvetica", sans-serif;
-	--font-sans-2: "Verdana", sans-serif;
 	--font-serif: "Job Clarendon Text", serif;
 	--font-serif-2: "Lagrange Mono", monospace;
 	--font-mono: "Nezu Fragment Gothic", monospace;
@@ -36,7 +35,8 @@ html {
 	/* max-width: 400px; */
 }
 body {
-	padding: 4ex 1ex;
+	/* padding: 6ex 1ex 3ex; */
+	padding: 3rem 0.5rem 1.5rem;
 	/* padding: 4px; */
 	color: rgb(var(--text-color));
 	background-color: rgb(var(--bg-color));
@@ -143,7 +143,7 @@ h3,
 }
 h4,
 .x4 {
-	font-size: 1.25rem;
+	font-size: 1rem;
 	line-height: 2ex;
 	/* font-family: var(--font-sans-2); */
 	/* font-weight: 700; */
@@ -307,7 +307,7 @@ button {
 hr {
 	border: none;
 	border-top: 1px dashed rgb(var(--text-color), 0.3);
-	margin: 1ex 0;
+	margin: 2ex 0;
 	clear: both;
 }
 img,
@@ -358,5 +358,17 @@ picture {
 	}
 	83% {
 		color: oklch(70% 1 300);
+	}
+}
+
+/* :::::::::::::::::::::::::::::::::: */
+/*            MEDIA QUERIES           */
+/* :::::::::::::::::::::::::::::::::: */
+@media (prefers-color-scheme: dark) {
+	:root,
+	html {
+		--bg-color: 46, 23, 30;
+		--text-color: 199, 144, 162;
+		--text-color-2: 124, 62, 82;
 	}
 }

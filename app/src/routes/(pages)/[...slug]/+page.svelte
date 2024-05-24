@@ -7,11 +7,14 @@ import type { PageData } from "./$types";
 import Image from "$lib/components/Image.svelte";
 import ImageGrid from "$lib/components/ImageGrid.svelte";
 import ImageRow from "$lib/components/ImageRow.svelte";
+import Break from "$lib/components/Break.svelte";
 
 export let data: PageData;
 const q = useQuery(data);
 
 $: ({ data: post } = $q);
+
+console.log(data.options.initial.data);
 </script>
 
 <article>
@@ -32,6 +35,7 @@ $: ({ data: post } = $q);
 					image: Image,
 					gallery: ImageGrid,
 					imagerow: ImageRow,
+					break: Break,
 				},
 			}}
 			value={post.body}
@@ -41,7 +45,7 @@ $: ({ data: post } = $q);
 
 <style>
 article {
-	max-width: 800px;
+	max-width: 777px;
 	/* margin: 0 auto; */
 }
 </style>

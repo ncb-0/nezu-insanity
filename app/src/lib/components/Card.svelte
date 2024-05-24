@@ -36,7 +36,11 @@ export let post: Post;
 			<img src={urlFor(post.mainImage).width(512).height(512).url()} />
 		{/if}
 
-		<p>{post.title}</p>
+		{#if post.shortTitle}
+			<p>{post.shortTitle}</p>
+		{:else if post.title}
+			<p>{post.title}</p>
+		{/if}
 		<!-- <h3>{formatDate(post._createdAt)}</h3> -->
 	</a>
 </div>
@@ -48,8 +52,8 @@ export let post: Post;
 	width: fit-content;
 	background-color: rgb(var(--bg-color));
 	text-decoration: none;
-	padding: 1ex 1ex 0.5ex;
-	border: 1px solid rgba(var(--text-color), 0.2);
+	padding: 0.5rem 0.5rem 0.25rem;
+	border: 1px solid rgba(var(--text-color), 0.3);
 }
 .card:hover {
 	/* background-color: rgba(var(--text-color), 0.1); */
@@ -76,7 +80,7 @@ export let post: Post;
 	width: 16px;
 	height: 16px;
 	position: absolute;
-	z-index: 1000;
+	z-index: 10000;
 	top: -1px;
 	right: -1px;
 }

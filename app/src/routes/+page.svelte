@@ -10,11 +10,11 @@ $: ({ data: posts } = $q);
 </script>
 
 <section>
-	<h1>nezu.world</h1>
+	<h1>nezu.world (v2)</h1>
 </section>
 
 <section>
-	<h2>portfolio</h2>
+	<h2>Portfolio</h2>
 
 	{#if posts.length}
 		<div class="card-grid">
@@ -29,6 +29,6 @@ $: ({ data: posts } = $q);
 .card-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-	gap: 1ex;
+	gap: 0.5rem;
 }
 </style>

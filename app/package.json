@@ -15,7 +15,8 @@
 		"@sanity/image-url": "^1.0.2",
 		"@sanity/svelte-loader": "^1.11.1",
 		"@sanity/visual-editing": "^1.7.1",
-		"groq": "^3.33.0"
+		"groq": "^3.33.0",
+		"netlify-cli": "^17.23.6"
 	},
 	"devDependencies": {
 		"@portabletext/svelte": "^2.1.7",
