@@ -1,5 +1,3 @@
-![Vercel](https://vercelbadge.vercel.app/api/ncb-0/nezu-insanity)
-
 this some serious shit. nezu dot world TWO
 
 # UNDER CONSTRUCTION :warning:
