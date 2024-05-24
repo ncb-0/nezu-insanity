@@ -8,6 +8,7 @@ import Image from "$lib/components/Image.svelte";
 import ImageGrid from "$lib/components/ImageGrid.svelte";
 import ImageRow from "$lib/components/ImageRow.svelte";
 import Break from "$lib/components/Break.svelte";
+import Giscus from "@giscus/svelte";
 
 export let data: PageData;
 const q = useQuery(data);
@@ -41,6 +42,21 @@ console.log(data.options.initial.data);
 			value={post.body}
 		/>
 	{/if}
+	<hr />
+	<Giscus
+		id="comments"
+		repo="ncb-0/nezu-insanity"
+		repoId="R_kgDOL_17LA"
+		category="Announcements"
+		categoryId="DIC_kwDOL_17LM4CflCf"
+		mapping="pathname"
+		reactionsEnabled="0"
+		emitMetadata="0"
+		inputPosition="top"
+		theme="https://nezu-insanity.vercel.app/giscus.css"
+		lang="en"
+		loading="lazy"
+	/>
 </article>
 
 <style>
