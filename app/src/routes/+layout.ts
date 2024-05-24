@@ -4,6 +4,8 @@ import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit";
 
 injectSpeedInsights();
 
+// lalala!
+
 inject({ mode: dev ? "development" : "production" });
 
 export const prerender = false;
