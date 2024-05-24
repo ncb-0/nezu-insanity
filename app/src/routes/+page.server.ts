@@ -1,5 +1,5 @@
-import { postsQuery as query, type Post } from '$lib/sanity/queries';
-import type { PageServerLoad } from './$types';
+import { postsQuery as query, type Post } from "$lib/sanity/queries";
+import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async (event) => {
 	const { loadQuery } = event.locals;
@@ -10,6 +10,6 @@ export const load: PageServerLoad = async (event) => {
 	// format you like.
 	return {
 		query,
-		options: { initial }
+		options: { initial },
 	};
 };

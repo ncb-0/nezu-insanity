@@ -9,8 +9,8 @@ export const projectId = process.env.SANITY_STUDIO_PROJECT_ID!
 export const dataset = process.env.SANITY_STUDIO_DATASET!
 
 export default defineConfig({
-  name: 'project-name',
-  title: 'Project Name',
+  name: 'nezu-insanity',
+  title: 'nezu.world 2.0',
   projectId,
   dataset,
   plugins: [

@@ -1,0 +1,16 @@
+{
+  "useTabs": true,
+  "singleQuote": false,
+  "trailingComma": "es5",
+  "printWidth": 80,
+  "proseWrap": "never",
+  "svelteIndentScriptAndStyle": false,
+  "overrides": [
+    {
+      "files": "*.ts",
+      "options": {
+        "parser": "typescript"
+      }
+    }
+  ]
+}

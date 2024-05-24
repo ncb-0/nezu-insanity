@@ -1,0 +1,126 @@
+/* :::::::::::::::::::::::::::::::::: */
+/*              MONOSPACE             */
+/* :::::::::::::::::::::::::::::::::: */
+
+/* ······ nezu fragment gothic ······ */
+@font-face {
+	font-family: "Nezu Fragment Gothic";
+	src: url("/fonts/Nezu Fragment Gothic/NezuFragmentGothic-Regular.woff2")
+		format("woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Nezu Fragment Gothic";
+	src: url("/fonts/Nezu Fragment Gothic/NezuFragmentGothic-Italic.woff2")
+		format("woff2");
+	font-weight: 400;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Nezu Fragment Gothic";
+	src: url("/fonts/Nezu Fragment Gothic/NezuFragmentGothic-Bold.woff2")
+		format("woff2");
+	font-weight: 700;
+	font-style: normal;
+}
+
+/* ············ helv mono ··········· */
+@font-face {
+	font-family: "Nezu Fragment Mono";
+	src: url("/fonts/Helv Mono/HelvMono-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Nezu Fragment Mono";
+	src: url("/fonts/Helv Mono/HelvMono-Italic.woff2") format("woff2");
+	font-weight: 400;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Nezu Fragment Mono";
+	src: url("/fonts/Helv Mono/HelvMono-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+}
+
+/* ·········· lagrange mono ········· */
+@font-face {
+	font-family: "Lagrange Mono";
+	src: url("/fonts/Lagrange Mono/LagrangeMono-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Lagrange Mono";
+	src: url("/fonts/Lagrange Mono/LagrangeMono-Italic.woff2") format("woff2");
+	font-weight: 400;
+	font-style: italic;
+}
+
+/* ······· job clarendon text ······· */
+@font-face {
+	font-family: "Job Clarendon Text";
+	src: url("/fonts/Job Clarendon Text/JobClarendonText-Regular.woff2")
+		format("woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Job Clarendon Text";
+	src: url("/fonts/Job Clarendon Text/JobClarendonText-Italic.woff2")
+		format("woff2");
+	font-weight: 400;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Job Clarendon Text";
+	src: url("/fonts/Job Clarendon Text/JobClarendonText-Bold.woff2")
+		format("woff2");
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Job Clarendon Text";
+	src: url("/fonts/Job Clarendon Text/JobClarendonText-BoldItalic.woff2")
+		format("woff2");
+	font-weight: 700;
+	font-style: italic;
+}
+
+/* :::::::::::::::::::::::::::::::::: */
+/*             SANS-SERIF             */
+/* :::::::::::::::::::::::::::::::::: */
+
+/* ············ helvetica ··········· */
+@font-face {
+	font-family: "Helvetica";
+	src:
+		url("/fonts/Helvetica/Helvetica.woff2") format("woff2"),
+		url("/fonts/Helvetica/Helvetica.ttf") format("truetype");
+	font-weight: 400;
+}
+@font-face {
+	font-family: "Helvetica";
+	src:
+		url("/fonts/Helvetica/Helvetica-Oblique.woff2") format("woff2"),
+		url("/fonts/Helvetica/Helvetica-Oblique.ttf") format("truetype");
+	font-weight: 400;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Helvetica";
+	src:
+		url("/fonts/Helvetica/HelveticaBold.woff2") format("woff2"),
+		url("/fonts/Helvetica/HelveticaBold.ttf") format("truetype");
+	font-weight: 700;
+}
+@font-face {
+	font-family: "Helvetica";
+	src:
+		url("/fonts/Helvetica/HelveticaBold-Oblique.woff2") format("woff2"),
+		url("/fonts/Helvetica/HelveticaBold-Oblique.ttf") format("truetype");
+	font-weight: 700;
+	font-style: italic;
+}

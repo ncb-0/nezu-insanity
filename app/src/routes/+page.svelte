@@ -1,21 +1,34 @@
 <script lang="ts">
-	import { useQuery } from '@sanity/svelte-loader';
-	import Card from '../components/Card.svelte';
-	import Welcome from '../components/Welcome.svelte';
-	import type { PageData } from './$types';
+import { useQuery } from "@sanity/svelte-loader";
+import Card from "$lib/components/Card.svelte";
+import type { PageData } from "./$types";
 
-	export let data: PageData;
-	const q = useQuery(data);
+export let data: PageData;
+const q = useQuery(data);
 
-	$: ({ data: posts } = $q);
+$: ({ data: posts } = $q);
 </script>
 
 <section>
+	<h1>nezu.world</h1>
+</section>
+
+<section>
+	<h2>portfolio</h2>
+
 	{#if posts.length}
-		{#each posts as post}
-			<Card {post} />
-		{/each}
-	{:else}
-		<Welcome />
+		<div class="card-grid">
+			{#each posts as post}
+				<Card {post} />
+			{/each}
+		</div>
 	{/if}
 </section>
+
+<style>
+.card-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 1ex;
+}
+</style>

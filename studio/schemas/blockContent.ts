@@ -56,5 +56,18 @@ export default defineType({
         ],
       },
     }),
+    {
+      type: 'image',
+    },
+    {
+      name: 'gallery',
+      type: 'gallery',
+      title: 'Gallery',
+    },
+    {
+      name: 'imagerow',
+      type: 'imagerow',
+      title: 'Image Row',
+    },
   ],
 })
