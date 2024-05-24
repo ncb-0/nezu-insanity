@@ -10,11 +10,11 @@ $: ({ data: posts } = $q);
 </script>
 
 <section>
-	<h1>nezu.world (v2)</h1>
+	<h1>lisa m (she/her/it) is an artist & designer in toronto, canada.</h1>
 </section>
 
 <section>
-	<h2>Portfolio</h2>
+	<h2>portfolio</h2>
 
 	{#if posts.length}
 		<div class="card-grid">
