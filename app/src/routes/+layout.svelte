@@ -4,7 +4,6 @@ import "$lib/styles/fonts.css";
 import { page } from "$app/stores";
 import Navbar from "$lib/components/Navbar.svelte";
 export let data;
-import { inject } from "@vercel/analytics";
 </script>
 
 <svelte:head>
