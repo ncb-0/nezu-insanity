@@ -1,3 +1,2 @@
-import { SANITY_API_READ_TOKEN } from "$env/static/private";
-
-export const token = SANITY_API_READ_TOKEN;
+export const token =
+	"skHol2x5DbQtgU3HTl444qwC7Wbq7DcytwnU0uKL4hR5sclrFKoWlpN5yaPiGWpVpPBpIYnfjt7qAmoTTm9sKTWRrhoIF2W10rVqv8VcdYbFfyx8XgmAL0kwT0puvPLbyf44R0KnMz7jU8tlQ6iBn05oHVNVjTUP9CL1Wm1lGaicvif5uYEK";
