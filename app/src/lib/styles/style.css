@@ -197,7 +197,15 @@ ul li {
 	list-style: "* ";
 }
 small {
-	font-size: 0.75rem;
+	font-size: 0.8333rem;
+	line-height: 2ex;
+}
+figcaption {
+	font-size: 0.8333rem;
+	opacity: 0.67;
+	line-height: 2ex;
+	text-align: center;
+	/* font-style: italic; */
 }
 blockquote {
 	margin-bottom: 1ex;
@@ -316,11 +324,11 @@ picture {
 	max-width: 100%;
 	height: auto;
 }
-:is(h1, h2, h3, h4, h5, h6, p) + :is(img, picture, div) {
-	margin-top: 1ex;
+:is(h1, h2, h3, h4, h5, h6, p) + :is(img, picture, div, figure) {
+	margin-top: 2ex;
 }
-:is(img, picture, div) + :is(h1, h2, h3, h4, h5, h6, p) {
-	margin-top: 1ex;
+:is(img, picture, div, figure) + :is(h1, h2, h3, h4, h5, h6, p) {
+	margin-top: 2ex;
 }
 .pixel {
 	image-rendering: pixelated;

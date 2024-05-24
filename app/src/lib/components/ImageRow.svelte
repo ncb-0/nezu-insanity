@@ -3,8 +3,6 @@ import { urlFor } from "$lib/sanity/image";
 
 export let portableText;
 
-console.log(portableText.value.images[0].asset._ref);
-
 function getImageDimensions(id) {
 	const dimensions = id.split("-")[2];
 
@@ -17,9 +15,14 @@ function getImageDimensions(id) {
 
 <div class="image-row">
 	{#each portableText.value.images as image (image._key)}
-		<div style="flex: {getImageDimensions(image.asset._ref).aspectRatio}">
-			<img src={urlFor(image).url()} />
-		</div>
+		<figure style="flex: {getImageDimensions(image.asset._ref).aspectRatio}">
+			<img src={urlFor(image).url()} alt={image.alt} />
+			{#if image.caption}
+				<figcaption>
+					{image.caption}
+				</figcaption>
+			{/if}
+		</figure>
 	{/each}
 </div>
 
@@ -31,11 +34,11 @@ function getImageDimensions(id) {
 	width: 100%;
 	height: min-content;
 }
-.image-row div {
+.image-row figure {
 	display: block;
 	max-width: 100%;
 }
-.image-row div img {
+.image-row figure img {
 	width: 100%;
 }
 </style>

@@ -76,6 +76,8 @@ export let post: Post;
 }
 .dogear {
 	/* display: none; */
+	cursor: pointer;
+	pointer-events: none;
 	display: none;
 	width: 16px;
 	height: 16px;

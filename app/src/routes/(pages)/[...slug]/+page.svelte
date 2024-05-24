@@ -42,7 +42,7 @@ console.log(data.options.initial.data);
 			value={post.body}
 		/>
 	{/if}
-	<hr />
+	<!-- <hr />
 	<Giscus
 		id="comments"
 		repo="ncb-0/nezu-insanity"
@@ -56,7 +56,7 @@ console.log(data.options.initial.data);
 		theme="https://nezu-insanity.vercel.app/giscus.css"
 		lang="en"
 		loading="lazy"
-	/>
+	/> -->
 </article>
 
 <style>

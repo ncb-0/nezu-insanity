@@ -1,7 +1,9 @@
 <script>
 import { goto } from "$app/navigation";
-import Breadcrumb from "$lib/components/Breadcrumb.svelte";
 import { page } from "$app/stores";
+import Breadcrumb from "$lib/components/Breadcrumb.svelte";
+import Modal from "$lib/components/Modal.svelte";
+import OutClick from "svelte-outclick";
 
 export let currentURL;
 export let data;
@@ -18,6 +20,16 @@ $: {
 			console.log("hi");
 			navbar.classList.add("scrolled");
 		}
+	}
+}
+
+let shown = false;
+
+function toggleModal() {
+	if (shown === true) {
+		shown = false;
+	} else if (shown === false) {
+		shown = true;
 	}
 }
 </script>
@@ -72,7 +84,40 @@ $: {
 			{/if}
 		</p>
 	</div>
+	<div class="grid-right">
+		<a href="javascript:void(0)" on:click={toggleModal} style="cursor: pointer"
+			>about</a
+		>
+	</div>
 </nav>
+
+<OutClick
+	on:outclick={() => {
+		if (shown === true) {
+			shown = false;
+		}
+	}}
+	excludeQuerySelectorAll="a"
+>
+	<Modal {shown} {...data}>
+		<section>
+			<h2>
+				nezu.world is the homepage of lisa m., an artist & designer in toronto,
+				canada.
+			</h2>
+		</section>
+		<section>
+			<h3>availability</h3>
+			<p>i am available for freelance work~ i do flyers, album covers, etc.</p>
+		</section>
+		<section>
+			<h3>contact</h3>
+			<p>
+				forward complaints: <a href="mailto:lisa@nezu.world">lisa@nezu.world</a>
+			</p>
+		</section>
+	</Modal>
+</OutClick>
 
 <style>
 nav {
@@ -84,7 +129,7 @@ nav {
 	display: grid;
 	background: rgba(var(--bg-color), 1);
 	gap: 1ch;
-	grid-template-columns: 4ex 1fr;
+	grid-template-columns: 4ex 1fr auto;
 	z-index: 9999999;
 }
 :global(nav) {

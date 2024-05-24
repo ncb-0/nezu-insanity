@@ -14,6 +14,18 @@ export default defineType({
       of: [
         {
           type: 'image',
+          fields: [
+            {
+              name: 'alt',
+              type: 'string',
+              title: 'Alternative text',
+            },
+            {
+              name: 'caption',
+              type: 'string',
+              title: 'Caption',
+            },
+          ],
         },
       ],
     },
