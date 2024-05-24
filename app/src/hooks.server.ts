@@ -1,5 +1,5 @@
-import { createRequestHandler, setServerClient } from '@sanity/svelte-loader';
-import { serverClient } from '$lib/server/sanity/client';
+import { createRequestHandler, setServerClient } from "@sanity/svelte-loader";
+import { serverClient } from "$lib/server/sanity/client";
 
 // Sets the client to be used by `loadQuery` when fetching data on the server.
 // The loader will handle setting the correct fetch parameters, including

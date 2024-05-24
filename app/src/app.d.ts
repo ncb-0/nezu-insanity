@@ -1,4 +1,4 @@
-import type { LoaderLocals } from '@sanity/svelte-loader';
+import type { LoaderLocals } from "@sanity/svelte-loader";
 
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
