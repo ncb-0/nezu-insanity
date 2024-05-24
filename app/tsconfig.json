@@ -8,7 +8,12 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"sourceMap": true,
-		"strict": true,
+		"strict": true
 	},
-	"include": {"src/**/*", "src/node_modules", ".svelte-kit/ambient.d.ts", ".svelte-kit/types/**/$types.d.ts"},
+	"include": [
+		"src/**/*",
+		"src/node_modules",
+		".svelte-kit/ambient.d.ts",
+		".svelte-kit/types/**/$types.d.ts"
+	]
 }
