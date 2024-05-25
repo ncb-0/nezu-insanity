@@ -9,11 +9,14 @@ import ImageGrid from "$lib/components/ImageGrid.svelte";
 import ImageRow from "$lib/components/ImageRow.svelte";
 import Break from "$lib/components/Break.svelte";
 import Giscus from "@giscus/svelte";
+import CardGrid from "$lib/components/CardGrid.svelte";
 
 export let data: PageData;
-const q = useQuery(data);
-
+$: q = useQuery(data);
 $: ({ data: post } = $q);
+
+console.log(data.children.data);
+console.log(data.parents.data);
 </script>
 
 <article>
@@ -32,21 +35,12 @@ $: ({ data: post } = $q);
 			value={post.body}
 		/>
 	{/if}
-	<!-- <hr />
-	<Giscus
-		id="comments"
-		repo="ncb-0/nezu-insanity"
-		repoId="R_kgDOL_17LA"
-		category="Announcements"
-		categoryId="DIC_kwDOL_17LM4CflCf"
-		mapping="pathname"
-		reactionsEnabled="0"
-		emitMetadata="0"
-		inputPosition="top"
-		theme="https://nezu-insanity.vercel.app/giscus.css"
-		lang="en"
-		loading="lazy"
-	/> -->
+
+	{#if data.children.data.length > 0}
+		<hr />
+		<h2>subpages:</h2>
+		<CardGrid items={data.children.data} />
+	{/if}
 </article>
 
 <style>

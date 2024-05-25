@@ -102,5 +102,10 @@ export default defineType({
       type: 'imagerow',
       title: 'Image Row',
     },
+    {
+      name: 'youtubeVideo',
+      type: 'youtubeEmbed',
+      title: 'YouTube Video',
+    },
   ],
 })

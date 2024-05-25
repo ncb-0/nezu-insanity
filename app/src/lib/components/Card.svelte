@@ -3,7 +3,8 @@ import { formatDate } from "$lib/utils";
 import { urlFor } from "$lib/sanity/image";
 import type { Post } from "$lib/sanity/queries";
 
-export let post: Post;
+// export let post: Post;
+export let item;
 </script>
 
 <div class="card">
@@ -31,17 +32,17 @@ export let post: Post;
 			</g>
 		</svg>
 	</div>
-	<a href={`/${post.slug.current}`}>
-		{#if post.mainImage}
-			<img src={urlFor(post.mainImage).width(512).height(512).url()} />
+	<a href={`/${item.slug.current}`}>
+		{#if item.mainImage}
+			<img src={urlFor(item.mainImage).width(512).height(512).url()} />
 		{/if}
 
-		{#if post.shortTitle}
-			<p>{post.shortTitle}</p>
-		{:else if post.title}
-			<p>{post.title}</p>
+		{#if item.shortTitle}
+			<p>{item.shortTitle}</p>
+		{:else if item.title}
+			<p>{item.title}</p>
 		{/if}
-		<!-- <h3>{formatDate(post._createdAt)}</h3> -->
+		<!-- <h3>{formatDate(item._createdAt)}</h3> -->
 	</a>
 </div>
 

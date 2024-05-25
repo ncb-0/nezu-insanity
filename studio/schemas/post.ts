@@ -24,6 +24,21 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'children',
+      title: 'Children',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [
+            {
+              type: 'post',
+            },
+          ],
+        },
+      ],
+    }),
+    defineField({
       name: 'year',
       title: 'Year',
       type: 'number',

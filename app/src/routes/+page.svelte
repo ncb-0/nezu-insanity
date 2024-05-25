@@ -1,6 +1,7 @@
 <script lang="ts">
 import { useQuery } from "@sanity/svelte-loader";
 import Card from "$lib/components/Card.svelte";
+import CardGrid from "$lib/components/CardGrid.svelte";
 import type { PageData } from "./$types";
 
 export let data: PageData;
@@ -24,11 +25,5 @@ $: ({ data: posts } = $q);
 <section>
 	<h2>portfolio:</h2>
 
-	{#if posts.length}
-		<div class="card-grid">
-			{#each posts as post}
-				<Card {post} />
-			{/each}
-		</div>
-	{/if}
+	<CardGrid items={posts} />
 </section>

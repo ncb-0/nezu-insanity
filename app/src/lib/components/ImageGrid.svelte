@@ -8,14 +8,12 @@ console.log(portableText.value.images[0].alt);
 
 <div class="image-grid">
 	{#each portableText.value.images as image (image._key)}
-		{#if image.caption}
-			<figure>
-				<img src={urlFor(image).url()} alt={image.alt} />
-				<figcaption>{image.caption}</figcaption>
-			</figure>
-		{:else}
+		<figure>
 			<img src={urlFor(image).url()} alt={image.alt} />
-		{/if}
+			{#if image.caption}
+				<figcaption>{image.caption}</figcaption>
+			{/if}
+		</figure>
 	{/each}
 </div>
 

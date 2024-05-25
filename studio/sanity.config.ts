@@ -2,6 +2,7 @@ import {visionTool} from '@sanity/vision'
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {presentationTool} from 'sanity/presentation'
+import {youtubeInput} from 'sanity-plugin-youtube-input'
 import {tags} from 'sanity-plugin-tags'
 import {schemaTypes} from './schemas'
 
@@ -26,6 +27,7 @@ export default defineConfig({
     }),
     visionTool(),
     tags({}),
+    youtubeInput({apiKey: 'AIzaSyCAXCnVt-qXxinyVqAPIzaO8aY4ow5b53Q'}),
   ],
   schema: {
     types: schemaTypes,

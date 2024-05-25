@@ -22,6 +22,7 @@
     "react-is": "^18.3.1",
     "sanity": "^3.43.0",
     "sanity-plugin-tags": "^2.0.2",
+    "sanity-plugin-youtube-input": "^0.2.0",
     "styled-components": "^6.1.11"
   },
   "devDependencies": {

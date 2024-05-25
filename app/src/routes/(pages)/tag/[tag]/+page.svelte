@@ -3,6 +3,8 @@ import { useQuery } from "@sanity/svelte-loader";
 import type { PageData } from "./$types";
 export let data: PageData;
 import Card from "$lib/components/Card.svelte";
+import CardGrid from "$lib/components/CardGrid.svelte";
+
 const q = useQuery(data);
 
 $: ({ data: tags } = $q);
@@ -12,11 +14,6 @@ console.log(data.params.tag);
 
 <section>
 	<h1>tagged: #{data.params.tag}</h1>
-	{#if tags.length}
-		<div class="card-grid">
-			{#each tags as post}
-				<Card {post} />
-			{/each}
-		</div>
-	{/if}
+
+	<CardGrid items={tags} />
 </section>
