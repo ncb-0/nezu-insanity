@@ -6,7 +6,7 @@ import Navbar from "$lib/components/Navbar.svelte";
 import { enableVisualEditing } from "@sanity/visual-editing";
 import { useLiveMode } from "@sanity/svelte-loader";
 import { client } from "$lib/sanity/client";
-import { PUBLIC_SANITY_STUDIO_URL } from "$env/static/public";
+let PUBLIC_SANITY_STUDIO_URL = "localhost:3333";
 import { onMount } from "svelte";
 console.log(PUBLIC_SANITY_STUDIO_URL);
 export let data;
