@@ -14,9 +14,6 @@ import CardGrid from "$lib/components/CardGrid.svelte";
 export let data: PageData;
 $: q = useQuery(data);
 $: ({ data: post } = $q);
-
-console.log(data.children.data);
-console.log(data.parents.data);
 </script>
 
 <article>
@@ -38,7 +35,7 @@ console.log(data.parents.data);
 
 	{#if data.children.data.length > 0}
 		<hr />
-		<h2>subpages:</h2>
+		<h2>subpages</h2>
 		<CardGrid items={data.children.data} />
 	{/if}
 </article>

@@ -201,17 +201,17 @@ ol {
 li {
 	margin-left: 2ch;
 }
-li.tag {
+.tag {
 	display: inline;
 	margin-left: 0;
 }
-li.tag a {
+/* .tag a {
 	text-decoration: none;
-}
-li.tag + li.tag::before {
+} */
+.tag + .tag::before {
 	content: " ";
 }
-li.tag a::before {
+.tag a::before {
 	content: "#";
 }
 ul li {
@@ -280,6 +280,8 @@ a {
 		/* border-radius: 5px; */
 		text-decoration: none;
 		/* font-weight: 700; */
+		margin: 2px 0;
+		display: inline-block;
 	}
 	&.button:hover {
 		color: rgb(var(--text-color));
@@ -297,6 +299,18 @@ a {
 		color: rgb(var(--text-color));
 		background: none;
 	}
+}
+h3 a.button {
+	padding: 1px 4px 2px;
+}
+.icon {
+	display: inline;
+	height: 1em;
+	font-size: inherit;
+	vertical-align: -15%;
+	/* vertical-align: text-bottom; */
+	padding: 0;
+	margin: 0;
 }
 button {
 	color: rgb(var(--text-color));
@@ -409,6 +423,24 @@ picture {
 		--bg-color: var(--bg-color-dark);
 		--text-color: var(--text-color-dark);
 	}
+	/* a.button,
+	button {
+		background: linear-gradient(
+				to top,
+				rgba(var(--text-color), 0) 33%,
+				rgba(var(--text-color), 0.2) 100%
+			),
+			rgb(var(--bg-color));
+	}
+	a.button:hover,
+	button:hover {
+		background: linear-gradient(
+				to bottom,
+				rgba(var(--text-color), 0.2) 33%,
+				rgba(var(--text-color), 0.6) 100%
+			),
+			rgb(var(--bg-color));
+	} */
 }
 @media (prefers-color-scheme: light) {
 	:root,

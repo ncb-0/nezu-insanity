@@ -6,7 +6,7 @@ export const postQuery = groq`*[_type == "post" && slug.current == $slug][0]`;
 
 export const postsQuery = groq`*[_type == "post" && defined(slug.current) && !(myTags[].value match "subpage") && !(myTags[].value match "testing")] | order(title asc) | order(date desc)`;
 
-export const taggedPostsQuery = groq`*[_type == "post" && myTags[].value match $tag && defined(slug.current)]|order(slug.current asc){
+export const taggedPostsQuery = groq`*[_type == "post" && myTags[].value match $tag && defined(slug.current)] | order(slug.current asc){
   slug,
   title,
   shortTitle,
@@ -28,9 +28,9 @@ export const parentsQuery = groq`*[_type == "post" && defined(slug.current) && s
   mainImage
 }}`;
 
-export const tagQuery = groq`*[myTags[].value match $tag]`;
+export const tagQuery = groq`*[myTags[].value match $tag] | order(slug.current asc)`;
 
-export const tagsQuery = groq`array::unique(*[defined(myTags)].myTags[]|order(_key asc)._key)`;
+export const tagsQuery = groq`array::unique(*[defined(myTags)].myTags[] | order(_key asc)._key)`;
 
 export interface Post {
 	_type: "post";
