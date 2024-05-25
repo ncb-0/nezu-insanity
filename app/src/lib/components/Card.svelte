@@ -31,7 +31,7 @@ export let post: Post;
 			</g>
 		</svg>
 	</div>
-	<a href={`${post.slug.current}`}>
+	<a href={`/${post.slug.current}`}>
 		{#if post.mainImage}
 			<img src={urlFor(post.mainImage).width(512).height(512).url()} />
 		{/if}

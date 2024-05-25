@@ -21,6 +21,7 @@
     "react-dom": "^18.3.1",
     "react-is": "^18.3.1",
     "sanity": "^3.43.0",
+    "sanity-plugin-tags": "^2.0.2",
     "styled-components": "^6.1.11"
   },
   "devDependencies": {

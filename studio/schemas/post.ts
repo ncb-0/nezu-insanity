@@ -16,6 +16,14 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'myTags',
+      title: 'Tags',
+      type: 'tags',
+      options: {
+        includeFromRelated: 'myTags',
+      },
+    }),
+    defineField({
       name: 'year',
       title: 'Year',
       type: 'number',

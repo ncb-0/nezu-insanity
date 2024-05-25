@@ -79,16 +79,20 @@ function toggleModal() {
 			<Breadcrumb />
 		</p>
 		<p>
-			{#if $page.data.options.initial.data.date}
-				{$page.data.options.initial.data.date}
+			{#if $page.data.options.initial.data.myTags}
+				<ul class="tags">
+					{#each $page.data.options.initial.data.myTags as tag (tag._key)}
+						<li class="tag"><a href="/tag/{tag._key}">{tag._key}</a></li>
+					{/each}
+				</ul>
 			{/if}
 		</p>
 	</div>
-	<div class="grid-right">
+	<!-- <div class="grid-right">
 		<a href="javascript:void(0)" on:click={toggleModal} style="cursor: pointer"
 			>about</a
 		>
-	</div>
+	</div> -->
 </nav>
 
 <OutClick

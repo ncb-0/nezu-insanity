@@ -14,20 +14,10 @@ export let data: PageData;
 const q = useQuery(data);
 
 $: ({ data: post } = $q);
-
-console.log(data.options.initial.data);
 </script>
 
 <article>
 	<h1>{post.title}</h1>
-	<!-- <h3>{formatDate(post._createdAt)}</h3> -->
-	<!-- {#if post.year}
-		<h3>{post.year}</h3>
-	{/if} -->
-
-	<!-- {#if post.mainImage}
-		<img src={urlFor(post.mainImage).url()} />
-	{/if} -->
 
 	{#if post.body}
 		<PortableText

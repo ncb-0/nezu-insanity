@@ -193,6 +193,19 @@ ol {
 li {
 	margin-left: 2ch;
 }
+li.tag {
+	display: inline;
+	margin-left: 0;
+}
+li.tag a {
+	text-decoration: none;
+}
+li.tag + li.tag::before {
+	content: " ";
+}
+li.tag a::before {
+	content: "#";
+}
 ul li {
 	list-style: "* ";
 }
@@ -342,6 +355,11 @@ picture {
 	position: float;
 	float: right;
 	margin-left: 1ch;
+}
+.card-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 0.5rem;
 }
 
 /* :::::::::::::::::::::::::::::::::: */
