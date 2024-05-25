@@ -8,7 +8,7 @@ export let data;
 </script>
 
 <svelte:head>
-	<title>nezu.world</title>
+	<title>v2.nezu.world</title>
 </svelte:head>
 
 <Navbar {...data} />
