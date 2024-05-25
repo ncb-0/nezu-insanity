@@ -14,10 +14,12 @@
 }
 :root,
 html {
-	--bg-color: 255, 255, 255;
-	/* --text-color: 0, 0, 0; */
-	--text-color: 124, 62, 82;
-	--text-color-2: 124, 62, 82;
+	/* --bg-color: 255, 255, 255;
+	--text-color: 124, 62, 82; */
+
+	--bg-color: 255, 248, 225;
+	--text-color: 107, 80, 0;
+
 	--border-color: inherit;
 
 	--font-sans: "Helvetica", sans-serif;
@@ -393,8 +395,9 @@ picture {
 @media (prefers-color-scheme: dark) {
 	:root,
 	html {
-		--bg-color: 46, 23, 30;
-		--text-color: 199, 144, 162;
-		--text-color-2: 124, 62, 82;
+		/* --bg-color: 46, 23, 30;
+		--text-color: 199, 144, 162; */
+		--bg-color: 68, 51, 0;
+		--text-color: 166, 135, 40;
 	}
 }

@@ -10,11 +10,19 @@ $: ({ data: posts } = $q);
 </script>
 
 <section>
-	<h1>lisa m (she/her/it) is an artist & designer in toronto, canada.</h1>
+	<!-- <h1>lisa m (she/her/it) is an artist & designer in toronto, canada.</h1> -->
+	<h1>
+		<a href="/">v2.nezu.world</a> is under construction.
+	</h1>
+	<h2>
+		(current version: <a href="https://v1.nezu.world" target="_blank"
+			>v1.nezu.world</a
+		>)
+	</h2>
 </section>
 
 <section>
-	<h2>portfolio</h2>
+	<h2>portfolio:</h2>
 
 	{#if posts.length}
 		<div class="card-grid">
