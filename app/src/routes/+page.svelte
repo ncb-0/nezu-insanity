@@ -12,6 +12,10 @@ $: ({ data: posts } = $q);
 console.log(data.tags.data);
 </script>
 
+<svelte:head>
+	<title>v2.nezu.world</title>
+</svelte:head>
+
 <article>
 	<section>
 		<!-- <h1>lisa m (she/her/it) is an artist & designer in toronto, canada.</h1> -->

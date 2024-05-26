@@ -8,7 +8,7 @@ export let data;
 </script>
 
 <svelte:head>
-	<title>v2.nezu.world</title>
+	<title>nezu.world</title>
 	<meta
 		name="theme-color"
 		media="(prefers-color-scheme: light)"

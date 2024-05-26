@@ -12,8 +12,21 @@ $: ({ data: tags } = $q);
 console.log(data.params.tag);
 </script>
 
-<section>
-	<h1>tagged: #{data.params.tag}</h1>
+<svelte:head>
+	<title>#{data.params.tag} | nezu.world</title>
+</svelte:head>
 
-	<CardGrid items={tags} />
-</section>
+<article>
+	<section>
+		<h1>tagged: #{data.params.tag}</h1>
+
+		<CardGrid items={tags} />
+	</section>
+</article>
+
+<style>
+article {
+	max-width: 100vw;
+	/* margin: 0 auto; */
+}
+</style>

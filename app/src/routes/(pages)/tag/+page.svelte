@@ -7,21 +7,34 @@ const q = useQuery(data);
 $: ({ data: tags } = $q);
 </script>
 
-<section>
-	<h1>
-		tags:
-		{#if tags.length}
-			{#each tags as tag}
-				<span class="tag"><a href="/tag/{tag}">{tag}</a></span>
-			{/each}
-		{/if}
-	</h1>
+<svelte:head>
+	<title>tags | nezu.world</title>
+</svelte:head>
 
-	<!-- {#if tags.length}
-		<ul class="tags">
-			{#each tags as tag}
-				<li class="tag"><a href="/tag/{tag}">{tag}</a></li>
-			{/each}
-		</ul>
-	{/if} -->
-</section>
+<article>
+	<section>
+		<h1>
+			tags:
+			{#if tags.length}
+				{#each tags as tag}
+					<span class="tag"><a href="/tag/{tag}">{tag}</a></span>
+				{/each}
+			{/if}
+		</h1>
+
+		<!-- {#if tags.length}
+			<ul class="tags">
+				{#each tags as tag}
+					<li class="tag"><a href="/tag/{tag}">{tag}</a></li>
+				{/each}
+			</ul>
+		{/if} -->
+	</section>
+</article>
+
+<style>
+article {
+	max-width: 100vw;
+	/* margin: 0 auto; */
+}
+</style>
