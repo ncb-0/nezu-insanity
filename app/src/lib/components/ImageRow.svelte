@@ -15,14 +15,16 @@ function getImageDimensions(id) {
 
 <div class="image-row">
 	{#each portableText.value.images as image (image._key)}
-		<figure style="flex: {getImageDimensions(image.asset._ref).aspectRatio}">
-			<img src={urlFor(image).url()} alt={image.alt} />
-			{#if image.caption}
+		{#if image.caption}
+			<figure style="flex: {getImageDimensions(image.asset._ref).aspectRatio}">
+				<img src={urlFor(image).url()} alt={image.alt} />
 				<figcaption>
 					{image.caption}
 				</figcaption>
-			{/if}
-		</figure>
+			</figure>
+		{:else}
+			<img src={urlFor(image).url()} alt={image.alt} />
+		{/if}
 	{/each}
 </div>
 
