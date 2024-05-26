@@ -17,6 +17,10 @@ console.log(data.currentURL);
 <svelte:head>
 	<title>#{data.params.tag} | nezu.world</title>
 	<meta property="og:title" content="#{data.params.tag} | nezu.world" />
+	<meta
+		property="og:description"
+		content="pages tagged #{data.params.tag} on nezu.world"
+	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://v2.nezu.world{data.currentURL}" />
 </svelte:head>

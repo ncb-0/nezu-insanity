@@ -19,6 +19,11 @@ $: ({ data: post } = $q);
 <svelte:head>
 	<title>{post.shortTitle} | nezu.world</title>
 	<meta property="og:title" content="{post.title} | nezu.world" />
+	{#if post.excerpt}
+		<meta property="og:description" content={post.excerpt} />
+	{:else}
+		<meta property="og:description" content="nezu.world" />
+	{/if}
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://v2.nezu.world{data.currentURL}" />
 	<meta

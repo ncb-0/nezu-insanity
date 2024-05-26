@@ -19,6 +19,10 @@ console.log(data.tags.data);
 		property="og:description"
 		content="The homepage of Lisa M., an artist & designer in Toronto, Canada."
 	/>
+	<meta
+		property="og:image"
+		content="https://v2.nezu.world/icon/android-chrome-512x512.png"
+	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://v2.nezu.world/" />
 </svelte:head>
