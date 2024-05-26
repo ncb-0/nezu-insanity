@@ -24,3 +24,5 @@ export let data;
 <Navbar {...data} />
 
 <slot />
+
+<div class="flowers-top"></div>
