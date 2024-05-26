@@ -9,6 +9,9 @@ $: ({ data: tags } = $q);
 
 <svelte:head>
 	<title>tags | nezu.world</title>
+	<meta property="og:title" content="tags | nezu.world" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://v2.nezu.world/{data.currentURL}" />
 </svelte:head>
 
 <article>

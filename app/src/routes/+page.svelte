@@ -14,6 +14,13 @@ console.log(data.tags.data);
 
 <svelte:head>
 	<title>v2.nezu.world</title>
+	<meta property="og:title" content="nezu.world" />
+	<meta
+		property="og:description"
+		content="The homepage of Lisa M., an artist & designer in Toronto, Canada."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://v2.nezu.world/" />
 </svelte:head>
 
 <article>
