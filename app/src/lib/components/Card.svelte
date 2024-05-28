@@ -9,6 +9,7 @@ export let item;
 export let baseURL = "";
 export let text = true;
 export let blog = false;
+export let nsfw = false;
 
 let date = Date.parse(item._createdAt);
 </script>
@@ -61,7 +62,7 @@ let date = Date.parse(item._createdAt);
 		</a>
 	{:else}
 		<a href={`${baseURL}/${item.slug.current}`} title={item.title}>
-			{#if item.mainImage}
+			{#if item.mainImage && !nsfw}
 				<img
 					src={urlFor(item.mainImage)
 						.format("png")
@@ -69,6 +70,16 @@ let date = Date.parse(item._createdAt);
 						.height(512)
 						.url()}
 				/>
+			{:else if nsfw}
+				<img
+					src={urlFor(item.mainImage)
+						.format("png")
+						.width(512)
+						.height(512)
+						.blur(128)
+						.url()}
+				/>
+				<span class="nsfw">nsfw</span>
 			{/if}
 
 			{#if item.mainImage}
@@ -138,5 +149,22 @@ let date = Date.parse(item._createdAt);
 	z-index: 10000;
 	top: -1px;
 	right: -1px;
+}
+span.nsfw {
+	font-size: 2rem;
+	font-weight: 700;
+	font-family: var(--font-sans);
+	color: #fff;
+	text-shadow:
+		rgba(var(--text-color-light), 1) 0 0 6px,
+		rgba(var(--text-color-light), 1) 0 0 12px,
+		rgba(var(--text-color-light), 1) 0 0 24px;
+	position: absolute;
+	text-align: center;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	user-select: none;
+	pointer-events: none;
 }
 </style>

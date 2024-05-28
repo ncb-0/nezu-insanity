@@ -130,7 +130,16 @@ $: filteredArtworks = data.options.initial.data.filter((artwork) => {
 	<section>
 		<div class="card-grid">
 			{#each filteredArtworks as artwork}
-				<Card item={artwork} baseURL="art/{artwork.year}" text="false" />
+				{#if artwork.nsfw == true}
+					<Card
+						item={artwork}
+						baseURL="art/{artwork.year}"
+						text="false"
+						nsfw="true"
+					/>
+				{:else}
+					<Card item={artwork} baseURL="art/{artwork.year}" text="false" />
+				{/if}
 			{/each}
 		</div>
 	</section>
