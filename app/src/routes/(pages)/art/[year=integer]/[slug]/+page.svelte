@@ -13,6 +13,15 @@ $: q = useQuery(data);
 $: ({ data: artwork } = $q);
 
 console.log(data.options.initial.data.media);
+
+function getImageDimensions(id) {
+	const dimensions = id.split("-")[2];
+
+	const [width, height] = dimensions.split("x").map((num) => parseInt(num, 10));
+	const aspectRatio = width / height;
+
+	return { width, height, aspectRatio };
+}
 </script>
 
 <svelte:head>
@@ -29,7 +38,13 @@ console.log(data.options.initial.data.media);
 <article>
 	<h1>{artwork.title}</h1>
 
-	<img src={urlFor(artwork.mainImage).url()} alt="" />
+	<img
+		src={urlFor(artwork.mainImage).url()}
+		width={getImageDimensions(artwork.mainImage.asset._ref).width}
+		height={getImageDimensions(artwork.mainImage.asset._ref).height}
+		style="aspect-ratio: {getImageDimensions(artwork.mainImage.asset._ref)
+			.width} / {getImageDimensions(artwork.mainImage.asset._ref).height}"
+	/>
 
 	{#if artwork.description}
 		<PortableText
