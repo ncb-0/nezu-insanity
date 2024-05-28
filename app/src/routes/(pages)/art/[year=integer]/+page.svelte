@@ -1,5 +1,6 @@
 <script lang="ts">
 import CardGrid from "$lib/components/CardGrid.svelte";
+import Card from "$lib/components/Card.svelte";
 import { useQuery } from "@sanity/svelte-loader";
 import type { PageData } from "./$types";
 export let data: PageData;
@@ -20,7 +21,20 @@ console.log(data.params);
 <article>
 	<h1>{data.params.year} gallery</h1>
 
-	<CardGrid items={artworks} baseURL={data.params.year} text="false" />
+	<div class="card-grid">
+		{#each artworks as artwork}
+			{#if artwork.nsfw == true}
+				<Card
+					item={artwork}
+					baseURL="art/{artwork.year}"
+					text="false"
+					nsfw="true"
+				/>
+			{:else}
+				<Card item={artwork} baseURL="art/{artwork.year}" text="false" />
+			{/if}
+		{/each}
+	</div>
 </article>
 
 <style>

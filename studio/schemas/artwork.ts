@@ -55,7 +55,7 @@ export default defineType({
       title: 'Media',
       type: 'tags',
       options: {
-        includeFromRelated: 'Media',
+        includeFromRelated: 'media',
         onCreate: (value) => ({
           label: value,
           value: value.toLowerCase().replace(/\W/g, '-'),
@@ -67,7 +67,7 @@ export default defineType({
       title: 'Characters',
       type: 'tags',
       options: {
-        includeFromRelated: 'Characters',
+        includeFromRelated: 'characters',
         onCreate: (value) => ({
           label: value,
           value: value.toLowerCase().replace(/\W/g, '-'),
@@ -79,7 +79,7 @@ export default defineType({
       title: 'CW',
       type: 'tags',
       options: {
-        includeFromRelated: 'CW',
+        includeFromRelated: 'cw',
         onCreate: (value) => ({
           label: value,
           value: value.toLowerCase().replace(/\W/g, '-'),
