@@ -44,26 +44,26 @@ let date = Date.parse(item._createdAt);
 			{#if item.mainImage && !nsfw}
 				<img
 					src={urlFor(item.mainImage)
-						.format("png")
-						.width(512)
-						.height(512)
+						.format("jpg")
+						.width(384)
+						.height(384)
 						.bg("ffff")
 						.url()}
-					width="512px"
-					height="512px"
+					width="384px"
+					height="384px"
 					style="aspect-ratio: 1 / 1"
 				/>
 			{:else if nsfw}
 				<img
 					src={urlFor(item.mainImage)
-						.format("png")
-						.width(512)
-						.height(512)
+						.format("jpg")
+						.width(384)
+						.height(384)
 						.blur(128)
 						.bg("ffff")
 						.url()}
-					width="512px"
-					height="512px"
+					width="384px"
+					height="384px"
 					style="aspect-ratio: 1 / 1"
 				/>
 				<span class="nsfw">nsfw</span>
@@ -93,26 +93,26 @@ let date = Date.parse(item._createdAt);
 			{#if item.mainImage && !nsfw}
 				<img
 					src={urlFor(item.mainImage)
-						.format("png")
-						.width(512)
-						.height(512)
+						.format("jpg")
+						.width(384)
+						.height(384)
 						.bg("ffff")
 						.url()}
-					width="512px"
-					height="512px"
+					width="384px"
+					height="384px"
 					style="aspect-ratio: 1 / 1"
 				/>
 			{:else if nsfw}
 				<img
 					src={urlFor(item.mainImage)
-						.format("png")
-						.width(512)
-						.height(512)
+						.format("jpg")
+						.width(384)
+						.height(384)
 						.blur(128)
 						.bg("ffff")
 						.url()}
-					width="512px"
-					height="512px"
+					width="384px"
+					height="384px"
 					style="aspect-ratio: 1 / 1"
 				/>
 				<span class="nsfw">nsfw</span>

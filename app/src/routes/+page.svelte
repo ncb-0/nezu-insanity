@@ -27,7 +27,6 @@ $: ({ data: posts } = $q);
 
 <article>
 	<section>
-		<!-- <h1>lisa m (she/her/it) is an artist & designer in toronto, canada.</h1> -->
 		<h1>
 			<a href="/">v2.nezu.world</a> is under construction.
 		</h1>
