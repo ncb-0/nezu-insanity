@@ -26,7 +26,7 @@ $: ({ data: tags } = $q);
 	<section>
 		<h1>tagged: #{data.params.tag}</h1>
 
-		<CardGrid items={tags} />
+		<CardGrid items={tags} baseURL={""} />
 	</section>
 </article>
 

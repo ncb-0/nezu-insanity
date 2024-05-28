@@ -6,6 +6,10 @@ export const postQuery = groq`*[_type == "post" && slug.current == $slug][0]`;
 
 export const postsQuery = groq`*[_type == "post" && defined(slug.current) && !(myTags[].value match "subpage") && !(myTags[].value match "testing")] | order(title asc) | order(date desc)`;
 
+export const blogQuery = groq`*[_type == "blogPost" && slug.current == $slug][0]`;
+
+export const blogsQuery = groq`*[_type == "blogPost" && defined(slug.current)] | order(_createdAt desc)`;
+
 export const artworksQuery = groq`*[_type == "artwork" && defined(slug.current) && media[].label match $selectedMedia
   && characters[].label match $selectedCharacters] | order(title asc) | order(date desc)`;
 
@@ -35,9 +39,9 @@ export const parentsQuery = groq`*[_type == "post" && defined(slug.current) && s
   mainImage
 }}`;
 
-export const tagQuery = groq`*[myTags[].value match $tag] | order(slug.current asc)`;
+export const tagQuery = groq`*[_type == "post" && myTags[].value match $tag] | order(slug.current asc)`;
 
-export const tagsQuery = groq`array::unique(*[defined(myTags)].myTags[] | order(_key asc)._key)`;
+export const tagsQuery = groq`array::unique(*[_type == "post" && defined(myTags)].myTags[] | order(_key asc)._key)`;
 
 export const mediaQuery = groq`array::unique(*[defined(media)].media[]._key | order(_key asc))`;
 
@@ -55,6 +59,20 @@ export interface Post {
 	date: Date;
 	title: string;
 	shortTitle: string;
+	slug: Slug;
+	excerpt?: string;
+	mainImage?: ImageAsset;
+	body: PortableTextBlock[];
+	children?: Array<Post>;
+}
+
+export interface BlogPost {
+	_type: "post";
+	_createdAt: string;
+	year?: number;
+	myTags?: Array<Object>;
+	date: Date;
+	title: string;
 	slug: Slug;
 	excerpt?: string;
 	mainImage?: ImageAsset;

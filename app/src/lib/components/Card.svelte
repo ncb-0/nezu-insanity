@@ -8,6 +8,9 @@ import { base } from "$app/paths";
 export let item;
 export let baseURL = "";
 export let text = true;
+export let blog = false;
+
+let date = Date.parse(item._createdAt);
 </script>
 
 <div class="card">
@@ -68,12 +71,18 @@ export let text = true;
 				/>
 			{/if}
 
-			{#if text == true}
-				{#if item.shortTitle}
-					<p>{item.shortTitle}</p>
-				{:else if item.title}
-					<p>{item.title}</p>
+			{#if item.mainImage}
+				{#if text == true}
+					{#if item.shortTitle}
+						<p>{item.shortTitle}</p>
+					{:else if item.title}
+						<p>{item.title}</p>
+					{/if}
 				{/if}
+			{:else}
+				<h3>{item.title}</h3>
+				<time datetime={item.date}>{item.date}</time>
+				<p>{item.excerpt}</p>
 			{/if}
 			<!-- <h3>{formatDate(item._createdAt)}</h3> -->
 		</a>
@@ -107,9 +116,12 @@ export let text = true;
 	background: none;
 	color: rgb(var(--text-color));
 }
-.card p {
+.card p,
+.card span,
+.card h3,
+.card time {
 	margin-top: 0;
-	padding: 2px 2px 0;
+	/* padding: 2px 2px 0; */
 	line-height: 2ex;
 }
 .card a img {
