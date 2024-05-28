@@ -3,11 +3,23 @@ import { useQuery } from "@sanity/svelte-loader";
 import Card from "$lib/components/Card.svelte";
 import CardGrid from "$lib/components/CardGrid.svelte";
 import type { PageData } from "./$types";
+import { urlFor } from "$lib/sanity/image";
 
 export let data: PageData;
 const q = useQuery(data);
 
 $: ({ data: posts } = $q);
+
+console.log(data.artworks.data);
+
+function getImageDimensions(id) {
+	const dimensions = id.split("-")[2];
+
+	const [width, height] = dimensions.split("x").map((num) => parseInt(num, 10));
+	const aspectRatio = width / height;
+
+	return { width, height, aspectRatio };
+}
 </script>
 
 <svelte:head>
@@ -46,6 +58,42 @@ $: ({ data: posts } = $q);
 
 	<section>
 		<h2><a href="art">gallery</a></h2>
+		<div class="thumbs">
+			{#each data.artworks.data as artwork}
+				<div class="thumb">
+					<a href="art/{artwork.year}/{artwork.slug.current}" class="clean">
+						{#if !artwork.nsfw}
+							<img
+								src={urlFor(artwork.mainImage)
+									.format("png")
+									.bg("ffff")
+									.width(128)
+									.height(128)
+									.url()}
+								width="128px"
+								height="128px"
+								style="aspect-ratio: 1 / 1;"
+								title={artwork.title}
+							/>
+						{:else}
+							<img
+								src={urlFor(artwork.mainImage)
+									.format("png")
+									.bg("ffff")
+									.width(128)
+									.height(128)
+									.blur(64)
+									.url()}
+								width="128px"
+								height="128px"
+								style="aspect-ratio: 1 / 1;"
+								title="{artwork.title} (NSFW)"
+							/>
+						{/if}
+					</a>
+				</div>
+			{/each}
+		</div>
 	</section>
 
 	<section>
@@ -189,5 +237,17 @@ $: ({ data: posts } = $q);
 article {
 	max-width: 100vw;
 	/* margin: 0 auto; */
+}
+.thumbs {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(calc(50px - 0.67rem), 1fr));
+}
+.thumb {
+	margin: 0;
+	padding: 0;
+	line-height: 0;
+}
+.thumb:hover {
+	opacity: 0.5;
 }
 </style>
