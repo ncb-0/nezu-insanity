@@ -272,6 +272,9 @@ kbd {
 kbd::after {
 	content: "]";
 } */
+.image-row + .image-row {
+	margin-top: 0.5rem;
+}
 
 /* :::::::::::::::::::::::::::::::::: */
 /*           INLINE ELEMENTS          */
