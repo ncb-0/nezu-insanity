@@ -85,6 +85,8 @@ function toggleModal() {
 						<li class="tag"><a href="/tag/{tag._key}">{tag._key}</a></li>
 					{/each}
 				</ul>
+			{:else}
+				<span>---</span>
 			{/if}
 		</p>
 	</div>
@@ -144,6 +146,8 @@ function toggleModal() {
 						<li class="tag"><a href="/tag/{tag._key}">{tag._key}</a></li>
 					{/each}
 				</ul>
+			{:else}
+				<span>---</span>
 			{/if}
 		</p>
 	</div>
