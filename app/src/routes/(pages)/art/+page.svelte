@@ -30,7 +30,7 @@ $: filteredArtworks = data.options.initial.data.filter((artwork) => {
 		params.selectedCharacters.length === 0 ||
 		(artwork.characters &&
 			artwork.characters.some((character) => {
-				return data.params.selectedCharacters.includes(character._key);
+				return params.selectedCharacters.includes(character._key);
 			}));
 
 	// Check if no media are selected or if there is a media match
