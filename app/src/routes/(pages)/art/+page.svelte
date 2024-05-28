@@ -180,7 +180,7 @@ label {
 select {
 	font-family: var(--font-mono) !important;
 	background: rgb(var(--bg-color));
-	border: 1px solid rgb(var(--text-color), 0.2);
+	border: 1px solid rgb(var(--text-color), 0.3);
 	/* border: none; */
 	padding: 0;
 	color: rgb(var(--text-color));
