@@ -41,7 +41,7 @@ let date = Date.parse(item._createdAt);
 	</div>
 	{#if baseURL == ""}
 		<a href={`/${item.slug.current}`} title={item.title}>
-			{#if item.mainImage}
+			{#if item.mainImage && !nsfw}
 				<img
 					src={urlFor(item.mainImage)
 						.format("png")
@@ -49,6 +49,16 @@ let date = Date.parse(item._createdAt);
 						.height(512)
 						.url()}
 				/>
+			{:else if nsfw}
+				<img
+					src={urlFor(item.mainImage)
+						.format("png")
+						.width(512)
+						.height(512)
+						.blur(128)
+						.url()}
+				/>
+				<span class="nsfw">nsfw</span>
 			{/if}
 
 			{#if text == true}
