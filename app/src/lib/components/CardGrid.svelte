@@ -2,12 +2,14 @@
 import Card from "$lib/components/Card.svelte";
 
 export let items;
+export let text = true;
+export let baseURL = ".";
 </script>
 
 {#if items.length}
 	<div class="card-grid">
 		{#each items as i}
-			<Card item={i} />
+			<Card item={i} {baseURL} {text} />
 		{/each}
 	</div>
 {/if}

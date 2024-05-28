@@ -52,7 +52,7 @@ $: ({ data: post } = $q);
 	{#if data.children.data.length > 0}
 		<hr />
 		<h2>subpages</h2>
-		<CardGrid items={data.children.data} />
+		<CardGrid items={data.children.data} baseURL={""} />
 	{/if}
 </article>
 

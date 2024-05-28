@@ -9,18 +9,25 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'shortTitle',
       title: 'Short Title',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'myTags',
       title: 'Tags',
       type: 'tags',
+      validation: (Rule) => Rule.required(),
       options: {
         includeFromRelated: 'myTags',
+        onCreate: (value) => ({
+          label: value,
+          value: value.toLowerCase().replace(/\W/g, '-'),
+        }),
       },
     }),
     defineField({
@@ -42,11 +49,13 @@ export default defineType({
       name: 'year',
       title: 'Year',
       type: 'number',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'date',
       title: 'Date',
       type: 'date',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'slug',
@@ -68,6 +77,7 @@ export default defineType({
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
+      validation: (Rule) => Rule.required(),
       options: {
         hotspot: true,
       },
@@ -76,6 +86,7 @@ export default defineType({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+      validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {

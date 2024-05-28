@@ -9,9 +9,6 @@ import { urlFor } from "$lib/sanity/image";
 const q = useQuery(data);
 
 $: ({ data: tags } = $q);
-
-console.log(data.params.tag);
-console.log(data.currentURL);
 </script>
 
 <svelte:head>

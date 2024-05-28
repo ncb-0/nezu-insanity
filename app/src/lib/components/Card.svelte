@@ -2,9 +2,12 @@
 import { formatDate } from "$lib/utils";
 import { urlFor } from "$lib/sanity/image";
 import type { Post } from "$lib/sanity/queries";
+import { base } from "$app/paths";
 
 // export let post: Post;
 export let item;
+export let baseURL = "";
+export let text = true;
 </script>
 
 <div class="card">
@@ -32,18 +35,49 @@ export let item;
 			</g>
 		</svg>
 	</div>
-	<a href={`/${item.slug.current}`}>
-		{#if item.mainImage}
-			<img src={urlFor(item.mainImage).width(512).height(512).url()} />
-		{/if}
+	{#if baseURL == ""}
+		<a href={`/${item.slug.current}`} title={item.title}>
+			{#if item.mainImage}
+				<img
+					src={urlFor(item.mainImage)
+						.format("png")
+						.width(512)
+						.height(512)
+						.url()}
+				/>
+			{/if}
 
-		{#if item.shortTitle}
-			<p>{item.shortTitle}</p>
-		{:else if item.title}
-			<p>{item.title}</p>
-		{/if}
-		<!-- <h3>{formatDate(item._createdAt)}</h3> -->
-	</a>
+			{#if text == true}
+				{#if item.shortTitle}
+					<p>{item.shortTitle}</p>
+				{:else if item.title}
+					<p>{item.title}</p>
+				{/if}
+			{/if}
+			<!-- <h3>{formatDate(item._createdAt)}</h3> -->
+		</a>
+	{:else}
+		<a href={`${baseURL}/${item.slug.current}`} title={item.title}>
+			{#if item.mainImage}
+				<img
+					src={urlFor(item.mainImage)
+						.format("png")
+						.width(512)
+						.height(512)
+						.url()}
+				/>
+			{/if}
+
+			{#if text == true}
+				{#if item.shortTitle}
+					<p>{item.shortTitle}</p>
+				{:else if item.title}
+					<p>{item.title}</p>
+				{/if}
+			{/if}
+			<!-- <h3>{formatDate(item._createdAt)}</h3> -->
+		</a>
+	{/if}
 </div>
 
 <style>
@@ -53,8 +87,10 @@ export let item;
 	width: fit-content;
 	background-color: rgb(var(--bg-color));
 	text-decoration: none;
-	padding: 0.5rem 0.5rem 0.25rem;
+	/* padding: 0.5rem 0.5rem 0.25rem; */
+	padding: 0;
 	border: 1px solid rgba(var(--text-color), 0.3);
+	line-height: 0;
 }
 .card:hover {
 	/* background-color: rgba(var(--text-color), 0.1); */
@@ -72,8 +108,12 @@ export let item;
 	color: rgb(var(--text-color));
 }
 .card p {
-	margin: 0;
+	margin-top: 0;
+	padding: 2px 2px 0;
 	line-height: 2ex;
+}
+.card a img {
+	background-color: white;
 }
 .dogear {
 	/* display: none; */

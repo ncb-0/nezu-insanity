@@ -8,8 +8,6 @@ export let data: PageData;
 const q = useQuery(data);
 
 $: ({ data: posts } = $q);
-
-console.log(data.tags.data);
 </script>
 
 <svelte:head>
@@ -44,6 +42,10 @@ console.log(data.tags.data);
 		<h2>portfolio</h2>
 
 		<CardGrid items={posts} />
+	</section>
+
+	<section>
+		<h2><a href="art">gallery</a></h2>
 	</section>
 
 	<section>
