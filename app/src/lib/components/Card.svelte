@@ -93,17 +93,21 @@ let date = Date.parse(item._createdAt);
 			{/if}
 
 			{#if item.mainImage}
-				{#if text == true}
-					{#if item.shortTitle}
-						<p>{item.shortTitle}</p>
-					{:else if item.title}
-						<p>{item.title}</p>
+				<div class="pad">
+					{#if text == true}
+						{#if item.shortTitle}
+							<p>{item.shortTitle}</p>
+						{:else if item.title}
+							<p>{item.title}</p>
+						{/if}
 					{/if}
-				{/if}
+				</div>
 			{:else}
-				<h3>{item.title}</h3>
-				<time datetime={item.date}>{item.date}</time>
-				<p>{item.excerpt}</p>
+				<div class="pad">
+					<h3>{item.title}</h3>
+					<time datetime={item.date}>{item.date}</time>
+					<p>{item.excerpt}</p>
+				</div>
 			{/if}
 			<!-- <h3>{formatDate(item._createdAt)}</h3> -->
 		</a>
@@ -144,6 +148,9 @@ let date = Date.parse(item._createdAt);
 	margin-top: 0;
 	/* padding: 2px 2px 0; */
 	line-height: 2ex;
+}
+.pad {
+	padding: 4px 4px 1px;
 }
 .card a img {
 	background-color: white;
