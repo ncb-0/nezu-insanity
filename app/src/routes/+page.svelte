@@ -1,6 +1,5 @@
 <script lang="ts">
 import { useQuery } from "@sanity/svelte-loader";
-import Card from "$lib/components/Card.svelte";
 import CardGrid from "$lib/components/CardGrid.svelte";
 import type { PageData } from "./$types";
 import { urlFor } from "$lib/sanity/image";
@@ -9,17 +8,6 @@ export let data: PageData;
 const q = useQuery(data);
 
 $: ({ data: posts } = $q);
-
-console.log(data.artworks.data);
-
-function getImageDimensions(id) {
-	const dimensions = id.split("-")[2];
-
-	const [width, height] = dimensions.split("x").map((num) => parseInt(num, 10));
-	const aspectRatio = width / height;
-
-	return { width, height, aspectRatio };
-}
 </script>
 
 <svelte:head>
@@ -65,27 +53,27 @@ function getImageDimensions(id) {
 						{#if !artwork.nsfw}
 							<img
 								src={urlFor(artwork.mainImage)
-									.format("png")
+									.format("jpg")
 									.bg("ffff")
-									.width(128)
-									.height(128)
+									.width(64)
+									.height(64)
 									.url()}
-								width="128px"
-								height="128px"
+								width="64px"
+								height="64px"
 								style="aspect-ratio: 1 / 1;"
 								title={artwork.title}
 							/>
 						{:else}
 							<img
 								src={urlFor(artwork.mainImage)
-									.format("png")
+									.format("jpg")
 									.bg("ffff")
-									.width(128)
-									.height(128)
+									.width(64)
+									.height(64)
 									.blur(64)
 									.url()}
-								width="128px"
-								height="128px"
+								width="64px"
+								height="64px"
 								style="aspect-ratio: 1 / 1;"
 								title="{artwork.title} (NSFW)"
 							/>
