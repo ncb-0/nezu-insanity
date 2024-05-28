@@ -40,46 +40,50 @@ $: ({ data: posts } = $q);
 	<section>
 		<h2>portfolio</h2>
 
-		<CardGrid items={posts} />
+		{#await posts then posts}
+			<CardGrid items={posts} />
+		{/await}
 	</section>
 
 	<section>
 		<h2><a href="art">gallery</a></h2>
 		<div class="thumbs">
-			{#each data.artworks.data as artwork}
-				<div class="thumb">
-					<a href="art/{artwork.year}/{artwork.slug.current}" class="clean">
-						{#if !artwork.nsfw}
-							<img
-								src={urlFor(artwork.mainImage)
-									.format("jpg")
-									.bg("ffff")
-									.width(64)
-									.height(64)
-									.url()}
-								width="64px"
-								height="64px"
-								style="aspect-ratio: 1 / 1;"
-								title={artwork.title}
-							/>
-						{:else}
-							<img
-								src={urlFor(artwork.mainImage)
-									.format("jpg")
-									.bg("ffff")
-									.width(64)
-									.height(64)
-									.blur(64)
-									.url()}
-								width="64px"
-								height="64px"
-								style="aspect-ratio: 1 / 1;"
-								title="{artwork.title} (NSFW)"
-							/>
-						{/if}
-					</a>
-				</div>
-			{/each}
+			{#await data.artworks.data then artworks}
+				{#each artworks as artwork}
+					<div class="thumb">
+						<a href="art/{artwork.year}/{artwork.slug.current}" class="clean">
+							{#if !artwork.nsfw}
+								<img
+									src={urlFor(artwork.mainImage)
+										.format("jpg")
+										.bg("ffff")
+										.width(64)
+										.height(64)
+										.url()}
+									width="64px"
+									height="64px"
+									style="aspect-ratio: 1 / 1;"
+									title={artwork.title}
+								/>
+							{:else}
+								<img
+									src={urlFor(artwork.mainImage)
+										.format("jpg")
+										.bg("ffff")
+										.width(64)
+										.height(64)
+										.blur(64)
+										.url()}
+									width="64px"
+									height="64px"
+									style="aspect-ratio: 1 / 1;"
+									title="{artwork.title} (NSFW)"
+								/>
+							{/if}
+						</a>
+					</div>
+				{/each}
+			{/await}
 		</div>
 	</section>
 
