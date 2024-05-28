@@ -80,5 +80,5 @@ export interface Artwork {
 	slug: Slug;
 	mainImage: ImageAsset;
 	media?: Array<Object>;
-	media?: Array<Object>;
+	characters?: Array<Object>;
 }
