@@ -17,13 +17,27 @@ function getImageDimensions(id) {
 	{#each portableText.value.images as image (image._key)}
 		{#if image.caption}
 			<figure style="flex: {getImageDimensions(image.asset._ref).aspectRatio}">
-				<img src={urlFor(image).url()} alt={image.alt} />
+				<img
+					src={urlFor(image).url()}
+					width={getImageDimensions(image.asset._ref).width}
+					height={getImageDimensions(image.asset._ref).height}
+					alt={image.alt}
+					style="aspect-ratio: {getImageDimensions(image.asset._ref)
+						.width} / {getImageDimensions(image.asset._ref).height}"
+				/>
 				<figcaption>
 					{image.caption}
 				</figcaption>
 			</figure>
 		{:else}
-			<img src={urlFor(image).url()} alt={image.alt} />
+			<img
+				src={urlFor(image).url()}
+				width={getImageDimensions(image.asset._ref).width}
+				height={getImageDimensions(image.asset._ref).height}
+				alt={image.alt}
+				style="aspect-ratio: {getImageDimensions(image.asset._ref)
+					.width} / {getImageDimensions(image.asset._ref).height}"
+			/>
 		{/if}
 	{/each}
 </div>

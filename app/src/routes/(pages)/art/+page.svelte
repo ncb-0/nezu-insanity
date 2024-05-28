@@ -2,17 +2,32 @@
 import CardGrid from "$lib/components/CardGrid.svelte";
 import Card from "$lib/components/Card.svelte";
 import { useQuery } from "@sanity/svelte-loader";
+import { ssp, queryParam } from "sveltekit-search-params";
 import type { PageData } from "./$types";
 export let data: PageData;
+
+const test = queryParam("test");
 
 $: q = useQuery(data);
 
 $: ({ data: artworks } = $q);
 
+let selectedCharacters: Tag[] = [];
+let selectedMedia: Tag[] = [];
+let selectedCW: Tag[] = [];
+let selectedYear: Number[] = [];
+
+const params = {
+	selectedCharacters,
+	selectedMedia,
+	selectedCW,
+	selectedYear,
+};
+
 $: filteredArtworks = data.options.initial.data.filter((artwork) => {
 	// Check if no characters are selected or if there is a character match
 	const characterMatch =
-		data.params.selectedCharacters.length === 0 ||
+		params.selectedCharacters.length === 0 ||
 		(artwork.characters &&
 			artwork.characters.some((character) => {
 				return data.params.selectedCharacters.includes(character._key);
@@ -20,21 +35,21 @@ $: filteredArtworks = data.options.initial.data.filter((artwork) => {
 
 	// Check if no media are selected or if there is a media match
 	const mediaMatch =
-		data.params.selectedMedia.length === 0 ||
+		params.selectedMedia.length === 0 ||
 		(artwork.media &&
 			artwork.media.some((media) => {
-				return data.params.selectedMedia.includes(media._key);
+				return params.selectedMedia.includes(media._key);
 			}));
 
 	// Check if the artwork year matches the selected year
 	const yearMatch =
-		data.params.selectedYear.length === 0 ||
+		params.selectedYear.length === 0 ||
 		(Array.isArray(artwork.year) &&
 			artwork.year.some((year) => {
-				return data.params.selectedYear.includes(year);
+				return params.selectedYear.includes(year);
 			})) ||
 		(!Array.isArray(artwork.year) &&
-			data.params.selectedYear.includes(artwork.year));
+			params.selectedYear.includes(artwork.year));
 
 	// Return true if both character and media match, and year matches
 	return characterMatch && mediaMatch && yearMatch;
@@ -65,7 +80,7 @@ $: filteredArtworks = data.options.initial.data.filter((artwork) => {
 					id="year"
 					multiple
 					size="0"
-					bind:value={data.params.selectedYear}
+					bind:value={params.selectedYear}
 				>
 					<option disabled selected label="select">(select year)</option>
 
@@ -81,7 +96,7 @@ $: filteredArtworks = data.options.initial.data.filter((artwork) => {
 					id="media"
 					multiple
 					size="0"
-					bind:value={data.params.selectedMedia}
+					bind:value={params.selectedMedia}
 				>
 					<option disabled selected label="select">(select media)</option>
 
@@ -97,7 +112,7 @@ $: filteredArtworks = data.options.initial.data.filter((artwork) => {
 					id="characters"
 					multiple
 					size="0"
-					bind:value={data.params.selectedCharacters}
+					bind:value={params.selectedCharacters}
 				>
 					<option disabled selected label="select">(select characters)</option>
 

@@ -7,29 +7,38 @@ export let floatLeft = false;
 export let floatRight = false;
 export let src = portableText.value;
 console.log(portableText.value);
+
+function getImageDimensions(id) {
+	const dimensions = id.split("-")[2];
+
+	const [width, height] = dimensions.split("x").map((num) => parseInt(num, 10));
+	const aspectRatio = width / height;
+
+	return { width, height, aspectRatio };
+}
 </script>
 
-{#if src.caption && !floatLeft && !floatRight}
+{#if src.caption}
 	<figure>
-		<img src={urlFor(src).url()} alt={src.alt} />
-		<figcaption>
-			{src.caption}
-		</figcaption>
-	</figure>
-{:else if floatLeft == true}
-	<figure class="float-left">
-		<img src={urlFor(src).url()} alt={src.alt} />
-		<figcaption>
-			{src.caption}
-		</figcaption>
-	</figure>
-{:else if floatRight == true}
-	<figure class="float-right">
-		<img src={urlFor(src).url()} alt={src.alt} />
+		<img
+			src={urlFor(src).url()}
+			width={getImageDimensions(src.asset._ref).width}
+			height={getImageDimensions(src.asset._ref).height}
+			alt={src.alt}
+			style="aspect-ratio: {getImageDimensions(src.asset._ref)
+				.width} / {getImageDimensions(src.asset._ref).height}"
+		/>
 		<figcaption>
 			{src.caption}
 		</figcaption>
 	</figure>
 {:else}
-	<img src={urlFor(src).url()} alt={src.alt} />
+	<img
+		src={urlFor(src).url()}
+		width={getImageDimensions(src.asset._ref).width}
+		height={getImageDimensions(src.asset._ref).height}
+		alt={src.alt}
+		style="aspect-ratio: {getImageDimensions(src.asset._ref)
+			.width} / {getImageDimensions(src.asset._ref).height}"
+	/>
 {/if}

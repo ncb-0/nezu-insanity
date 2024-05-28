@@ -20,7 +20,7 @@ console.log(data.params);
 <article>
 	<h1>{data.params.year} gallery</h1>
 
-	<CardGrid items={artworks} baseURL={data.params.year} />
+	<CardGrid items={artworks} baseURL={data.params.year} text="false" />
 </article>
 
 <style>

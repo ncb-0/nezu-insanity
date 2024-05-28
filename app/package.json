@@ -23,7 +23,8 @@
 		"groq-js": "^1.9.0",
 		"netlify-cli": "^17.23.8",
 		"svelte-body": "^1.4.0",
-		"svelte-outclick": "^3.7.1"
+		"svelte-outclick": "^3.7.1",
+		"sveltekit-search-params": "^2.1.2"
 	},
 	"devDependencies": {
 		"@portabletext/svelte": "^2.1.11",
