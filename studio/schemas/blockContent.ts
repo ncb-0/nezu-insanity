@@ -90,6 +90,16 @@ export default defineType({
           type: 'string',
           title: 'Caption',
         },
+        {
+          name: 'floatLeft',
+          type: 'boolean',
+          title: 'Float Left?',
+        },
+        {
+          name: 'floatRight',
+          type: 'boolean',
+          title: 'Float Right?',
+        },
       ],
     },
     {
