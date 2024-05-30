@@ -29,10 +29,17 @@ function getImageDimensions(id) {
 	<meta property="og:title" content="{artwork.title} | nezu.world" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://v2.nezu.world{data.currentURL}" />
-	<meta
-		property="og:image"
-		content={urlFor(artwork.mainImage).width(512).height(512).url()}
-	/>
+	{#if artwork.nsfw == true}
+		<meta
+			property="og:image"
+			content={urlFor(artwork.mainImage).width(512).blur(64).url()}
+		/>
+	{:else}
+		<meta
+			property="og:image"
+			content={urlFor(artwork.mainImage).width(512).url()}
+		/>
+	{/if}
 </svelte:head>
 
 <article>
