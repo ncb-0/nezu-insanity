@@ -99,4 +99,5 @@ export interface Artwork {
 	mainImage: ImageAsset;
 	media?: Array<Object>;
 	characters?: Array<Object>;
+	cw?: Array<Object>;
 }

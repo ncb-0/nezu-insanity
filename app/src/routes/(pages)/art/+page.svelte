@@ -6,6 +6,8 @@ import { ssp, queryParam } from "sveltekit-search-params";
 import type { PageData } from "./$types";
 export let data: PageData;
 
+import { browser, building } from "$app/environment";
+
 const test = queryParam("test");
 
 $: q = useQuery(data);
@@ -41,6 +43,14 @@ $: filteredArtworks = data.options.initial.data.filter((artwork) => {
 				return params.selectedMedia.includes(media._key);
 			}));
 
+	// Check if no CWs are selected or if there is a CW match
+	const cwMatch =
+		params.selectedCW.length === 0 ||
+		(artwork.cw &&
+			artwork.cw.some((cw) => {
+				return params.selectedCW.includes(cw._key);
+			}));
+
 	// Check if the artwork year matches the selected year
 	const yearMatch =
 		params.selectedYear.length === 0 ||
@@ -52,7 +62,7 @@ $: filteredArtworks = data.options.initial.data.filter((artwork) => {
 			params.selectedYear.includes(artwork.year));
 
 	// Return true if both character and media match, and year matches
-	return characterMatch && mediaMatch && yearMatch;
+	return characterMatch && mediaMatch && yearMatch && cwMatch;
 });
 </script>
 
@@ -121,14 +131,14 @@ $: filteredArtworks = data.options.initial.data.filter((artwork) => {
 					{/each}
 				</select>
 			</div>
-			<!-- <div>
+			<div>
 				<label for="cw">content warnings</label>
 				<select
 					name="Content Warnings"
 					id="cw"
 					multiple
 					size="0"
-					bind:value={data.params.selectedCW}
+					bind:value={params.selectedCW}
 				>
 					<option disabled selected label="select"
 						>(select content warnings)</option
@@ -138,24 +148,28 @@ $: filteredArtworks = data.options.initial.data.filter((artwork) => {
 						<option value={cw}>{cw}</option>
 					{/each}
 				</select>
-			</div> -->
+			</div>
 		</div>
 	</section>
 
 	<section>
 		<div class="card-grid">
-			{#each filteredArtworks as artwork}
-				{#if artwork.nsfw == true}
-					<Card
-						item={artwork}
-						baseURL="art/{artwork.year}"
-						text="false"
-						nsfw="true"
-					/>
-				{:else}
-					<Card item={artwork} baseURL="art/{artwork.year}" text="false" />
-				{/if}
-			{/each}
+			{#await filteredArtworks}
+				<p>loading…</p>
+			{:then filteredArtworks}
+				{#each filteredArtworks as artwork}
+					{#if artwork.nsfw == true}
+						<Card
+							item={artwork}
+							baseURL="art/{artwork.year}"
+							text="false"
+							nsfw="true"
+						/>
+					{:else}
+						<Card item={artwork} baseURL="art/{artwork.year}" text="false" />
+					{/if}
+				{/each}
+			{/await}
 		</div>
 	</section>
 </article>
