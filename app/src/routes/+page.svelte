@@ -57,11 +57,11 @@ $: ({ data: posts } = $q);
 									src={urlFor(artwork.mainImage)
 										.format("jpg")
 										.bg("ffff")
-										.width(64)
-										.height(64)
+										.width(96)
+										.height(96)
 										.url()}
-									width="64px"
-									height="64px"
+									width="96px"
+									height="96px"
 									style="aspect-ratio: 1 / 1;"
 									title={artwork.title}
 								/>
@@ -70,12 +70,12 @@ $: ({ data: posts } = $q);
 									src={urlFor(artwork.mainImage)
 										.format("jpg")
 										.bg("ffff")
-										.width(64)
-										.height(64)
+										.width(96)
+										.height(96)
 										.blur(64)
 										.url()}
-									width="64px"
-									height="64px"
+									width="96px"
+									height="96px"
 									style="aspect-ratio: 1 / 1;"
 									title="{artwork.title} (NSFW)"
 								/>

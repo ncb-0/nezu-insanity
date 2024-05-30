@@ -45,25 +45,25 @@ let date = Date.parse(item._createdAt);
 				<img
 					src={urlFor(item.mainImage)
 						.format("jpg")
-						.width(384)
-						.height(384)
+						.width(512)
+						.height(512)
 						.bg("ffff")
 						.url()}
-					width="384px"
-					height="384px"
+					width="512px"
+					height="512px"
 					style="aspect-ratio: 1 / 1"
 				/>
 			{:else if nsfw}
 				<img
 					src={urlFor(item.mainImage)
 						.format("jpg")
-						.width(384)
-						.height(384)
+						.width(512)
+						.height(512)
 						.blur(128)
 						.bg("ffff")
 						.url()}
-					width="384px"
-					height="384px"
+					width="512px"
+					height="512px"
 					style="aspect-ratio: 1 / 1"
 				/>
 				<span class="nsfw">nsfw</span>
