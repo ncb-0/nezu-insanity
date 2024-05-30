@@ -24,14 +24,9 @@ console.log(data.params);
 	<div class="card-grid">
 		{#each artworks as artwork}
 			{#if artwork.nsfw == true}
-				<Card
-					item={artwork}
-					baseURL="art/{artwork.year}"
-					text="false"
-					nsfw="true"
-				/>
+				<Card item={artwork} baseURL={artwork.year} text="false" nsfw="true" />
 			{:else}
-				<Card item={artwork} baseURL="art/{artwork.year}" text="false" />
+				<Card item={artwork} baseURL={artwork.year} text="false" />
 			{/if}
 		{/each}
 	</div>
