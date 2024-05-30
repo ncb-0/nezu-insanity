@@ -32,7 +32,7 @@ function getImageDimensions(id) {
 	{#if artwork.nsfw == true}
 		<meta
 			property="og:image"
-			content={urlFor(artwork.mainImage).width(512).blur(64).url()}
+			content={urlFor(artwork.mainImage).width(512).blur(128).url()}
 		/>
 	{:else}
 		<meta
