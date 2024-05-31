@@ -25,9 +25,3 @@ export const load: PageServerLoad = async (event) => {
 		options: { initial },
 	};
 };
-
-export const config = {
-	isr: {
-		expiration: 60,
-	},
-};
