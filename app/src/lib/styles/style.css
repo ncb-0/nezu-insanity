@@ -454,7 +454,8 @@ picture {
 	}
 	body {
 		background:
-			url("/ui/flowers-bottom-dark.svg") top 100vh right 0.5rem / 96px repeat-y,
+			url("/ui/flowers-bottom-dark-purple.svg") top 100vh right 0.5rem / 96px
+				repeat-y,
 			rgb(var(--bg-color));
 	}
 	.flowers-top {
@@ -470,7 +471,8 @@ picture {
 		height: 100vh;
 
 		background:
-			url("/ui/flowers-top-dark.svg") bottom 0 right 0.5rem / 96px no-repeat,
+			url("/ui/flowers-top-dark-purple.svg") bottom 0 right 0.5rem / 96px
+				no-repeat,
 			rgb(var(--bg-color));
 	}
 }
