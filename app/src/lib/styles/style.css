@@ -14,14 +14,17 @@
 }
 :root,
 html {
-	/* --bg-color: 255, 255, 255;
-	--text-color: 124, 62, 82; */
+	--bg-color-light: 255, 255, 255;
+	--text-color-light: 124, 62, 82;
 
-	--bg-color-dark: 68, 51, 0;
-	--text-color-dark: 166, 135, 40;
+	/* --bg-color-dark: 68, 51, 0;
+	--text-color-dark: 166, 135, 40; */
 
-	--bg-color-light: 255, 248, 225;
-	--text-color-light: 107, 80, 0;
+	--bg-color-dark: 46, 23, 30;
+	--text-color-dark: 199, 144, 162;
+
+	/* --bg-color-light: 255, 248, 225;
+	--text-color-light: 107, 80, 0; */
 
 	--bg-color: var(--bg-color-light);
 	--text-color: var(--text-color-light);
@@ -50,7 +53,7 @@ body {
 	/* background-color: rgb(var(--bg-color)); */
 	text-wrap: pretty;
 	background:
-		url("/ui/flowers-bottom.svg") top 100vh right 0.5rem / 96px repeat-y,
+		url("/ui/flowers-bottom-purple.svg") top 100vh right 0.5rem / 96px repeat-y,
 		rgb(var(--bg-color));
 	max-width: calc(100vw - 96px - 1rem);
 }
@@ -67,7 +70,7 @@ body {
 	height: 100vh;
 
 	background:
-		url("/ui/flowers-top.svg") bottom 0 right 0.5rem / 96px no-repeat,
+		url("/ui/flowers-top-purple.svg") bottom 0 right 0.5rem / 96px no-repeat,
 		rgb(var(--bg-color));
 }
 
@@ -485,9 +488,9 @@ picture {
 		max-width: 100vw;
 		padding-bottom: 0;
 		background:
-			url("/ui/bg.svg") top 0 left 0 / 100% calc(100% - 128px) no-repeat,
-			url("/ui/flowers-bottom.svg") top calc(100% + 128px) right 0.5rem / 96px
-				repeat-y,
+			url("/ui/bg-white.svg") top 0 left 0 / 100% calc(100% - 128px) no-repeat,
+			url("/ui/flowers-bottom-purple.svg") top calc(100% + 128px) right 0.5rem /
+				96px repeat-y,
 			rgb(var(--bg-color));
 	}
 	article {
@@ -500,7 +503,7 @@ picture {
 		height: 128px;
 		width: 100%;
 		background:
-			url("/ui/flowers-top.svg") bottom right / 96px no-repeat,
+			url("/ui/flowers-top-purple.svg") bottom right / 96px no-repeat,
 			rgb(var(--bg-color));
 	}
 }
@@ -520,9 +523,10 @@ picture {
 		max-width: 100vw;
 		padding-bottom: 0;
 		background:
-			url("/ui/bg-dark.svg") top 0 left 0 / 100% calc(100% - 128px) no-repeat,
-			url("/ui/flowers-bottom-dark.svg") top calc(100% + 128px) right 0.5rem /
-				96px repeat-y,
+			url("/ui/bg-dark-purple.svg") top 0 left 0 / 100% calc(100% - 128px)
+				no-repeat,
+			url("/ui/flowers-bottom-dark-purple.svg") top calc(100% + 128px) right
+				0.5rem / 96px repeat-y,
 			rgb(var(--bg-color));
 	}
 	article {
@@ -535,7 +539,7 @@ picture {
 		height: 128px;
 		width: 100%;
 		background:
-			url("/ui/flowers-top-dark.svg") bottom right / 96px no-repeat,
+			url("/ui/flowers-top-dark-purple.svg") bottom right / 96px no-repeat,
 			rgb(var(--bg-color));
 	}
 }

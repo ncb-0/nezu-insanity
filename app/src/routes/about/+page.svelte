@@ -4,7 +4,7 @@ export let data: PageData;
 </script>
 
 <svelte:head>
-	<title>v2.nezu.world</title>
+	<title>nezu.world</title>
 	<meta property="og:title" content="nezu.world" />
 	<meta
 		property="og:description"
@@ -12,10 +12,10 @@ export let data: PageData;
 	/>
 	<meta
 		property="og:image"
-		content="https://v2.nezu.world/icon/android-chrome-512x512.png"
+		content="https://nezu.world/icon/android-chrome-512x512.png"
 	/>
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://v2.nezu.world/" />
+	<meta property="og:url" content="https://nezu.world/" />
 </svelte:head>
 
 <article>

@@ -70,7 +70,7 @@ $: filteredArtworks = data.options.initial.data.filter((artwork) => {
 	<title>gallery | nezu.world</title>
 	<meta property="og:title" content="gallery | nezu.world" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://v2.nezu.world/{data.currentURL}" />
+	<meta property="og:url" content="https://nezu.world/{data.currentURL}" />
 </svelte:head>
 
 <article>

@@ -19,7 +19,7 @@ $: {
 	});
 
 	// Add a way to get home too.
-	crumbs.unshift({ label: "v2.nezu.world", href: "/" });
+	crumbs.unshift({ label: "nezu.world", href: "/" });
 }
 </script>
 

@@ -11,7 +11,7 @@ $: ({ data: posts } = $q);
 </script>
 
 <svelte:head>
-	<title>v2.nezu.world</title>
+	<title>nezu.world</title>
 	<meta property="og:title" content="nezu.world" />
 	<meta
 		property="og:description"
@@ -19,16 +19,16 @@ $: ({ data: posts } = $q);
 	/>
 	<meta
 		property="og:image"
-		content="https://v2.nezu.world/icon/android-chrome-512x512.png"
+		content="https://nezu.world/icon/android-chrome-512x512.png"
 	/>
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://v2.nezu.world/" />
+	<meta property="og:url" content="https://nezu.world/" />
 </svelte:head>
 
 <article>
 	<section>
 		<h1>
-			<!-- <a href="/">v2.nezu.world</a> is under construction. -->
+			<!-- <a href="/">nezu.world</a> is under construction. -->
 			The homepage of <a href="about">Lisa M</a>, an artist & designer in
 			Toronto, Canada.
 		</h1>

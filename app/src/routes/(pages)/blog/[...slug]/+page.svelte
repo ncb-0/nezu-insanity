@@ -25,7 +25,7 @@ $: ({ data: post } = $q);
 		<meta property="og:description" content="nezu.world" />
 	{/if}
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://v2.nezu.world{data.currentURL}" />
+	<meta property="og:url" content="https://nezu.world{data.currentURL}" />
 	<!-- <meta
 		property="og:image"
 		content={urlFor(post.mainImage).width(512).height(512).url()}
