@@ -252,11 +252,8 @@ figcaption {
 	/* font-style: italic; */
 }
 blockquote {
-	margin-bottom: 1ex;
-
-	p {
-		margin-bottom: 0;
-	}
+	padding-left: calc(3ch - 4px);
+	border-left: 4px solid rgba(var(--text-color), 0.3);
 }
 kbd {
 	font-family: var(--font-mono);
