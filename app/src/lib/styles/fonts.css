@@ -124,3 +124,286 @@
 	font-weight: 700;
 	font-style: italic;
 }
+/* :::::::::::::::::::::::::::::::::: */
+/*           TYPEMOUSE FONTS          */
+/* :::::::::::::::::::::::::::::::::: */
+
+/* ············· tm-mega ············ */
+@font-face {
+	font-family: "Mega";
+	src:
+		url("/fonts/TM/Mega/Mega-Hairline.woff2") format("woff2"),
+		url("/fonts/TM/Mega/Mega-Hairline.woff") format("woff"),
+		url("/fonts/TM/Mega/Mega-Hairline.ttf") format("truetype");
+	font-weight: 100;
+}
+@font-face {
+	font-family: "Mega";
+	src:
+		url("/fonts/TM/Mega/Mega-Extralight.woff2") format("woff2"),
+		url("/fonts/TM/Mega/Mega-Extralight.woff") format("woff"),
+		url("/fonts/TM/Mega/Mega-Extralight.ttf") format("truetype");
+	font-weight: 200;
+}
+@font-face {
+	font-family: "Mega";
+	src:
+		url("/fonts/TM/Mega/Mega-Thin.woff2") format("woff2"),
+		url("/fonts/TM/Mega/Mega-Thin.woff") format("woff"),
+		url("/fonts/TM/Mega/Mega-Thin.ttf") format("truetype");
+	font-weight: 300;
+}
+@font-face {
+	font-family: "Mega";
+	src:
+		url("/fonts/TM/Mega/Mega-Light.woff2") format("woff2"),
+		url("/fonts/TM/Mega/Mega-Light.woff") format("woff"),
+		url("/fonts/TM/Mega/Mega-Light.ttf") format("truetype");
+	font-weight: 400;
+}
+@font-face {
+	font-family: "Mega";
+	src:
+		url("/fonts/TM/Mega/Mega-Regular.woff2") format("woff2"),
+		url("/fonts/TM/Mega/Mega-Regular.woff") format("woff"),
+		url("/fonts/TM/Mega/Mega-Regular.ttf") format("truetype");
+	font-weight: 500;
+}
+@font-face {
+	font-family: "Mega";
+	src:
+		url("/fonts/TM/Mega/Mega-Medium.woff2") format("woff2"),
+		url("/fonts/TM/Mega/Mega-Medium.woff") format("woff"),
+		url("/fonts/TM/Mega/Mega-Medium.ttf") format("truetype");
+	font-weight: 600;
+}
+@font-face {
+	font-family: "Mega";
+	src:
+		url("/fonts/TM/Mega/Mega-Bold.woff2") format("woff2"),
+		url("/fonts/TM/Mega/Mega-Bold.woff") format("woff"),
+		url("/fonts/TM/Mega/Mega-Bold.ttf") format("truetype");
+	font-weight: 700;
+}
+@font-face {
+	font-family: "Mega";
+	src:
+		url("/fonts/TM/Mega/Mega-Heavy.woff2") format("woff2"),
+		url("/fonts/TM/Mega/Mega-Heavy.woff") format("woff"),
+		url("/fonts/TM/Mega/Mega-Heavy.ttf") format("truetype");
+	font-weight: 800;
+}
+@font-face {
+	font-family: "Mega";
+	src:
+		url("/fonts/TM/Mega/Mega-Black.woff2") format("woff2"),
+		url("/fonts/TM/Mega/Mega-Black.woff") format("woff"),
+		url("/fonts/TM/Mega/Mega-Black.ttf") format("truetype");
+	font-weight: 900;
+}
+
+/* ············ tm-pico-a ··········· */
+@font-face {
+	font-family: "Pico A";
+	src:
+		url("/fonts/TM/PicoA/PicoA-Hairline.woff2") format("woff2"),
+		url("/fonts/TM/PicoA/PicoA-Hairline.woff") format("woff"),
+		url("/fonts/TM/PicoA/PicoA-Hairline.ttf") format("truetype");
+	font-weight: 100;
+}
+@font-face {
+	font-family: "Pico A";
+	src:
+		url("/fonts/TM/PicoA/PicoA-Extralight.woff2") format("woff2"),
+		url("/fonts/TM/PicoA/PicoA-Extralight.woff") format("woff"),
+		url("/fonts/TM/PicoA/PicoA-Extralight.ttf") format("truetype");
+	font-weight: 200;
+}
+@font-face {
+	font-family: "Pico A";
+	src:
+		url("/fonts/TM/PicoA/PicoA-Light.woff2") format("woff2"),
+		url("/fonts/TM/PicoA/PicoA-Light.woff") format("woff"),
+		url("/fonts/TM/PicoA/PicoA-Light.ttf") format("truetype");
+	font-weight: 300;
+}
+@font-face {
+	font-family: "Pico A";
+	src:
+		url("/fonts/TM/PicoA/PicoA-Semilight.woff2") format("woff2"),
+		url("/fonts/TM/PicoA/PicoA-Semilight.woff") format("woff"),
+		url("/fonts/TM/PicoA/PicoA-Semilight.ttf") format("truetype");
+	font-weight: 400;
+}
+@font-face {
+	font-family: "Pico A";
+	src:
+		url("/fonts/TM/PicoA/PicoA-Book.woff2") format("woff2"),
+		url("/fonts/TM/PicoA/PicoA-Book.woff") format("woff"),
+		url("/fonts/TM/PicoA/PicoA-Book.ttf") format("truetype");
+	font-weight: 500;
+}
+@font-face {
+	font-family: "Pico A";
+	src:
+		url("/fonts/TM/PicoA/PicoA-Regular.woff2") format("woff2"),
+		url("/fonts/TM/PicoA/PicoA-Regular.woff") format("woff"),
+		url("/fonts/TM/PicoA/PicoA-Regular.ttf") format("truetype");
+	font-weight: 600;
+}
+@font-face {
+	font-family: "Pico A";
+	src:
+		url("/fonts/TM/PicoA/PicoA-Medium.woff2") format("woff2"),
+		url("/fonts/TM/PicoA/PicoA-Medium.woff") format("woff"),
+		url("/fonts/TM/PicoA/PicoA-Medium.ttf") format("truetype");
+	font-weight: 700;
+}
+@font-face {
+	font-family: "Pico A";
+	src:
+		url("/fonts/TM/PicoA/PicoA-Bold.woff2") format("woff2"),
+		url("/fonts/TM/PicoA/PicoA-Bold.woff") format("woff"),
+		url("/fonts/TM/PicoA/PicoA-Bold.ttf") format("truetype");
+	font-weight: 800;
+}
+@font-face {
+	font-family: "Pico A";
+	src:
+		url("/fonts/TM/PicoA/PicoA-Black.woff2") format("woff2"),
+		url("/fonts/TM/PicoA/PicoA-Black.woff") format("woff"),
+		url("/fonts/TM/PicoA/PicoA-Black.ttf") format("truetype");
+	font-weight: 900;
+}
+
+/* ············ tm-pico-b ··········· */
+@font-face {
+	font-family: "Pico B";
+	src:
+		url("/fonts/TM/PicoB/PicoB-Hairline.woff2") format("woff2"),
+		url("/fonts/TM/PicoB/PicoB-Hairline.woff") format("woff"),
+		url("/fonts/TM/PicoB/PicoB-Hairline.ttf") format("truetype");
+	font-weight: 100;
+}
+@font-face {
+	font-family: "Pico B";
+	src:
+		url("/fonts/TM/PicoB/PicoB-ExtraLight.woff2") format("woff2"),
+		url("/fonts/TM/PicoB/PicoB-ExtraLight.woff") format("woff"),
+		url("/fonts/TM/PicoB/PicoB-ExtraLight.ttf") format("truetype");
+	font-weight: 200;
+}
+@font-face {
+	font-family: "Pico B";
+	src:
+		url("/fonts/TM/PicoB/PicoB-Light.woff2") format("woff2"),
+		url("/fonts/TM/PicoB/PicoB-Light.woff") format("woff"),
+		url("/fonts/TM/PicoB/PicoB-Light.ttf") format("truetype");
+	font-weight: 300;
+}
+@font-face {
+	font-family: "Pico B";
+	src:
+		url("/fonts/TM/PicoB/PicoB-Semilight.woff2") format("woff2"),
+		url("/fonts/TM/PicoB/PicoB-Semilight.woff") format("woff"),
+		url("/fonts/TM/PicoB/PicoB-Semilight.ttf") format("truetype");
+	font-weight: 400;
+}
+@font-face {
+	font-family: "Pico B";
+	src:
+		url("/fonts/TM/PicoB/PicoB-Book.woff2") format("woff2"),
+		url("/fonts/TM/PicoB/PicoB-Book.woff") format("woff"),
+		url("/fonts/TM/PicoB/PicoB-Book.ttf") format("truetype");
+	font-weight: 500;
+}
+@font-face {
+	font-family: "Pico B";
+	src:
+		url("/fonts/TM/PicoB/PicoB-Regular.woff2") format("woff2"),
+		url("/fonts/TM/PicoB/PicoB-Regular.woff") format("woff"),
+		url("/fonts/TM/PicoB/PicoB-Regular.ttf") format("truetype");
+	font-weight: 600;
+}
+@font-face {
+	font-family: "Pico B";
+	src:
+		url("/fonts/TM/PicoB/PicoB-Medium.woff2") format("woff2"),
+		url("/fonts/TM/PicoB/PicoB-Medium.woff") format("woff"),
+		url("/fonts/TM/PicoB/PicoB-Medium.ttf") format("truetype");
+	font-weight: 700;
+}
+@font-face {
+	font-family: "Pico B";
+	src:
+		url("/fonts/TM/PicoB/PicoB-Bold.woff2") format("woff2"),
+		url("/fonts/TM/PicoB/PicoB-Bold.woff") format("woff"),
+		url("/fonts/TM/PicoB/PicoB-Bold.ttf") format("truetype");
+	font-weight: 800;
+}
+@font-face {
+	font-family: "Pico B";
+	src:
+		url("/fonts/TM/PicoB/PicoB-Black.woff2") format("woff2"),
+		url("/fonts/TM/PicoB/PicoB-Black.woff") format("woff"),
+		url("/fonts/TM/PicoB/PicoB-Black.ttf") format("truetype");
+	font-weight: 900;
+}
+
+/* ············· tm-spec ············ */
+@font-face {
+	font-family: "Spec";
+	src:
+		url("/fonts/TM/Spec/Spec-100.woff2") format("woff2"),
+		url("/fonts/TM/Spec/Spec-100.woff") format("woff"),
+		url("/fonts/TM/Spec/Spec-100.ttf") format("truetype");
+	font-weight: 100;
+}
+@font-face {
+	font-family: "Spec";
+	src:
+		url("/fonts/TM/Spec/Spec-200.woff2") format("woff2"),
+		url("/fonts/TM/Spec/Spec-200.woff") format("woff"),
+		url("/fonts/TM/Spec/Spec-200.ttf") format("truetype");
+	font-weight: 200;
+}
+@font-face {
+	font-family: "Spec";
+	src:
+		url("/fonts/TM/Spec/Spec-300.woff2") format("woff2"),
+		url("/fonts/TM/Spec/Spec-300.woff") format("woff"),
+		url("/fonts/TM/Spec/Spec-300.ttf") format("truetype");
+	font-weight: 300;
+}
+@font-face {
+	font-family: "Spec";
+	src:
+		url("/fonts/TM/Spec/Spec-400.woff2") format("woff2"),
+		url("/fonts/TM/Spec/Spec-400.woff") format("woff"),
+		url("/fonts/TM/Spec/Spec-400.ttf") format("truetype");
+	font-weight: 400;
+}
+@font-face {
+	font-family: "Spec";
+	src:
+		url("/fonts/TM/Spec/Spec-500.woff2") format("woff2"),
+		url("/fonts/TM/Spec/Spec-500.woff") format("woff"),
+		url("/fonts/TM/Spec/Spec-500.ttf") format("truetype");
+	font-weight: 500;
+}
+@font-face {
+	font-family: "Spec";
+	src:
+		url("/fonts/TM/Spec/Spec-600.woff2") format("woff2"),
+		url("/fonts/TM/Spec/Spec-600.woff") format("woff"),
+		url("/fonts/TM/Spec/Spec-600.ttf") format("truetype");
+	font-weight: 600;
+}
+@font-face {
+	font-family: "Spec";
+	src:
+		url("/fonts/TM/Spec/Spec-700.woff2") format("woff2"),
+		url("/fonts/TM/Spec/Spec-700.woff") format("woff"),
+		url("/fonts/TM/Spec/Spec-700.ttf") format("truetype");
+	font-weight: 700;
+}

@@ -46,7 +46,7 @@ $: ({ data: posts } = $q);
 	</section>
 
 	<section>
-		<h2><a href="art">gallery</a></h2>
+		<h2><a href="art#">gallery…</a></h2>
 		<div class="thumbs">
 			{#await data.artworks.data then artworks}
 				{#each artworks as artwork}
@@ -85,6 +85,10 @@ $: ({ data: posts } = $q);
 				{/each}
 			{/await}
 		</div>
+	</section>
+
+	<section>
+		<h2><a href="type#">type design…</a></h2>
 	</section>
 
 	<section>

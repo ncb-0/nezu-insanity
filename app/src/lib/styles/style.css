@@ -211,8 +211,11 @@ ol {
 	+ :is(h1, h2, h3, h4, h5, h6, p, ul, ol, hr, blockquote, a) {
 	margin-top: 1ex;
 }
-:is(h1, h2, h3, h4, h5, h6) + :is(h1, h2, h3, h4, h5, h6) {
+:is(h1, h2, h3, h4, h5, h6) + :is(h1, h2, h3, h4, h5, h6, p) {
 	margin-top: 0.5ex;
+}
+h1 + p {
+	margin-top: 1ex;
 }
 #chatlog p + p {
 	margin-top: 0.5ex !important;
@@ -388,6 +391,7 @@ picture {
 :is(img, picture, div, figure) + :is(h1, h2, h3, h4, h5, h6, p) {
 	margin-top: 2ex;
 }
+
 .pixel {
 	image-rendering: pixelated;
 }
@@ -395,11 +399,13 @@ picture {
 	position: float;
 	float: left;
 	margin-right: 1ch;
+	max-width: 40%;
 }
 .float-right {
 	position: float;
 	float: right;
 	margin-left: 1ch;
+	max-width: 40%;
 }
 .card-grid {
 	display: grid;

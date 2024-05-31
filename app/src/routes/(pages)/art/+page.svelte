@@ -201,6 +201,7 @@ select {
 	border-radius: 0;
 	display: block;
 	width: 100%;
+	font-size: 1rem;
 }
 select option:disabled {
 	color: rgba(var(--text-color), 0.4);
