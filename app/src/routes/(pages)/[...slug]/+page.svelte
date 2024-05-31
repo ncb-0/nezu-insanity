@@ -10,6 +10,7 @@ import ImageRow from "$lib/components/ImageRow.svelte";
 import Break from "$lib/components/Break.svelte";
 import Giscus from "@giscus/svelte";
 import CardGrid from "$lib/components/CardGrid.svelte";
+import Button from "$lib/components/Button.svelte";
 
 export let data: PageData;
 $: q = useQuery(data);
@@ -43,6 +44,7 @@ $: ({ data: post } = $q);
 					gallery: ImageGrid,
 					imagerow: ImageRow,
 					break: Break,
+					button: Button,
 				},
 			}}
 			value={post.body}

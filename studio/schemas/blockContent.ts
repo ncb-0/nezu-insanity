@@ -117,5 +117,10 @@ export default defineType({
       type: 'youtubeEmbed',
       title: 'YouTube Video',
     },
+    {
+      name: 'button',
+      type: 'Button',
+      title: 'Button',
+    },
   ],
 })
