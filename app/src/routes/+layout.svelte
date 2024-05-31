@@ -13,12 +13,12 @@ export let data;
 	<meta
 		name="theme-color"
 		media="(prefers-color-scheme: light)"
-		content="rgb(255, 248, 225)"
+		content="rgb(255, 255, 255)"
 	/>
 	<meta
 		name="theme-color"
 		media="(prefers-color-scheme: dark)"
-		content="rgb(68, 51, 0)"
+		content="rgb(46, 23, 30)"
 	/>
 </svelte:head>
 
