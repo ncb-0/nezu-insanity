@@ -14,7 +14,7 @@ export let data;
 	</section>
 
 	<section>
-		<h2>tm-lagrange-mono</h2>
+		<h2 id="tm-lagrange-mono">tm-lagrange-mono</h2>
 		<p>A monospaced clarendon.</p>
 		<FontTester
 			fontFamily="Lagrange Mono"
@@ -33,7 +33,7 @@ export let data;
 	</section>
 
 	<section>
-		<h2>tm-mega</h2>
+		<h2 id="tm-mega">tm-mega</h2>
 		<p>
 			A sturdy sans serif with superelliptical curves and a Frutigerian flair.
 			Mega supports Latin Plus (incl. Pinyin & Vietnamese), extended Cyrillic,
@@ -84,13 +84,13 @@ export let data;
 	</section>
 
 	<section>
-		<h2>tm-pico</h2>
+		<h2 id="tm-pico">tm-pico</h2>
 		<p>
 			A cute sans-serif with a crude geometric feel and minimal optical
 			corrections. Pico supports Latin Plus (incl. Pinyin & Vietnamese) and
 			basic Cyrillic.
 		</p>
-		<h3>tm-pico-A</h3>
+		<h3 id="tm-pico-a">tm-pico-A</h3>
 		<p>Non-rounded variant.</p>
 		<FontTester
 			fontFamily="Pico A"
@@ -135,7 +135,7 @@ export let data;
 			]}
 		/>
 
-		<h3>tm-pico-B</h3>
+		<h3 id="tm-pico-b">tm-pico-B</h3>
 		<p>Rounded variant.</p>
 		<FontTester
 			fontFamily="Pico B"
@@ -182,7 +182,7 @@ export let data;
 	</section>
 
 	<section>
-		<h2>tm-spec</h2>
+		<h2 id="tm-spec">tm-spec</h2>
 		<p>My first typeface, formerly known as “sb-spec” and “sb-studio”.</p>
 		<FontTester
 			fontFamily="Spec"
