@@ -91,14 +91,14 @@ $: textArea && textArea.style.setProperty("font-family", fontFamily);
 				bind:value={fontLeading}
 				min="0.5"
 				max="3"
-				step="0.25"
+				step="0.1"
 			/>
 			<input
 				type="number"
 				bind:value={fontLeading}
 				min="0.5"
 				max="3"
-				step="0.25"
+				step="0.1"
 				style="width: 4ch; text-align: right;"
 			/>
 		</div>
