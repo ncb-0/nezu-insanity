@@ -26,7 +26,7 @@ const params = {
 	selectedYear,
 };
 
-$: filteredArtworks = data.options.initial.data.filter((artwork) => {
+$: filteredArtworks = artworks.filter((artwork) => {
 	// Check if no characters are selected or if there is a character match
 	const characterMatch =
 		params.selectedCharacters.length === 0 ||

@@ -30,16 +30,16 @@ export const load: PageServerLoad = async (event) => {
 	// corresponding `+page.svelte` file, but you can return the data in any
 	// format you like.
 	return {
-		query,
+		// query,
 		media,
 		year,
 		characters,
 		cw,
-		selectedCharacters,
-		selectedMedia,
-		selectedYear,
-		selectedCW,
-		params,
+		// selectedCharacters,
+		// selectedMedia,
+		// selectedYear,
+		// selectedCW,
+		// params,
 		options: { initial },
 	};
 };

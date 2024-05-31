@@ -14,10 +14,10 @@ let navbar = null;
 $: {
 	if (navbar) {
 		if (y === 0) {
-			console.log("bye");
+			// console.log("bye");
 			navbar.classList.remove("scrolled");
 		} else {
-			console.log("hi");
+			// console.log("hi");
 			navbar.classList.add("scrolled");
 		}
 	}

@@ -1,12 +1,10 @@
 import { postsQuery, type Post } from "$lib/sanity/queries";
 import { tagsQuery, type Tag } from "$lib/sanity/queries";
-import { artworksQuery, type Artwork } from "$lib/sanity/queries";
+import { artworksCompactQuery, type Artwork } from "$lib/sanity/queries";
 import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async (event) => {
 	const { loadQuery } = event.locals;
-	// const initial = await loadQuery<Post[]>(postsQuery);
-	// const tags = await loadQuery<Tag[]>(tagsQuery);
 
 	let selectedCharacters: Tag[] = [];
 	let selectedMedia: Tag[] = [];
@@ -27,7 +25,7 @@ export const load: PageServerLoad = async (event) => {
 	// format you like.
 	return {
 		tags: await loadQuery<Tag[]>(tagsQuery),
-		artworks: await loadQuery<Artwork[]>(artworksQuery, params),
+		artworks: await loadQuery<Artwork[]>(artworksCompactQuery, params),
 		options: { initial: await loadQuery<Post[]>(postsQuery) },
 	};
 };

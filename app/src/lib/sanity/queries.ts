@@ -4,14 +4,28 @@ import groq from "groq";
 
 export const postQuery = groq`*[_type == "post" && slug.current == $slug][0]`;
 
-export const postsQuery = groq`*[_type == "post" && defined(slug.current) && !(myTags[].value match "subpage") && !(myTags[].value match "testing")] | order(title asc) | order(date desc)`;
+// export const postsQuery = groq`*[_type == "post" && defined(slug.current) && !(myTags[].value match "subpage") && !(myTags[].value match "testing")] | order(title asc) | order(date desc)`;
+
+export const postsQuery = groq`*[_type == "post" 
+  && defined(slug.current)
+  && !(myTags[].value match "subpage") 
+  && !(myTags[].value match "testing")] 
+       | order(title asc) 
+       | order(date desc){
+    title, shortTitle, mainImage, slug
+  }`;
 
 export const blogQuery = groq`*[_type == "blogPost" && slug.current == $slug][0]`;
 
-export const blogsQuery = groq`*[_type == "blogPost" && defined(slug.current)] | order(_createdAt desc)`;
+export const blogsQuery = groq`*[_type == "blogPost" && defined(slug.current)] | order(_createdAt desc){
+    title, shortTitle, mainImage, slug
+  }`;
 
-export const artworksQuery = groq`*[_type == "artwork" && defined(slug.current) && media[].label match $selectedMedia
-  && characters[].label match $selectedCharacters] | order(title asc) | order(date desc)`;
+// export const artworksQuery = groq`*[_type == "artwork" && defined(slug.current) && media[].label match $selectedMedia && characters[].label match $selectedCharacters] | order(title asc) | order(date desc)`;
+
+export const artworksQuery = groq`*[_type == "artwork" && defined(slug.current) && media[].label match $selectedMedia && characters[].label match $selectedCharacters] | order(title asc) | order(date desc){ title, shortTitle, mainImage, slug, media, characters, year, date }`;
+
+export const artworksCompactQuery = groq`*[_type == "artwork" && defined(slug.current) && media[].label match $selectedMedia && characters[].label match $selectedCharacters] | order(title asc) | order(date desc){ title, shortTitle, mainImage, slug, date, year }`;
 
 export const artworksYearQuery = groq`*[_type == "artwork" && defined(slug.current) && year == $year] | order(title asc) | order(date desc)`;
 
@@ -28,7 +42,6 @@ export const childrenQuery = groq`*[_type == "post" && defined(children) && slug
   shortTitle, 
 	slug, 
   mainImage,
-	children,
 }`;
 
 export const parentsQuery = groq`*[_type == "post" && defined(slug.current) && slug.current == $slug]{
@@ -39,7 +52,11 @@ export const parentsQuery = groq`*[_type == "post" && defined(slug.current) && s
   mainImage
 }}`;
 
-export const tagQuery = groq`*[_type == "post" && myTags[].value match $tag] | order(slug.current asc)`;
+// export const tagQuery = groq`*[_type == "post" && myTags[].value match $tag] | order(slug.current asc)`;
+
+export const tagQuery = groq`*[_type == "post" && myTags[].value match $tag] | order(slug.current asc){
+  title, shortTitle, mainImage, slug, myTags
+  }`;
 
 export const tagsQuery = groq`array::unique(*[_type == "post" && defined(myTags)].myTags[] | order(_key asc)._key)`;
 
@@ -50,6 +67,15 @@ export const yearsQuery = groq`array::unique(*[_type == "artwork" && defined(yea
 export const charactersQuery = groq`array::unique(*[defined(characters)].characters[]._key | order(_key desc))`;
 
 export const cwQuery = groq`array::unique(*[defined(cw)].cw[]._key | order(_key asc))`;
+
+export const combinedQuery = groq`{
+  tags: array::unique(*[_type == "post" && defined(myTags)].myTags[] | order(_key asc)._key),
+  media: array::unique(*[defined(media)].media[]._key | order(_key asc)),
+  years: array::unique(*[_type == "artwork" && defined(year)].year | order(year asc)),
+  characters: array::unique(*[defined(characters)].characters[]._key | order(_key desc)),
+  cw: array::unique(*[defined(cw)].cw[]._key | order(_key asc)),
+  artworks: *[_type == "artwork" && defined(slug.current) && media[].label match $selectedMedia && characters[].label match $selectedCharacters] | order(title asc) | order(date desc){ title, shortTitle, mainImage, slug, media, characters, year, date }
+}`;
 
 export interface Post {
 	_type: "post";
