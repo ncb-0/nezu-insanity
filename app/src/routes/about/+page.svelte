@@ -24,7 +24,10 @@ export let data: PageData;
 
 		<p>
 			<figure class="float-right">
-				<img src="/img/nezureal.jpg" />
+				<img
+					src="/img/nezureal.jpg"
+					alt="Lisa in her mouse-human hybrid form…"
+				/>
 				<figcaption>Lisa in her mouse-human hybrid form…</figcaption>
 			</figure>
 		</p>
