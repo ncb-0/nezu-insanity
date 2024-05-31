@@ -3,6 +3,7 @@ import "$lib/styles/style.css";
 import "$lib/styles/fonts.css";
 import { page } from "$app/stores";
 import Navbar from "$lib/components/Navbar.svelte";
+import { onMount } from "svelte";
 
 export let data;
 </script>

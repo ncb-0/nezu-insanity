@@ -471,6 +471,14 @@ picture {
 			rgb(var(--bg-color));
 	}
 }
+@media (max-width: 550px) {
+	.float-left,
+	.float-right {
+		float: none;
+		max-width: 100%;
+		margin: 0;
+	}
+}
 @media (max-width: 897px) {
 	body {
 		background: rgb(var(--bg-color));

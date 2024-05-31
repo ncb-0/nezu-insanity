@@ -28,13 +28,15 @@ $: ({ data: posts } = $q);
 <article>
 	<section>
 		<h1>
-			<a href="/">v2.nezu.world</a> is under construction.
+			<!-- <a href="/">v2.nezu.world</a> is under construction. -->
+			The homepage of <a href="about">Lisa M</a>, an artist & designer in
+			Toronto, Canada.
 		</h1>
-		<h2>
+		<!-- <h2>
 			(current version: <a href="https://v1.nezu.world" target="_blank"
 				>v1.nezu.world</a
 			>)
-		</h2>
+		</h2> -->
 	</section>
 
 	<section>
