@@ -288,9 +288,9 @@
 @font-face {
 	font-family: "Pico B";
 	src:
-		url("/fonts/TM/PicoB/PicoB-ExtraLight.woff2") format("woff2"),
-		url("/fonts/TM/PicoB/PicoB-ExtraLight.woff") format("woff"),
-		url("/fonts/TM/PicoB/PicoB-ExtraLight.ttf") format("truetype");
+		url("/fonts/TM/PicoB/PicoB-Extralight.woff2") format("woff2"),
+		url("/fonts/TM/PicoB/PicoB-Extralight.woff") format("woff"),
+		url("/fonts/TM/PicoB/PicoB-Extralight.ttf") format("truetype");
 	font-weight: 200;
 }
 @font-face {
