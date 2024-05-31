@@ -30,11 +30,8 @@ export let data: PageData;
 				/>
 				<figcaption>Lisa in her mouse-human hybrid form…</figcaption>
 			</figure>
-		</p>
-
-		<p>
-			i’m Lisa. (she/her/it) i’m a multidisciplinary artist from toronto. my
-			work spans <a href="/art">digital and traditional art</a>,
+			i’m Lisa. (she/her/it) i’m a multidisciplinary artist from toronto. my work
+			spans<a href="/art">digital and traditional art</a>,
 			<a href="/tag/design">graphic design</a>, <a href="/type">type design</a>,
 			<a href="/tag/writing">creative writing</a>,
 			<a href="/tag/dj">dj</a>, whatever. i’m cute and i do a little bit of
