@@ -23,7 +23,7 @@ export const blogsQuery = groq`*[_type == "blogPost" && defined(slug.current)] |
 
 // export const artworksQuery = groq`*[_type == "artwork" && defined(slug.current) && media[].label match $selectedMedia && characters[].label match $selectedCharacters] | order(title asc) | order(date desc)`;
 
-export const artworksQuery = groq`*[_type == "artwork" && defined(slug.current) && media[].label match $selectedMedia && characters[].label match $selectedCharacters] | order(title asc) | order(date desc){ title, shortTitle, mainImage, slug, media, characters, year, date }`;
+export const artworksQuery = groq`*[_type == "artwork" && defined(slug.current) && media[].label match $selectedMedia && characters[].label match $selectedCharacters] | order(title asc) | order(date desc){ title, shortTitle, mainImage, slug, media, characters, year, date, cw, nsfw }`;
 
 export const artworksCompactQuery = groq`*[_type == "artwork" && defined(slug.current) && media[].label match $selectedMedia && characters[].label match $selectedCharacters] | order(title asc) | order(date desc){ title, shortTitle, mainImage, slug, date, year }`;
 
@@ -74,7 +74,7 @@ export const combinedQuery = groq`{
   years: array::unique(*[_type == "artwork" && defined(year)].year | order(year asc)),
   characters: array::unique(*[defined(characters)].characters[]._key | order(_key desc)),
   cw: array::unique(*[defined(cw)].cw[]._key | order(_key asc)),
-  artworks: *[_type == "artwork" && defined(slug.current) && media[].label match $selectedMedia && characters[].label match $selectedCharacters] | order(title asc) | order(date desc){ title, shortTitle, mainImage, slug, media, characters, year, date }
+  artworks: *[_type == "artwork" && defined(slug.current) && media[].label match $selectedMedia && characters[].label match $selectedCharacters] | order(title asc) | order(date desc){ title, shortTitle, mainImage, slug, media, characters, year, date, cw, nsfw }
 }`;
 
 export interface Post {
@@ -118,12 +118,21 @@ export interface Artwork {
 	_type: "artwork";
 	_createdAt: string;
 	year: number;
-	myTags?: Array<Object>;
+	myTags?: Array<Tag>;
 	date: Date;
 	title: string;
 	slug: Slug;
 	mainImage: ImageAsset;
-	media?: Array<Object>;
-	characters?: Array<Object>;
-	cw?: Array<Object>;
+	media?: Array<Tag>;
+	characters?: Array<Tag>;
+	cw?: Array<Tag>;
+	nsfw?: boolean;
+}
+
+export interface QueryResult {
+	media: Array<Tag>;
+	years: Array<Number>;
+	characters: Array<Tag>;
+	cw: Array<Tag>;
+	artworks: Array<Artwork>;
 }
