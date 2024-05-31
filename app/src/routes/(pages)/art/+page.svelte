@@ -152,7 +152,7 @@ $: filteredArtworks = data.options.initial.data.filter((artwork) => {
 		</div>
 	</section>
 
-	<section>
+	<section data-sveltekit-preload-data="tap">
 		<div class="card-grid">
 			{#await filteredArtworks}
 				<p>loading…</p>

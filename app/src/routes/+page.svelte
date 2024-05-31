@@ -39,7 +39,7 @@ $: ({ data: posts } = $q);
 		</h2> -->
 	</section>
 
-	<section>
+	<section data-sveltekit-preload-data="tap">
 		<h2>portfolio</h2>
 
 		{#await posts then posts}
@@ -49,7 +49,7 @@ $: ({ data: posts } = $q);
 
 	<section>
 		<h2><a href="art#">gallery…</a></h2>
-		<div class="thumbs">
+		<div class="thumbs" data-sveltekit-preload-data="tap">
 			{#await data.artworks.data then artworks}
 				{#each artworks as artwork}
 					<div class="thumb">

@@ -8,7 +8,7 @@ export let baseURL = ".";
 </script>
 
 {#if items.length}
-	<div class="card-grid">
+	<div class="card-grid" data-sveltekit-preload-data="tap">
 		{#each items as i}
 			<Card item={i} {baseURL} {text} {blog} />
 		{/each}
