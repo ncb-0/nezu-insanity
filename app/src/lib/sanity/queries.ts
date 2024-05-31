@@ -25,7 +25,7 @@ export const blogsQuery = groq`*[_type == "blogPost" && defined(slug.current)] |
 
 export const artworksQuery = groq`*[_type == "artwork" && defined(slug.current) && media[].label match $selectedMedia && characters[].label match $selectedCharacters] | order(title asc) | order(date desc){ title, shortTitle, mainImage, slug, media, characters, year, date, cw, nsfw }`;
 
-export const artworksCompactQuery = groq`*[_type == "artwork" && defined(slug.current) && media[].label match $selectedMedia && characters[].label match $selectedCharacters] | order(title asc) | order(date desc){ title, shortTitle, mainImage, slug, date, year }`;
+export const artworksCompactQuery = groq`*[_type == "artwork" && defined(slug.current) && media[].label match $selectedMedia && characters[].label match $selectedCharacters] | order(title asc) | order(date desc){ title, shortTitle, mainImage, slug, date, year, nsfw }`;
 
 export const artworksYearQuery = groq`*[_type == "artwork" && defined(slug.current) && year == $year] | order(title asc) | order(date desc)`;
 
