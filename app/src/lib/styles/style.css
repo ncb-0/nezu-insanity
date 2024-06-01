@@ -31,6 +31,11 @@ html {
 
 	--border-color: inherit;
 
+	overflow-x: hidden;
+	scrollbar-gutter: stable;
+	scrollbar-width: thin;
+	width: 100%;
+
 	--font-sans: "Helvetica", sans-serif;
 	--font-serif: "Job Clarendon Text", serif;
 	--font-serif-2: "Lagrange Mono", monospace;
@@ -55,7 +60,7 @@ body {
 	background:
 		url("/ui/flowers-bottom-purple.svg") top 100vh right 0.5rem / 96px repeat-y,
 		rgb(var(--bg-color));
-	max-width: calc(100vw - 96px - 1rem);
+	max-width: calc(100% - 96px - 1rem);
 }
 .flowers-top {
 	overflow: hidden;
@@ -66,7 +71,7 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100vw;
+	width: 100%;
 	height: 100vh;
 
 	background:
