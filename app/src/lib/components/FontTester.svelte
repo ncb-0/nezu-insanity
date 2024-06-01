@@ -163,6 +163,10 @@ textarea,
 	border: 1px solid rgba(var(--text-color), 0.3);
 	background: rgb(var(--bg-color));
 	color: rgb(var(--text-color));
+	hyphens: auto;
+	word-break: normal;
+	overflow-y: hidden;
+	overflow-x: hidden;
 }
 [contenteditable],
 textarea {
