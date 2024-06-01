@@ -456,6 +456,10 @@ picture {
 
 		--bg-color: var(--bg-color-dark);
 		--text-color: var(--text-color-dark);
+		overflow-x: hidden;
+		scrollbar-gutter: stable;
+		scrollbar-width: thin;
+		width: 100%;
 	}
 	body {
 		background:
@@ -465,14 +469,11 @@ picture {
 	}
 	.flowers-top {
 		overflow: hidden;
-		z-index: -1; /* layer below everything else */
-
-		/* position whole div to top left
-  and take up 100% of viewport*/
+		z-index: -1;
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 100vw;
+		width: 100%;
 		height: 100vh;
 
 		background:
@@ -501,7 +502,7 @@ picture {
 			rgb(var(--bg-color));
 	}
 	article {
-		max-width: 100vw;
+		max-width: 100%;
 		padding-bottom: 2rem;
 	}
 	.flowers-top {
@@ -524,10 +525,14 @@ picture {
 
 		--bg-color: var(--bg-color-dark);
 		--text-color: var(--text-color-dark);
+		overflow-x: hidden;
+		scrollbar-gutter: stable;
+		scrollbar-width: thin;
+		width: 100%;
 	}
 	body {
 		background: rgb(var(--bg-color));
-		max-width: 100vw;
+		max-width: 100%;
 		padding-bottom: 0;
 		background:
 			url("/ui/bg-dark-purple.svg") top 0 left 0 / 100% calc(100% - 128px)
@@ -537,7 +542,7 @@ picture {
 			rgb(var(--bg-color));
 	}
 	article {
-		max-width: 100vw;
+		max-width: 100%;
 		padding-bottom: 2rem;
 	}
 	.flowers-top {
