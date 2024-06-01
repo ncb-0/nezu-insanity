@@ -15,7 +15,10 @@ $: textArea && textArea.style.setProperty("font-size", `${fontSize}px`);
 $: textArea && textArea.style.setProperty("font-weight", fontWeight);
 $: textArea && textArea.style.setProperty("font-style", fontStyle);
 $: textArea &&
-	textArea.style.setProperty("letter-spacing", `${fontTracking}px`);
+	textArea.style.setProperty(
+		"letter-spacing",
+		`calc(${fontTracking} * 0.01em)`
+	);
 $: textArea && textArea.style.setProperty("line-height", fontLeading);
 $: textArea && textArea.style.setProperty("font-family", fontFamily);
 </script>
