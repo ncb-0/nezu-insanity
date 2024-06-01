@@ -42,7 +42,7 @@ function getImageDimensions(id) {
 	{/if}
 </svelte:head>
 
-<article>
+<article class="narrow">
 	<h1>{artwork.title}</h1>
 
 	<img
@@ -96,10 +96,3 @@ function getImageDimensions(id) {
 		</ul>
 	{/if}
 </article>
-
-<style>
-article {
-	max-width: 777px;
-	/* margin: 0 auto; */
-}
-</style>

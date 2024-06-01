@@ -25,7 +25,7 @@ $: ({ data: blogPosts } = $q);
 
 <style>
 article {
-	max-width: 100vw;
+	max-width: 100%;
 	/* margin: 0 auto; */
 }
 </style>

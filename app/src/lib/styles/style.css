@@ -78,6 +78,14 @@ body {
 		url("/ui/flowers-top-purple.svg") bottom 0 right 0.5rem / 96px no-repeat,
 		rgb(var(--bg-color));
 }
+article.narrow {
+	max-width: 777px;
+	/* overflow: auto; */
+}
+article {
+	max-width: 100%;
+	/* overflow: auto; */
+}
 
 /* :::::::::::::::::::::::::::::::::: */
 /*             TYPOGRAPHY             */
@@ -493,7 +501,7 @@ picture {
 @media (max-width: 897px) {
 	body {
 		background: rgb(var(--bg-color));
-		max-width: 100vw;
+		max-width: 100%;
 		padding-bottom: 0;
 		background:
 			url("/ui/bg-white.svg") top 0 left 0 / 100% calc(100% - 128px) no-repeat,

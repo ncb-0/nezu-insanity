@@ -32,7 +32,7 @@ $: ({ data: post } = $q);
 	/> -->
 </svelte:head>
 
-<article>
+<article class="narrow">
 	<h1>{post.title}</h1>
 
 	{#if post.body}
@@ -49,10 +49,3 @@ $: ({ data: post } = $q);
 		/>
 	{/if}
 </article>
-
-<style>
-article {
-	max-width: 777px;
-	/* margin: 0 auto; */
-}
-</style>

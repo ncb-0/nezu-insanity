@@ -13,7 +13,7 @@
 	<meta property="og:url" content="https://nezu.world/" />
 </svelte:head>
 
-<article>
+<article class="narrow">
 	<h1>about</h1>
 
 	<figure class="float-right" style="margin-top: 0.5ex;">
@@ -193,11 +193,3 @@
 		<li><a href="https://vercel.com" target="_blank">Vercel</a></li>
 	</ul>
 </article>
-
-<style>
-article {
-	max-width: 777px;
-	/* margin: 0 auto; */
-	overflow: auto;
-}
-</style>
