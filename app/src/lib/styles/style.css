@@ -420,13 +420,13 @@ picture {
 	position: float;
 	float: left;
 	margin-right: 1ch;
-	max-width: 40% !important;
+	max-width: 40%;
 }
 .float-right {
 	position: float;
 	float: right;
 	margin-left: 1ch;
-	max-width: 40% !important;
+	max-width: 40%;
 }
 .card-grid {
 	display: grid;
@@ -504,7 +504,7 @@ picture {
 	.float-left,
 	.float-right {
 		float: none;
-		max-width: 100%;
+		width: 100% !important;
 		margin: 0;
 	}
 }

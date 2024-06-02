@@ -25,7 +25,13 @@ function toggleLightbox() {
 	}
 }
 
-$: console.log(showLightbox);
+function getFileExtension(filename) {
+	return filename.substring(filename.lastIndexOf("-") + 1);
+}
+
+const fileExtension = getFileExtension(src.asset._ref);
+
+$: console.log(fileExtension);
 </script>
 
 <svelte:window
@@ -124,14 +130,25 @@ $: console.log(showLightbox);
 {#if showLightbox == true}
 	<div class="shade" on:click={toggleLightbox}>
 		<figure class="lightbox">
-			<img
-				src={urlFor(src).format("png").url()}
-				width={getImageDimensions(src.asset._ref).width}
-				height={getImageDimensions(src.asset._ref).height}
-				alt={src.alt}
-				style="aspect-ratio: {getImageDimensions(src.asset._ref)
-					.width} / {getImageDimensions(src.asset._ref).height}"
-			/>
+			{#if fileExtension == "svg"}
+				<img
+					src={urlFor(src).format("png").url()}
+					width={getImageDimensions(src.asset._ref).width}
+					height={getImageDimensions(src.asset._ref).height}
+					alt={src.alt}
+					style="aspect-ratio: {getImageDimensions(src.asset._ref)
+						.width} / {getImageDimensions(src.asset._ref).height}"
+				/>
+			{:else}
+				<img
+					src={urlFor(src).url()}
+					width={getImageDimensions(src.asset._ref).width}
+					height={getImageDimensions(src.asset._ref).height}
+					alt={src.alt}
+					style="aspect-ratio: {getImageDimensions(src.asset._ref)
+						.width} / {getImageDimensions(src.asset._ref).height}"
+				/>
+			{/if}
 			{#if src.caption}
 				<figcaption>
 					{src.caption}
@@ -145,7 +162,7 @@ $: console.log(showLightbox);
 figure,
 img {
 	cursor: pointer;
-	max-width: 100%;
+	/* max-width: 100%; */
 }
 .lightbox {
 	display: none;
@@ -166,7 +183,7 @@ img {
 	cursor: normal;
 }
 .lightbox img {
-	/* max-width: 100%; */
+	max-width: 100%;
 	max-height: 100%;
 	width: auto;
 	/* margin: 0; */
