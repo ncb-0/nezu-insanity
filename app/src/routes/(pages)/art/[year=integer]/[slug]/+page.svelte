@@ -27,8 +27,14 @@ function getImageDimensions(id) {
 <svelte:head>
 	<title>{artwork.title} | nezu.world</title>
 	<meta property="og:title" content="{artwork.title} | nezu.world" />
+	<meta property="twitter:title" content="{artwork.title} | nezu.world" />
+	<meta property="og:description" content="{artwork.title} by Lisa M." />
+	<meta property="description" content="{artwork.title} by Lisa M." />
+	<meta property="twitter:description" content="{artwork.title} by Lisa M." />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://nezu.world{data.currentURL}" />
+	<meta property="og:site_name" content="nezu.world" />
+	<meta property="twitter:card" content="summary" />
 	{#if artwork.nsfw == true}
 		<meta
 			property="og:image"

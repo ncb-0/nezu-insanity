@@ -40,53 +40,27 @@ $: console.log(fileExtension);
 	}}
 />
 
-{#if src.caption && !src.floatLeft && !src.floatRight}
-	<figure on:click={toggleLightbox} {style}>
-		<img
-			src={urlFor(src).url()}
-			width={getImageDimensions(src.asset._ref).width}
-			height={getImageDimensions(src.asset._ref).height}
-			alt={src.alt}
-			style="aspect-ratio: {getImageDimensions(src.asset._ref)
-				.width} / {getImageDimensions(src.asset._ref).height}"
-		/>
+<figure
+	class={src.floatLeft ? "float-left" : src.floatRight ? "float-right" : ""}
+	on:click={toggleLightbox}
+	{style}
+>
+	<img
+		src={urlFor(src).url()}
+		width={getImageDimensions(src.asset._ref).width}
+		height={getImageDimensions(src.asset._ref).height}
+		alt={src.alt}
+		style="aspect-ratio: {getImageDimensions(src.asset._ref)
+			.width} / {getImageDimensions(src.asset._ref).height}"
+	/>
+	{#if src.caption}
 		<figcaption>
 			{src.caption}
 		</figcaption>
-	</figure>
-{:else if src.floatLeft}
-	<p>
-		<figure class="float-left" on:click={toggleLightbox} {style}>
-			<img
-				src={urlFor(src).url()}
-				width={getImageDimensions(src.asset._ref).width}
-				height={getImageDimensions(src.asset._ref).height}
-				alt={src.alt}
-				style="aspect-ratio: {getImageDimensions(src.asset._ref)
-					.width} / {getImageDimensions(src.asset._ref).height}"
-			/>
-			<figcaption>
-				{src.caption}
-			</figcaption>
-		</figure>
-	</p>
-{:else if src.floatRight}
-	<p>
-		<figure class="float-right" on:click={toggleLightbox} {style}>
-			<img
-				src={urlFor(src).url()}
-				width={getImageDimensions(src.asset._ref).width}
-				height={getImageDimensions(src.asset._ref).height}
-				alt={src.alt}
-				style="aspect-ratio: {getImageDimensions(src.asset._ref)
-					.width} / {getImageDimensions(src.asset._ref).height}"
-			/>
-			<figcaption>
-				{src.caption}
-			</figcaption>
-		</figure>
-	</p>
-{:else}
+	{/if}
+</figure>
+
+<!-- {:else}
 	<img
 		src={urlFor(src).url()}
 		width={getImageDimensions(src.asset._ref).width}
@@ -96,59 +70,21 @@ $: console.log(fileExtension);
 			.width} / {getImageDimensions(src.asset._ref).height}; {style}"
 		on:click={toggleLightbox}
 	/>
-{/if}
-
-<!-- {#if showLightbox == true}
-	<div class="shade">
-		<OutClick
-			on:outclick={() => {
-				if (showLightbox === true) {
-					showLightbox = false;
-				}
-			}}
-			excludeQuerySelectorAll="lightbox"
-		>
-			<figure class="lightbox">
-				<img
-					src={urlFor(src).url()}
-					width={getImageDimensions(src.asset._ref).width}
-					height={getImageDimensions(src.asset._ref).height}
-					alt={src.alt}
-					style="aspect-ratio: {getImageDimensions(src.asset._ref)
-						.width} / {getImageDimensions(src.asset._ref).height}"
-				/>
-				{#if src.caption}
-					<figcaption>
-						{src.caption}
-					</figcaption>
-				{/if}
-			</figure>
-		</OutClick>
-	</div>
 {/if} -->
 
 {#if showLightbox == true}
 	<div class="shade" on:click={toggleLightbox}>
 		<figure class="lightbox">
-			{#if fileExtension == "svg"}
-				<img
-					src={urlFor(src).format("png").url()}
-					width={getImageDimensions(src.asset._ref).width}
-					height={getImageDimensions(src.asset._ref).height}
-					alt={src.alt}
-					style="aspect-ratio: {getImageDimensions(src.asset._ref)
-						.width} / {getImageDimensions(src.asset._ref).height}"
-				/>
-			{:else}
-				<img
-					src={urlFor(src).url()}
-					width={getImageDimensions(src.asset._ref).width}
-					height={getImageDimensions(src.asset._ref).height}
-					alt={src.alt}
-					style="aspect-ratio: {getImageDimensions(src.asset._ref)
-						.width} / {getImageDimensions(src.asset._ref).height}"
-				/>
-			{/if}
+			<img
+				src={fileExtension == "svg"
+					? urlFor(src).format("png").url()
+					: urlFor(src).url()}
+				width={getImageDimensions(src.asset._ref).width}
+				height={getImageDimensions(src.asset._ref).height}
+				alt={src.alt}
+				style="aspect-ratio: {getImageDimensions(src.asset._ref)
+					.width} / {getImageDimensions(src.asset._ref).height}"
+			/>
 			{#if src.caption}
 				<figcaption>
 					{src.caption}

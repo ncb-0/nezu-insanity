@@ -18,8 +18,23 @@ $: ({ data: tags } = $q);
 		property="og:description"
 		content="pages tagged #{data.params.tag} on nezu.world"
 	/>
+	<meta
+		property="description"
+		content="pages tagged #{data.params.tag} on nezu.world"
+	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://nezu.world{data.currentURL}" />
+	<meta property="og:site_name" content="nezu.world" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary" />
+	<meta property="twitter:title" content="{data.params.tag} | nezu.world" />
+	<meta
+		property="twitter:description"
+		content="pages tagged #{data.params.tag} on nezu.world"
+	/>
+	<meta property="twitter:url" content="https://nezu.world{data.currentURL}" />
+	<meta property="twitter:creator" content="@ncb0_" />
 </svelte:head>
 
 <article>

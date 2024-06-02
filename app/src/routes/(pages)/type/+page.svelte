@@ -3,6 +3,23 @@ import FontTester from "$lib/components/FontTester.svelte";
 export let data;
 </script>
 
+<svelte:head>
+	<title>type design | nezu.world</title>
+	<meta property="og:title" content="tags | nezu.world" />
+	<meta property="og:description" content="Typefaces designed by Lisa M." />
+	<meta property="description" content="Typefaces designed by Lisa M." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://nezu.world/{data.currentURL}" />
+	<meta property="og:site_name" content="nezu.world" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary" />
+	<meta property="twitter:title" content={data.title} />
+	<meta property="twitter:description" content={data.description} />
+	<meta property="twitter:url" content="https://nezu.world/{data.currentURL}" />
+	<meta property="twitter:creator" content="@ncb0_" />
+</svelte:head>
+
 <article>
 	<section>
 		<h1>type design</h1>

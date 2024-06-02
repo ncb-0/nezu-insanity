@@ -15,7 +15,17 @@ console.log(data.params);
 	<title>{data.params.year} gallery | nezu.world</title>
 	<meta property="og:title" content="{data.params.year} gallery | nezu.world" />
 	<meta property="og:type" content="website" />
+	<meta property="og:description" content="Art by Lisa M. ({data.params.year})" />
+	<meta property="description" content="Art by Lisa M. ({data.params.year})" />
 	<meta property="og:url" content="https://nezu.world/{data.currentURL}" />
+	<meta property="og:site_name" content="nezu.world" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary" />
+	<meta property="twitter:title" content="{data.params.year} gallery | nezu.world" />
+	<meta property="twitter:description" content="Art by Lisa M. ({data.params.year})" />
+	<meta property="twitter:url" content="https://nezu.world/{data.currentURL}" />
+</svelte:head>
 </svelte:head>
 
 <article>

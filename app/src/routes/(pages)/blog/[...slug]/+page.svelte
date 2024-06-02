@@ -19,17 +19,29 @@ $: ({ data: post } = $q);
 <svelte:head>
 	<title>{post.shortTitle} | nezu.world</title>
 	<meta property="og:title" content="{post.title} | nezu.world" />
-	{#if post.excerpt}
-		<meta property="og:description" content={post.excerpt} />
-	{:else}
-		<meta property="og:description" content="nezu.world" />
-	{/if}
+	<meta property="og:description" content={post.excerpt || "Lisa M.’s blog."} />
+	<meta property="description" content={post.excerpt || "Lisa M.’s blog."} />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://nezu.world{data.currentURL}" />
-	<!-- <meta
+	<meta property="og:site_name" content="nezu.world" />
+	<meta
 		property="og:image"
 		content={urlFor(post.mainImage).width(512).height(512).url()}
-	/> -->
+	/>
+
+	<!-- Twitter -->
+	<meta name="twitter:creator" content="@ncb0_" />
+	<meta property="twitter:card" content="summary" />
+	<meta property="twitter:title" content="{post.title} | nezu.world" />
+	<meta
+		property="twitter:description"
+		content={post.excerpt || "Lisa M.’s blog."}
+	/>
+	<meta property="twitter:url" content="https://nezu.world{data.currentURL}" />
+	<meta
+		property="twitter:image"
+		content={urlFor(post.mainImage).width(512).height(512).url()}
+	/>
 </svelte:head>
 
 <article class="narrow">

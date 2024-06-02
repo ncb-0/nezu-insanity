@@ -10,8 +10,27 @@ $: ({ data: tags } = $q);
 <svelte:head>
 	<title>tags | nezu.world</title>
 	<meta property="og:title" content="tags | nezu.world" />
+	<meta
+		property="og:description"
+		content="The homepage of Lisa M., an artist & designer in Toronto, Canada."
+	/>
+	<meta
+		property="description"
+		content="The homepage of Lisa M., an artist & designer in Toronto, Canada."
+	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://nezu.world/{data.currentURL}" />
+	<meta property="og:site_name" content="nezu.world" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary" />
+	<meta property="twitter:title" content="tags | nezu.world" />
+	<meta
+		property="twitter:description"
+		content="The homepage of Lisa M., an artist & designer in Toronto, Canada."
+	/>
+	<meta property="twitter:url" content="https://nezu.world/{data.currentURL}" />
+	<meta property="twitter:creator" content="@ncb0_" />
 </svelte:head>
 
 <article>

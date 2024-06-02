@@ -39,105 +39,57 @@ let date = Date.parse(item._createdAt);
 			</g>
 		</svg>
 	</div>
-	{#if baseURL == ""}
-		<a href={`/${item.slug.current}`} title={item.title}>
-			{#if item.mainImage && !nsfw}
-				<img
-					src={urlFor(item.mainImage)
-						.format("jpg")
-						.width(512)
-						.height(512)
-						.bg("ffff")
-						.url()}
-					width="512px"
-					height="512px"
-					style="aspect-ratio: 1 / 1"
-				/>
-			{:else if nsfw}
-				<img
-					src={urlFor(item.mainImage)
-						.format("jpg")
-						.width(512)
-						.height(512)
-						.blur(128)
-						.bg("ffff")
-						.url()}
-					width="512px"
-					height="512px"
-					style="aspect-ratio: 1 / 1"
-				/>
-				<span class="nsfw">nsfw</span>
-			{/if}
+	<a
+		href={`${baseURL ? `${baseURL}/` : "/"}${item.slug.current}`}
+		title={item.title}
+	>
+		{#if item.mainImage && !nsfw}
+			<img
+				src={urlFor(item.mainImage)
+					.format("jpg")
+					.width(baseURL ? 384 : 512)
+					.height(baseURL ? 384 : 512)
+					.bg("ffff")
+					.url()}
+				width={`${baseURL ? 384 : 512}px`}
+				height={`${baseURL ? 384 : 512}px`}
+				style="aspect-ratio: 1 / 1"
+			/>
+		{:else if nsfw}
+			<img
+				src={urlFor(item.mainImage)
+					.format("jpg")
+					.width(baseURL ? 384 : 512)
+					.height(baseURL ? 384 : 512)
+					.blur(128)
+					.bg("ffff")
+					.url()}
+				width={`${baseURL ? 384 : 512}px`}
+				height={`${baseURL ? 384 : 512}px`}
+				style="aspect-ratio: 1 / 1"
+			/>
+			<span class="nsfw">nsfw</span>
+		{/if}
 
-			{#if item.mainImage}
-				{#if text == true}
-					<div class="pad">
-						{#if item.shortTitle}
-							<p>{item.shortTitle}</p>
-						{:else if item.title}
-							<p>{item.title}</p>
-						{/if}
-					</div>
-				{/if}
-			{:else}
+		{#if item.mainImage}
+			{#if text == true}
 				<div class="pad">
-					<h3>{item.title}</h3>
-					<time datetime={item.date}>{item.date}</time>
-					<p>{item.excerpt}</p>
+					{#if item.shortTitle}
+						<p>{item.shortTitle}</p>
+					{:else if item.title}
+						<p>{item.title}</p>
+					{/if}
 				</div>
 			{/if}
-			<!-- <h3>{formatDate(item._createdAt)}</h3> -->
-		</a>
-	{:else}
-		<a href={`${baseURL}/${item.slug.current}`} title={item.title}>
-			{#if item.mainImage && !nsfw}
-				<img
-					src={urlFor(item.mainImage)
-						.format("jpg")
-						.width(384)
-						.height(384)
-						.bg("ffff")
-						.url()}
-					width="384px"
-					height="384px"
-					style="aspect-ratio: 1 / 1"
-				/>
-			{:else if nsfw}
-				<img
-					src={urlFor(item.mainImage)
-						.format("jpg")
-						.width(384)
-						.height(384)
-						.blur(128)
-						.bg("ffff")
-						.url()}
-					width="384px"
-					height="384px"
-					style="aspect-ratio: 1 / 1"
-				/>
-				<span class="nsfw">nsfw</span>
-			{/if}
-
-			{#if item.mainImage}
-				{#if text == true}
-					<div class="pad">
-						{#if item.shortTitle}
-							<p>{item.shortTitle}</p>
-						{:else if item.title}
-							<p>{item.title}</p>
-						{/if}
-					</div>
-				{/if}
-			{:else}
-				<div class="pad">
-					<h3>{item.title}</h3>
-					<time datetime={item.date}>{item.date}</time>
-					<p>{item.excerpt}</p>
-				</div>
-			{/if}
-			<!-- <h3>{formatDate(item._createdAt)}</h3> -->
-		</a>
-	{/if}
+		{:else}
+			<div class="pad">
+				<h3>{item.title}</h3>
+				<time datetime={item.date}>{item.date}</time>
+				<p>{item.excerpt}</p>
+			</div>
+		{/if}
+		<!-- <h3>{formatDate(item._createdAt)}</h3> -->
+	</a>
 </div>
 
 <style>

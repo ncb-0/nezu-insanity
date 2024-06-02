@@ -70,7 +70,18 @@ $: filteredArtworks = artworks.filter((artwork) => {
 	<title>gallery | nezu.world</title>
 	<meta property="og:title" content="gallery | nezu.world" />
 	<meta property="og:type" content="website" />
+	<meta property="og:description" content="Art by Lisa M" />
+	<meta property="og:description" content="Art by Lisa M." />
 	<meta property="og:url" content="https://nezu.world/{data.currentURL}" />
+	<meta property="og:site_name" content="nezu.world" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="gallery | nezu.world" />
+	<meta name="twitter:description" content="Art by Lisa M" />
+	<meta name="twitter:description" content="Art by Lisa M." />
+	<meta name="twitter:url" content="https://nezu.world/{data.currentURL}" />
+	<meta name="twitter:site" content="@ncb0_" />
+	<meta name="twitter:creator" content="@ncb0_" />
 </svelte:head>
 
 <article>

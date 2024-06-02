@@ -409,7 +409,8 @@ picture {
 :is(h1, h2, h3, h4, h5, h6, p) + :is(img, picture, div, figure) {
 	margin-top: 2ex;
 }
-:is(img, picture, div, figure) + :is(h1, h2, h3, h4, h5, h6, p) {
+:is(img, picture, div, figure)
+	+ :is(h1, h2, h3, h4, h5, h6, p, figure.float-left, figure.float-right) {
 	margin-top: 2ex;
 }
 
