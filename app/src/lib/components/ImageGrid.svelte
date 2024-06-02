@@ -1,9 +1,8 @@
 <script>
 import { urlFor } from "$lib/sanity/image";
+import Image from "$lib/components/Image.svelte";
 
 export let portableText;
-
-console.log(portableText.value.images[0].alt);
 
 function getImageDimensions(id) {
 	const dimensions = id.split("-")[2];
@@ -15,7 +14,7 @@ function getImageDimensions(id) {
 }
 </script>
 
-<div class="image-grid">
+<!-- <div class="image-grid">
 	{#each portableText.value.images as image (image._key)}
 		{#if image.caption}
 			<figure>
@@ -39,6 +38,12 @@ function getImageDimensions(id) {
 					.width} / {getImageDimensions(image.asset._ref).height}"
 			/>
 		{/if}
+	{/each}
+</div> -->
+
+<div class="image-grid">
+	{#each portableText.value.images as image (image._key)}
+		<Image src={image} />
 	{/each}
 </div>
 

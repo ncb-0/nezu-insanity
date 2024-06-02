@@ -1,5 +1,6 @@
 <script>
 import { urlFor } from "$lib/sanity/image";
+import Image from "$lib/components/Image.svelte";
 
 export let portableText;
 
@@ -13,7 +14,7 @@ function getImageDimensions(id) {
 }
 </script>
 
-<div class="image-row">
+<!-- <div class="image-row">
 	{#each portableText.value.images as image (image._key)}
 		{#if image.caption}
 			<figure style="flex: {getImageDimensions(image.asset._ref).aspectRatio}">
@@ -39,6 +40,16 @@ function getImageDimensions(id) {
 					.width} / {getImageDimensions(image.asset._ref).height}"
 			/>
 		{/if}
+	{/each}
+</div> -->
+
+<div class="image-row">
+	{#each portableText.value.images as image (image._key)}
+		<Image
+			src={image}
+			style="flex: {getImageDimensions(image.asset._ref)
+				.aspectRatio}; width: 100%;"
+		/>
 	{/each}
 </div>
 

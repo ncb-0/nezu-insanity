@@ -45,13 +45,7 @@ function getImageDimensions(id) {
 <article class="narrow">
 	<h1>{artwork.title}</h1>
 
-	<img
-		src={urlFor(artwork.mainImage).url()}
-		width={getImageDimensions(artwork.mainImage.asset._ref).width}
-		height={getImageDimensions(artwork.mainImage.asset._ref).height}
-		style="aspect-ratio: {getImageDimensions(artwork.mainImage.asset._ref)
-			.width} / {getImageDimensions(artwork.mainImage.asset._ref).height}"
-	/>
+	<Image src={artwork.mainImage} />
 
 	{#if artwork.description}
 		<PortableText

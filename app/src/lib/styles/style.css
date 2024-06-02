@@ -17,6 +17,12 @@ html {
 	--bg-color-light: 255, 255, 255;
 	--text-color-light: 124, 62, 82;
 
+	--bg-color-neutral-light: 255, 255, 255;
+	--text-color-neutral-light: 0, 0, 0;
+
+	--bg-color-neutral-dark: 0, 0, 0;
+	--text-color-neutral-dark: 255, 255, 255;
+
 	/* --bg-color-dark: 68, 51, 0;
 	--text-color-dark: 166, 135, 40; */
 
@@ -28,6 +34,8 @@ html {
 
 	--bg-color: var(--bg-color-light);
 	--text-color: var(--text-color-light);
+	--bg-color-neutral: var(--bg-color-neutral-light);
+	--text-color-neutral: var(--text-color-neutral-light);
 
 	--border-color: inherit;
 
@@ -412,13 +420,13 @@ picture {
 	position: float;
 	float: left;
 	margin-right: 1ch;
-	max-width: 40%;
+	max-width: 40% !important;
 }
 .float-right {
 	position: float;
 	float: right;
 	margin-left: 1ch;
-	max-width: 40%;
+	max-width: 40% !important;
 }
 .card-grid {
 	display: grid;
@@ -464,6 +472,8 @@ picture {
 
 		--bg-color: var(--bg-color-dark);
 		--text-color: var(--text-color-dark);
+		--bg-color-neutral: var(--bg-color-neutral-dark);
+		--text-color-neutral: var(--text-color-neutral-dark);
 		overflow-x: hidden;
 		scrollbar-gutter: stable;
 		scrollbar-width: thin;
@@ -533,6 +543,8 @@ picture {
 
 		--bg-color: var(--bg-color-dark);
 		--text-color: var(--text-color-dark);
+		--bg-color-neutral: var(--bg-color-neutral-dark);
+		--text-color-neutral: var(--text-color-neutral-dark);
 		overflow-x: hidden;
 		scrollbar-gutter: stable;
 		scrollbar-width: thin;
