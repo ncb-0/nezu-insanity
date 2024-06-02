@@ -46,7 +46,7 @@ import Image from "$lib/components/Image.svelte";
 
 	<p style="margin-top: 0.5ex;">
 		i’m Lisa. (she/her/it) i’m a multidisciplinary artist from toronto. my work
-		spans<a href="/art">digital and traditional art</a>,
+		spans <a href="/art">digital and traditional art</a>,
 		<a href="/tag/design">graphic design</a>, <a href="/type">type design</a>,
 		<a href="/tag/writing">creative writing</a>,
 		<a href="/tag/dj">dj</a>, whatever. i’m cute and i do a little bit of
