@@ -1,6 +1,7 @@
 <script lang="ts">
 import { useQuery } from "@sanity/svelte-loader";
 import CardGrid from "$lib/components/CardGrid.svelte";
+import TextCard from "$lib/components/TextCard.svelte";
 import type { PageData } from "./$types";
 import { urlFor } from "$lib/sanity/image";
 
@@ -44,8 +45,8 @@ $: ({ data: posts } = $q);
 	<section>
 		<h1>
 			<!-- <a href="/">nezu.world</a> is under construction. -->
-			The homepage of <a href="about">Lisa M</a>, an artist & designer in
-			Toronto, Canada.
+			the homepage of <a href="about">lisa m</a>, an artist & designer in
+			toronto, canada.
 		</h1>
 		<!-- <h2>
 			(current version: <a href="https://v1.nezu.world" target="_blank"
@@ -54,62 +55,7 @@ $: ({ data: posts } = $q);
 		</h2> -->
 	</section>
 
-	<section data-sveltekit-preload-data="hover">
-		<h2>portfolio</h2>
-
-		{#await posts then posts}
-			<CardGrid items={posts} />
-		{/await}
-	</section>
-
 	<section>
-		<h2><a href="art#">gallery…</a></h2>
-		<div class="thumbs" data-sveltekit-preload-data="hover">
-			{#await data.artworks.data then artworks}
-				{#each artworks as artwork}
-					<div class="thumb">
-						<a href="art/{artwork.year}/{artwork.slug.current}" class="clean">
-							{#if !artwork.nsfw}
-								<img
-									src={urlFor(artwork.mainImage)
-										.format("jpg")
-										.bg("ffff")
-										.width(96)
-										.height(96)
-										.url()}
-									width="96px"
-									height="96px"
-									style="aspect-ratio: 1 / 1;"
-									title={artwork.title}
-								/>
-							{:else}
-								<img
-									src={urlFor(artwork.mainImage)
-										.format("jpg")
-										.bg("ffff")
-										.width(96)
-										.height(96)
-										.blur(64)
-										.url()}
-									width="96px"
-									height="96px"
-									style="aspect-ratio: 1 / 1;"
-									title="{artwork.title} (NSFW)"
-								/>
-							{/if}
-						</a>
-					</div>
-				{/each}
-			{/await}
-		</div>
-	</section>
-
-	<section>
-		<h2><a href="type#">type design…</a></h2>
-	</section>
-
-	<section>
-		<h2>elsewhere</h2>
 		<h3>
 			<a target="_blank" href="https://twitter.com/ncb0_" class="button"
 				><svg
@@ -233,8 +179,71 @@ $: ({ data: posts } = $q);
 		</h3>
 	</section>
 
+	<section data-sveltekit-preload-data="hover">
+		<h2>portfolio</h2>
+
+		{#await posts then posts}
+			<CardGrid items={posts} />
+		{/await}
+	</section>
+
 	<section>
-		<h2>tags</h2>
+		<h2><a href="blog#">blog…</a></h2>
+		<div class="blog-grid">
+			{#each data.blogPosts.data as blogPost}
+				<TextCard item={blogPost} baseURL="/blog" />
+			{/each}
+		</div>
+	</section>
+
+	<section>
+		<h2><a href="art#">gallery…</a></h2>
+		<div class="thumbs" data-sveltekit-preload-data="hover">
+			{#await data.artworks.data then artworks}
+				{#each artworks as artwork}
+					<div class="thumb">
+						<a href="art/{artwork.year}/{artwork.slug.current}" class="clean">
+							{#if !artwork.nsfw}
+								<img
+									src={urlFor(artwork.mainImage)
+										.format("jpg")
+										.bg("ffff")
+										.width(96)
+										.height(96)
+										.url()}
+									width="96px"
+									height="96px"
+									style="aspect-ratio: 1 / 1;"
+									title={artwork.title}
+								/>
+							{:else}
+								<img
+									src={urlFor(artwork.mainImage)
+										.format("jpg")
+										.bg("ffff")
+										.width(96)
+										.height(96)
+										.blur(64)
+										.url()}
+									width="96px"
+									height="96px"
+									style="aspect-ratio: 1 / 1;"
+									title="{artwork.title} (NSFW)"
+								/>
+							{/if}
+						</a>
+					</div>
+				{/each}
+			{/await}
+		</div>
+	</section>
+
+	<section>
+		<h2><a href="type#">type design…</a></h2>
+	</section>
+
+	<section>
+		<h2><a href="tag#">tags…</a></h2>
 		{#if data.tags.data.length}
 			<ul class="tags">
 				{#each data.tags.data as tag}
@@ -252,7 +261,8 @@ article {
 }
 .thumbs {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(calc(50px - 0.67rem), 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(calc(37.5px + 0.5rem), 1fr));
+	/* gap: 0.5rem; */
 }
 .thumb {
 	margin: 0;

@@ -1,11 +1,15 @@
 <script lang="ts">
 import CardGrid from "$lib/components/CardGrid.svelte";
+import Card from "$lib/components/Card.svelte";
+import TextCard from "$lib/components/TextCard.svelte";
 import { useQuery } from "@sanity/svelte-loader";
 import type { PageData } from "./$types";
 export let data: PageData;
 const q = useQuery(data);
 
 $: ({ data: blogPosts } = $q);
+
+console.log(data);
 </script>
 
 <svelte:head>
@@ -29,13 +33,11 @@ $: ({ data: blogPosts } = $q);
 	<section>
 		<h1>blog</h1>
 
-		<CardGrid items={blogPosts} baseURL="blog" />
+		<!-- <CardGrid items={blogPosts} baseURL="blog" /> -->
+		<div class="blog-grid">
+			{#each blogPosts as post}
+				<TextCard item={post} baseURL="/blog" />
+			{/each}
+		</div>
 	</section>
 </article>
-
-<style>
-article {
-	max-width: 100%;
-	/* margin: 0 auto; */
-}
-</style>

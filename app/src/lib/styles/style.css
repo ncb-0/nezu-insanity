@@ -125,9 +125,10 @@ section + section {
 	font-family: var(--font-serif-2);
 	font-weight: 400;
 }
+.serif-2 strong,
 .serif-2 b {
 	font-family: var(--font-mono);
-	line-height: 0;
+	/* line-height: 0; */
 }
 .left {
 	text-align: left;
@@ -413,7 +414,6 @@ picture {
 	+ :is(h1, h2, h3, h4, h5, h6, p, figure.float-left, figure.float-right) {
 	margin-top: 2ex;
 }
-
 .pixel {
 	image-rendering: pixelated;
 }
@@ -430,6 +430,11 @@ picture {
 	max-width: 40%;
 }
 .card-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 0.5rem;
+}
+.blog-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 	gap: 0.5rem;

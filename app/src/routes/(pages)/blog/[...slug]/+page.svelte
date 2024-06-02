@@ -10,6 +10,7 @@ import ImageRow from "$lib/components/ImageRow.svelte";
 import Break from "$lib/components/Break.svelte";
 import Giscus from "@giscus/svelte";
 import CardGrid from "$lib/components/CardGrid.svelte";
+import Button from "$lib/components/Button.svelte";
 
 export let data: PageData;
 $: q = useQuery(data);
@@ -17,17 +18,13 @@ $: ({ data: post } = $q);
 </script>
 
 <svelte:head>
-	<title>{post.shortTitle} | nezu.world</title>
+	<title>{post.title} | nezu.world</title>
 	<meta property="og:title" content="{post.title} | nezu.world" />
 	<meta property="og:description" content={post.excerpt || "Lisa M.’s blog."} />
 	<meta property="description" content={post.excerpt || "Lisa M.’s blog."} />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://nezu.world{data.currentURL}" />
 	<meta property="og:site_name" content="nezu.world" />
-	<meta
-		property="og:image"
-		content={urlFor(post.mainImage).width(512).height(512).url()}
-	/>
 
 	<!-- Twitter -->
 	<meta name="twitter:creator" content="@ncb0_" />
@@ -38,14 +35,11 @@ $: ({ data: post } = $q);
 		content={post.excerpt || "Lisa M.’s blog."}
 	/>
 	<meta property="twitter:url" content="https://nezu.world{data.currentURL}" />
-	<meta
-		property="twitter:image"
-		content={urlFor(post.mainImage).width(512).height(512).url()}
-	/>
 </svelte:head>
 
-<article class="narrow">
+<article class="narrow serif-2">
 	<h1>{post.title}</h1>
+	<h2><date datetime={post.date}>{post.date}</date></h2>
 
 	{#if post.body}
 		<PortableText
@@ -55,6 +49,7 @@ $: ({ data: post } = $q);
 					gallery: ImageGrid,
 					imagerow: ImageRow,
 					break: Break,
+					button: Button,
 				},
 			}}
 			value={post.body}

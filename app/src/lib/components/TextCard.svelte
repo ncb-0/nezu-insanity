@@ -7,11 +7,12 @@ import { base } from "$app/paths";
 // export let post: Post;
 export let item;
 export let baseURL = "";
-export let text = true;
-export let blog = false;
-export let nsfw = false;
+
+export let blog = true;
 
 let date = Date.parse(item._createdAt);
+
+console.log(item._createdAt);
 </script>
 
 <div class="card">
@@ -43,52 +44,14 @@ let date = Date.parse(item._createdAt);
 		href={`${baseURL ? `${baseURL}/` : "/"}${item.slug.current}`}
 		title={item.title}
 	>
-		{#if item.mainImage && !nsfw}
-			<img
-				src={urlFor(item.mainImage)
-					.format("jpg")
-					.width(baseURL ? 384 : 512)
-					.height(baseURL ? 384 : 512)
-					.bg("ffff")
-					.url()}
-				width={`${baseURL ? 384 : 512}px`}
-				height={`${baseURL ? 384 : 512}px`}
-				style="aspect-ratio: 1 / 1"
-			/>
-		{:else if nsfw}
-			<img
-				src={urlFor(item.mainImage)
-					.format("jpg")
-					.width(baseURL ? 384 : 512)
-					.height(baseURL ? 384 : 512)
-					.blur(128)
-					.bg("ffff")
-					.url()}
-				width={`${baseURL ? 384 : 512}px`}
-				height={`${baseURL ? 384 : 512}px`}
-				style="aspect-ratio: 1 / 1"
-			/>
-			<span class="nsfw">nsfw</span>
-		{/if}
-
-		{#if item.mainImage}
-			{#if text == true}
-				<div class="pad">
-					{#if item.shortTitle}
-						<p>{item.shortTitle}</p>
-					{:else if item.title}
-						<p>{item.title}</p>
-					{/if}
-				</div>
+		<div class="pad">
+			<time datetime={item.date}>{item.date}</time>
+			<h2>{item.title}</h2>
+			<!-- <p>{item.date}</p> -->
+			{#if item.excerpt}
+				<p class="serif-2">{item.excerpt}</p>
 			{/if}
-		{:else}
-			<div class="pad">
-				<h3>{item.title}</h3>
-				<time datetime={item.date}>{item.date}</time>
-				<p>{item.excerpt}</p>
-			</div>
-		{/if}
-		<!-- <h3>{formatDate(item._createdAt)}</h3> -->
+		</div>
 	</a>
 </div>
 
@@ -96,14 +59,14 @@ let date = Date.parse(item._createdAt);
 .card {
 	position: relative;
 	display: block;
-	width: fit-content;
+	/* width: fit-content; */
 	background-color: rgb(var(--bg-color));
 	text-decoration: none;
 	/* padding: 0.5rem 0.5rem 0.25rem; */
 	padding: 0;
 	border: 1px solid rgba(var(--text-color), 0.3);
 	line-height: 0;
-	grid-column: span 1;
+	grid-column: span 2;
 }
 .card:hover {
 	/* background-color: rgba(var(--text-color), 0.1); */
@@ -129,7 +92,7 @@ let date = Date.parse(item._createdAt);
 	line-height: 2ex;
 }
 .pad {
-	padding: 4px 4px 1px;
+	padding: 4px;
 }
 .card a img {
 	/* background-color: white; */

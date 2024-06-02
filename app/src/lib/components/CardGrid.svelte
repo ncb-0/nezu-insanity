@@ -14,11 +14,3 @@ export let baseURL = ".";
 		{/each}
 	</div>
 {/if}
-
-<style>
-.card-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-	gap: 0.5rem;
-}
-</style>
