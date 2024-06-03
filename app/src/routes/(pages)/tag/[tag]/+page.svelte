@@ -25,8 +25,6 @@ $: ({ data: tags } = $q);
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://nezu.world{data.currentURL}" />
 	<meta property="og:site_name" content="nezu.world" />
-
-	<!-- Twitter -->
 	<meta property="twitter:card" content="summary" />
 	<meta property="twitter:title" content="{data.params.tag} | nezu.world" />
 	<meta
@@ -35,6 +33,14 @@ $: ({ data: tags } = $q);
 	/>
 	<meta property="twitter:url" content="https://nezu.world{data.currentURL}" />
 	<meta property="twitter:creator" content="@ncb0_" />
+	<meta
+		property="og:image"
+		content="https://nezu.world/icon/android-chrome-512x512.png"
+	/>
+<meta
+		property="twitter:image"
+		content="https://nezu.world/icon/android-chrome-512x512.png"
+	/>
 </svelte:head>
 
 <article>
