@@ -32,6 +32,10 @@ $: ({ data: posts } = $q);
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary" />
+	<meta
+		property="twitter:image"
+		content="https://nezu.world/icon/android-chrome-512x512.png"
+	/>
 	<meta property="twitter:title" content="nezu.world" />
 	<meta
 		property="twitter:description"
