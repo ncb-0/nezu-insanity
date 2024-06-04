@@ -45,9 +45,11 @@ html {
 	width: 100%;
 
 	--font-sans: "Helvetica", sans-serif;
+	/* --font-sans: "Pico A", sans-serif; */
 	--font-serif: "Job Clarendon Text", serif;
 	--font-serif-2: "Lagrange Mono", monospace;
 	--font-mono: "Nezu Fragment Gothic", monospace;
+	/* --font-mono: "Pico A Mono", monospace; */
 	--font-mono-2: "Nezu Fragment Mono", monospace;
 
 	font-size: 12px;

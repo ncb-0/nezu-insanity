@@ -44,11 +44,13 @@ export let data;
 			fontSize="48"
 			fontStyles={[
 				{
-					value: "normal",
+					weight: 400,
+					style: "normal",
 					name: "Regular",
 				},
 				{
-					value: "italic",
+					weight: 400,
+					style: "italic",
 					name: "Italic",
 				},
 			]}
@@ -65,41 +67,50 @@ export let data;
 		<FontTester
 			fontFamily="Mega"
 			fontSize="48"
-			fontWeights={[
+			fontStyles={[
 				{
 					weight: 100,
+					style: "normal",
 					name: "Hairline",
 				},
 				{
 					weight: 200,
+					style: "normal",
 					name: "Extralight",
 				},
 				{
 					weight: 300,
+					style: "normal",
 					name: "Thin",
 				},
 				{
 					weight: 400,
+					style: "normal",
 					name: "Light",
 				},
 				{
 					weight: 500,
+					style: "normal",
 					name: "Regular",
 				},
 				{
 					weight: 600,
+					style: "normal",
 					name: "Medium",
 				},
 				{
 					weight: 700,
+					style: "normal",
 					name: "Bold",
 				},
 				{
 					weight: 800,
+					style: "normal",
 					name: "Heavy",
 				},
 				{
 					weight: 900,
+					style: "normal",
 					name: "Black",
 				},
 			]}
@@ -118,41 +129,102 @@ export let data;
 		<FontTester
 			fontFamily="Pico A"
 			fontSize="48"
-			fontWeights={[
+			fontStyles={[
 				{
-					weight: 100,
+					weight: 50,
+					style: "normal",
 					name: "Hairline",
 				},
 				{
-					weight: 200,
+					weight: 100,
+					style: "normal",
 					name: "Extralight",
 				},
 				{
-					weight: 300,
+					weight: 200,
+					style: "normal",
 					name: "Light",
 				},
 				{
-					weight: 400,
+					weight: 300,
+					style: "normal",
 					name: "Semilight",
 				},
 				{
-					weight: 500,
+					weight: 400,
+					style: "normal",
 					name: "Book",
 				},
 				{
-					weight: 600,
+					weight: 450,
+					style: "normal",
 					name: "Regular",
 				},
 				{
-					weight: 700,
+					weight: 500,
+					style: "normal",
 					name: "Medium",
 				},
 				{
-					weight: 800,
+					weight: 700,
+					style: "normal",
 					name: "Bold",
 				},
 				{
-					weight: 900,
+					weight: 800,
+					name: "Black",
+				},
+			]}
+		/>
+
+		<h3 id="tm-pico-a-mono">tm-pico-A-mono</h3>
+		<p>Monospaced variant of Pico A.</p>
+		<FontTester
+			fontFamily="Pico A Mono"
+			fontSize="48"
+			fontStyles={[
+				{
+					weight: 50,
+					style: "normal",
+					name: "Hairline",
+				},
+				{
+					weight: 100,
+					style: "normal",
+					name: "Extralight",
+				},
+				{
+					weight: 200,
+					style: "normal",
+					name: "Light",
+				},
+				{
+					weight: 300,
+					style: "normal",
+					name: "Semilight",
+				},
+				{
+					weight: 400,
+					style: "normal",
+					name: "Book",
+				},
+				{
+					weight: 450,
+					style: "normal",
+					name: "Regular",
+				},
+				{
+					weight: 500,
+					style: "normal",
+					name: "Medium",
+				},
+				{
+					weight: 700,
+					style: "normal",
+					name: "Bold",
+				},
+				{
+					weight: 800,
 					name: "Black",
 				},
 			]}
@@ -163,41 +235,49 @@ export let data;
 		<FontTester
 			fontFamily="Pico B"
 			fontSize="48"
-			fontWeights={[
+			fontStyles={[
 				{
-					weight: 100,
+					weight: 50,
+					style: "normal",
 					name: "Hairline",
 				},
 				{
-					weight: 200,
+					weight: 100,
+					style: "normal",
 					name: "Extralight",
 				},
 				{
-					weight: 300,
+					weight: 200,
+					style: "normal",
 					name: "Light",
 				},
 				{
-					weight: 400,
+					weight: 300,
+					style: "normal",
 					name: "Semilight",
 				},
 				{
-					weight: 500,
+					weight: 400,
+					style: "normal",
 					name: "Book",
 				},
 				{
-					weight: 600,
+					weight: 450,
+					style: "normal",
 					name: "Regular",
 				},
 				{
-					weight: 700,
+					weight: 500,
+					style: "normal",
 					name: "Medium",
 				},
 				{
-					weight: 800,
+					weight: 700,
+					style: "normal",
 					name: "Bold",
 				},
 				{
-					weight: 900,
+					weight: 800,
 					name: "Black",
 				},
 			]}
@@ -210,33 +290,40 @@ export let data;
 		<FontTester
 			fontFamily="Spec"
 			fontSize="48"
-			fontWeights={[
+			fontStyles={[
 				{
 					weight: 100,
+					style: "normal",
 					name: "Hairline",
 				},
 				{
 					weight: 200,
+					style: "normal",
 					name: "Thin",
 				},
 				{
 					weight: 300,
+					style: "normal",
 					name: "Light",
 				},
 				{
 					weight: 400,
+					style: "normal",
 					name: "Regular",
 				},
 				{
 					weight: 500,
+					style: "normal",
 					name: "Medium",
 				},
 				{
 					weight: 600,
+					style: "normal",
 					name: "Semibold",
 				},
 				{
 					weight: 700,
+					style: "normal",
 					name: "Bold",
 				},
 			]}

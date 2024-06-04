@@ -209,7 +209,7 @@
 		url("/fonts/TM/PicoA/PicoA-Hairline.woff2") format("woff2"),
 		url("/fonts/TM/PicoA/PicoA-Hairline.woff") format("woff"),
 		url("/fonts/TM/PicoA/PicoA-Hairline.ttf") format("truetype");
-	font-weight: 100;
+	font-weight: 50;
 }
 @font-face {
 	font-family: "Pico A";
@@ -217,7 +217,7 @@
 		url("/fonts/TM/PicoA/PicoA-Extralight.woff2") format("woff2"),
 		url("/fonts/TM/PicoA/PicoA-Extralight.woff") format("woff"),
 		url("/fonts/TM/PicoA/PicoA-Extralight.ttf") format("truetype");
-	font-weight: 200;
+	font-weight: 100;
 }
 @font-face {
 	font-family: "Pico A";
@@ -225,7 +225,7 @@
 		url("/fonts/TM/PicoA/PicoA-Light.woff2") format("woff2"),
 		url("/fonts/TM/PicoA/PicoA-Light.woff") format("woff"),
 		url("/fonts/TM/PicoA/PicoA-Light.ttf") format("truetype");
-	font-weight: 300;
+	font-weight: 200;
 }
 @font-face {
 	font-family: "Pico A";
@@ -233,7 +233,7 @@
 		url("/fonts/TM/PicoA/PicoA-Semilight.woff2") format("woff2"),
 		url("/fonts/TM/PicoA/PicoA-Semilight.woff") format("woff"),
 		url("/fonts/TM/PicoA/PicoA-Semilight.ttf") format("truetype");
-	font-weight: 400;
+	font-weight: 300;
 }
 @font-face {
 	font-family: "Pico A";
@@ -241,7 +241,7 @@
 		url("/fonts/TM/PicoA/PicoA-Book.woff2") format("woff2"),
 		url("/fonts/TM/PicoA/PicoA-Book.woff") format("woff"),
 		url("/fonts/TM/PicoA/PicoA-Book.ttf") format("truetype");
-	font-weight: 500;
+	font-weight: 400;
 }
 @font-face {
 	font-family: "Pico A";
@@ -249,7 +249,7 @@
 		url("/fonts/TM/PicoA/PicoA-Regular.woff2") format("woff2"),
 		url("/fonts/TM/PicoA/PicoA-Regular.woff") format("woff"),
 		url("/fonts/TM/PicoA/PicoA-Regular.ttf") format("truetype");
-	font-weight: 600;
+	font-weight: 450;
 }
 @font-face {
 	font-family: "Pico A";
@@ -257,7 +257,7 @@
 		url("/fonts/TM/PicoA/PicoA-Medium.woff2") format("woff2"),
 		url("/fonts/TM/PicoA/PicoA-Medium.woff") format("woff"),
 		url("/fonts/TM/PicoA/PicoA-Medium.ttf") format("truetype");
-	font-weight: 700;
+	font-weight: 500;
 }
 @font-face {
 	font-family: "Pico A";
@@ -265,7 +265,7 @@
 		url("/fonts/TM/PicoA/PicoA-Bold.woff2") format("woff2"),
 		url("/fonts/TM/PicoA/PicoA-Bold.woff") format("woff"),
 		url("/fonts/TM/PicoA/PicoA-Bold.ttf") format("truetype");
-	font-weight: 800;
+	font-weight: 700;
 }
 @font-face {
 	font-family: "Pico A";
@@ -273,7 +273,63 @@
 		url("/fonts/TM/PicoA/PicoA-Black.woff2") format("woff2"),
 		url("/fonts/TM/PicoA/PicoA-Black.woff") format("woff"),
 		url("/fonts/TM/PicoA/PicoA-Black.ttf") format("truetype");
-	font-weight: 900;
+	font-weight: 800;
+}
+
+/* ········· tm-pico-a-mono ········· */
+@font-face {
+	font-family: "Pico A Mono";
+	src: url("/fonts/TM/PicoAMono/PicoAMono-Hairline.woff2") format("woff2");
+	font-style: normal;
+	font-weight: 50;
+}
+@font-face {
+	font-family: "Pico A Mono";
+	src: url("/fonts/TM/PicoAMono/PicoAMono-Extralight.woff2") format("woff2");
+	font-style: normal;
+	font-weight: 100;
+}
+@font-face {
+	font-family: "Pico A Mono";
+	src: url("/fonts/TM/PicoAMono/PicoAMono-Light.woff2") format("woff2");
+	font-style: normal;
+	font-weight: 200;
+}
+@font-face {
+	font-family: "Pico A Mono";
+	src: url("/fonts/TM/PicoAMono/PicoAMono-Semilight.woff2") format("woff2");
+	font-style: normal;
+	font-weight: 300;
+}
+@font-face {
+	font-family: "Pico A Mono";
+	src: url("/fonts/TM/PicoAMono/PicoAMono-Book.woff2") format("woff2");
+	font-style: normal;
+	font-weight: 400;
+}
+@font-face {
+	font-family: "Pico A Mono";
+	src: url("/fonts/TM/PicoAMono/PicoAMono-Regular.woff2") format("woff2");
+	font-style: normal;
+	font-weight: 450;
+}
+@font-face {
+	font-family: "Pico A Mono";
+	src: url("/fonts/TM/PicoAMono/PicoAMono-Medium.woff2") format("woff2");
+	font-style: normal;
+	font-weight: 500;
+}
+@font-face {
+	font-family: "Pico A Mono";
+	src: url("/fonts/TM/PicoAMono/PicoAMono-Bold.woff2") format("woff2");
+	font-style: normal;
+	font-weight: 700;
+}
+@font-face {
+	font-family: "Pico A Mono";
+	src: url("/fonts/TM/PicoAMono/PicoAMono-Black.woff2") format("woff2");
+	font-style: normal;
+	font-weight: 800;
 }
 
 /* ············ tm-pico-b ··········· */
@@ -283,7 +339,7 @@
 		url("/fonts/TM/PicoB/PicoB-Hairline.woff2") format("woff2"),
 		url("/fonts/TM/PicoB/PicoB-Hairline.woff") format("woff"),
 		url("/fonts/TM/PicoB/PicoB-Hairline.ttf") format("truetype");
-	font-weight: 100;
+	font-weight: 50;
 }
 @font-face {
 	font-family: "Pico B";
@@ -291,7 +347,7 @@
 		url("/fonts/TM/PicoB/PicoB-Extralight.woff2") format("woff2"),
 		url("/fonts/TM/PicoB/PicoB-Extralight.woff") format("woff"),
 		url("/fonts/TM/PicoB/PicoB-Extralight.ttf") format("truetype");
-	font-weight: 200;
+	font-weight: 100;
 }
 @font-face {
 	font-family: "Pico B";
@@ -299,7 +355,7 @@
 		url("/fonts/TM/PicoB/PicoB-Light.woff2") format("woff2"),
 		url("/fonts/TM/PicoB/PicoB-Light.woff") format("woff"),
 		url("/fonts/TM/PicoB/PicoB-Light.ttf") format("truetype");
-	font-weight: 300;
+	font-weight: 200;
 }
 @font-face {
 	font-family: "Pico B";
@@ -307,7 +363,7 @@
 		url("/fonts/TM/PicoB/PicoB-Semilight.woff2") format("woff2"),
 		url("/fonts/TM/PicoB/PicoB-Semilight.woff") format("woff"),
 		url("/fonts/TM/PicoB/PicoB-Semilight.ttf") format("truetype");
-	font-weight: 400;
+	font-weight: 300;
 }
 @font-face {
 	font-family: "Pico B";
@@ -315,7 +371,7 @@
 		url("/fonts/TM/PicoB/PicoB-Book.woff2") format("woff2"),
 		url("/fonts/TM/PicoB/PicoB-Book.woff") format("woff"),
 		url("/fonts/TM/PicoB/PicoB-Book.ttf") format("truetype");
-	font-weight: 500;
+	font-weight: 400;
 }
 @font-face {
 	font-family: "Pico B";
@@ -323,7 +379,7 @@
 		url("/fonts/TM/PicoB/PicoB-Regular.woff2") format("woff2"),
 		url("/fonts/TM/PicoB/PicoB-Regular.woff") format("woff"),
 		url("/fonts/TM/PicoB/PicoB-Regular.ttf") format("truetype");
-	font-weight: 600;
+	font-weight: 450;
 }
 @font-face {
 	font-family: "Pico B";
@@ -331,7 +387,7 @@
 		url("/fonts/TM/PicoB/PicoB-Medium.woff2") format("woff2"),
 		url("/fonts/TM/PicoB/PicoB-Medium.woff") format("woff"),
 		url("/fonts/TM/PicoB/PicoB-Medium.ttf") format("truetype");
-	font-weight: 700;
+	font-weight: 500;
 }
 @font-face {
 	font-family: "Pico B";
@@ -339,7 +395,7 @@
 		url("/fonts/TM/PicoB/PicoB-Bold.woff2") format("woff2"),
 		url("/fonts/TM/PicoB/PicoB-Bold.woff") format("woff"),
 		url("/fonts/TM/PicoB/PicoB-Bold.ttf") format("truetype");
-	font-weight: 800;
+	font-weight: 700;
 }
 @font-face {
 	font-family: "Pico B";
@@ -347,7 +403,7 @@
 		url("/fonts/TM/PicoB/PicoB-Black.woff2") format("woff2"),
 		url("/fonts/TM/PicoB/PicoB-Black.woff") format("woff"),
 		url("/fonts/TM/PicoB/PicoB-Black.ttf") format("truetype");
-	font-weight: 900;
+	font-weight: 800;
 }
 
 /* ············· tm-spec ············ */

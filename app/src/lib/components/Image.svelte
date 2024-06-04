@@ -119,9 +119,10 @@ img {
 	cursor: normal;
 }
 .lightbox img {
-	max-width: 100%;
-	max-height: 100%;
+	/* max-width: 100%; */
+	max-height: calc(100dvh - 6rem);
 	width: auto;
+	/* height: 100%; */
 	/* margin: 0; */
 	/* box-shadow:
 		0 0.5ex 2ex rgba(var(--text-color-neutral), 0.2),
@@ -150,7 +151,7 @@ img {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100vh;
+	height: 100dvh;
 	/* overflow: hidden; */
 	background: rgba(var(--bg-color), 0.8);
 	/* background: rgba(var(--bg-color-neutral), 0.8); */

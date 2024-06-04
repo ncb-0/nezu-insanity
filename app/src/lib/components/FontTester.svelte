@@ -1,9 +1,7 @@
 <script>
 export let fontSize = 24;
-export let fontWeights;
-export let fontWeight = 400;
 export let fontStyles;
-export let fontStyle = "normal";
+export let fontStyle;
 export let fontTracking = 0;
 export let fontLeading = 1;
 export let fontFamily = "sans-serif";
@@ -12,8 +10,8 @@ export let placeholderText = `${fontFamily}: AaGgRr/0123456789`;
 let textArea;
 
 $: textArea && textArea.style.setProperty("font-size", `${fontSize}px`);
-$: textArea && textArea.style.setProperty("font-weight", fontWeight);
-$: textArea && textArea.style.setProperty("font-style", fontStyle);
+$: textArea && textArea.style.setProperty("font-weight", fontStyle.weight);
+$: textArea && textArea.style.setProperty("font-style", fontStyle.style);
 $: textArea &&
 	textArea.style.setProperty(
 		"letter-spacing",
@@ -25,23 +23,16 @@ $: textArea && textArea.style.setProperty("font-family", fontFamily);
 
 <div class="type-tester">
 	<div class="font-options">
-		{#if fontWeights}
-			<div class="font-option">
-				<label for="font-weight">weight</label>
-				<select id="font-weight" bind:value={fontWeight}>
-					{#each fontWeights as weight}
-						<option value={weight.weight} selected>{weight.name}</option>
-					{/each}
-				</select>
-			</div>
-		{/if}
-
 		{#if fontStyles}
 			<div class="font-option">
 				<label for="font-style">style</label>
 				<select id="font-style" bind:value={fontStyle}>
 					{#each fontStyles as style}
-						<option value={style.value} selected>{style.name}</option>
+						{#if style.weight === 400 && style.style === "normal"}
+							<option value={style} selected>{style.name}</option>
+						{:else}
+							<option value={style}>{style.name}</option>
+						{/if}
 					{/each}
 				</select>
 			</div>
@@ -130,6 +121,7 @@ $: textArea && textArea.style.setProperty("font-family", fontFamily);
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	gap: 0.5rem 2ch;
+	align-items: baseline;
 }
 @media (max-width: 800px) {
 	.font-options {
@@ -142,7 +134,7 @@ $: textArea && textArea.style.setProperty("font-family", fontFamily);
 	}
 }
 .font-option {
-	display: grid;
+	/* display: grid; */
 	display: flex;
 	/* grid-auto-flow: column; */
 	align-items: baseline;
@@ -191,7 +183,7 @@ input {
 	font-size: 1rem !important;
 }
 .slider {
-	transform: translateY(-2px);
+	/* transform: translateY(0px); */
 	/* border-radius: 2px; */
 	-webkit-appearance: none;
 	width: 100%;
@@ -200,7 +192,7 @@ input {
 	height: 1px;
 	background: rgb(var(--text-color), 0.3);
 	/* vertical-align: -4px; */
-	transform: translateY(-3px);
+	/* transform: translateY(1px); */
 	/* margin-bottom: 12px; */
 }
 .slider::-moz-range-thumb {
