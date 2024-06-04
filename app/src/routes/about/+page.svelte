@@ -212,16 +212,14 @@ import Image from "$lib/components/Image.svelte";
 	<h4 id="fonts">Fonts</h4>
 
 	<ul>
-		<li>
-			Helvetica
-			<!-- - tm-lagrange-mono (top secret…!) -->
-		</li>
+		<li>Helvetica</li>
 		<li>
 			<a
 				href="https://github.com/weiweihuanghuang/fragment-mono"
 				target="_blank">Fragment Mono</a
 			> (Modified)
 		</li>
+		<li><a href="/type#tm-lagrange-mono">tm-lagrange-mono</a></li>
 	</ul>
 
 	<h4 id="tools">Tools</h4>
