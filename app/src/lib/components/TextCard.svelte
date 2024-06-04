@@ -18,26 +18,16 @@ console.log(item._createdAt);
 <div class="card">
 	<div class="dogear">
 		<svg
-			version="1.1"
-			id="Layer_1"
 			xmlns="http://www.w3.org/2000/svg"
-			xmlns:xlink="http://www.w3.org/1999/xlink"
-			x="0px"
-			y="0px"
-			viewBox="0 0 16 16"
 			xml:space="preserve"
+			viewBox="0 0 18 18"
 		>
-			<rect fill="rgb(var(--bg-color))" width="16" height="16" />
-			<g>
-				<polygon
-					fill="rgb(var(--bg-color))"
-					points="0.5,15.5 0.5,1.2 14.8,15.5 	"
-				/>
-				<path
-					fill="rgb(var(--text-color))"
-					d="M1,2.4L13.6,15H1V2.4 M0,0v16h16L0,0L0,0z"
-				/>
-			</g>
+			<path fill="rgb(var(--bg-color))" d="M0 0h18v18H0z" />
+			<path fill="rgb(var(--bg-color))" d="m.5 3.2 14.3 14.3H.5z" />
+			<path
+				fill="rgb(var(--text-color))"
+				d="M1 4.4 13.6 17H1V4.4M0 2v16h16L0 2Z"
+			/>
 		</svg>
 	</div>
 	<a
@@ -103,12 +93,12 @@ console.log(item._createdAt);
 	cursor: pointer;
 	pointer-events: none;
 	display: none;
-	width: 16px;
-	height: 16px;
+	width: 18px;
+	height: 18px;
 	position: absolute;
 	z-index: 10000;
-	top: -1px;
-	right: -1px;
+	top: -3px;
+	right: -3px;
 }
 span.nsfw {
 	font-size: 2rem;
