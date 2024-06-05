@@ -215,25 +215,33 @@ $: ({ data: posts } = $q);
 	<section data-sveltekit-preload-data="hover">
 		<h2>portfolio</h2>
 
-		{#await posts then posts}
-			<CardGrid items={posts} />
+		{#await data.options.initial}
+			<p>loading…</p>
+		{:then posts}
+			<CardGrid items={posts.data} />
 		{/await}
 	</section>
 
 	<section>
 		<h2><a href="blog#">blog…</a></h2>
 		<div class="blog-grid">
-			{#each data.blogPosts.data as blogPost}
-				<TextCard item={blogPost} baseURL="/blog" />
-			{/each}
+			{#await data.blogPosts}
+				<p>loading…</p>
+			{:then blogPosts}
+				{#each blogPosts.data as blogPost}
+					<TextCard item={blogPost} baseURL="/blog" />
+				{/each}
+			{/await}
 		</div>
 	</section>
 
 	<section>
 		<h2><a href="art#">gallery…</a></h2>
 		<div class="thumbs" data-sveltekit-preload-data="hover">
-			{#await data.artworks.data then artworks}
-				{#each artworks as artwork}
+			{#await data.artworks}
+				<p>loading…</p>
+			{:then artworks}
+				{#each artworks.data as artwork}
 					<div class="thumb">
 						<a href="art/{artwork.year}/{artwork.slug.current}" class="clean">
 							{#if !artwork.nsfw}

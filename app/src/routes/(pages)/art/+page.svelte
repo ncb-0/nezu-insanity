@@ -6,8 +6,6 @@ import { ssp, queryParam } from "sveltekit-search-params";
 import type { PageData } from "./$types";
 export let data: PageData;
 
-import { browser, building } from "$app/environment";
-
 const test = queryParam("test");
 
 $: q = useQuery(data);
@@ -26,44 +24,96 @@ const params = {
 	selectedYear,
 };
 
-$: filteredArtworks = artworks.filter((artwork) => {
-	// Check if no characters are selected or if there is a character match
-	const characterMatch =
+// $: filteredArtworks = artworks.filter((artwork) => {
+// 	// Check if no characters are selected or if there is a character match
+// 	const characterMatch =
+// 		params.selectedCharacters.length === 0 ||
+// 		(artwork.characters &&
+// 			artwork.characters.some((character) => {
+// 				return params.selectedCharacters.includes(character._key);
+// 			}));
+
+// 	// Check if no media are selected or if there is a media match
+// 	const mediaMatch =
+// 		params.selectedMedia.length === 0 ||
+// 		(artwork.media &&
+// 			artwork.media.some((media) => {
+// 				return params.selectedMedia.includes(media._key);
+// 			}));
+
+// 	// Check if no CWs are selected or if there is a CW match
+// 	const cwMatch =
+// 		params.selectedCW.length === 0 ||
+// 		(artwork.cw &&
+// 			artwork.cw.some((cw) => {
+// 				return params.selectedCW.includes(cw._key);
+// 			}));
+
+// 	// Check if the artwork year matches the selected year
+// 	const yearMatch =
+// 		params.selectedYear.length === 0 ||
+// 		(Array.isArray(artwork.year) &&
+// 			artwork.year.some((year) => {
+// 				return params.selectedYear.includes(year);
+// 			})) ||
+// 		(!Array.isArray(artwork.year) &&
+// 			params.selectedYear.includes(artwork.year));
+
+// 	// Return true if both character and media match, and year matches
+// 	return characterMatch && mediaMatch && yearMatch && cwMatch;
+// });
+
+const checkCharacterMatch = (artwork) => {
+	return (
 		params.selectedCharacters.length === 0 ||
 		(artwork.characters &&
 			artwork.characters.some((character) => {
 				return params.selectedCharacters.includes(character._key);
-			}));
+			}))
+	);
+};
 
-	// Check if no media are selected or if there is a media match
-	const mediaMatch =
+const checkMediaMatch = (artwork) => {
+	return (
 		params.selectedMedia.length === 0 ||
 		(artwork.media &&
 			artwork.media.some((media) => {
 				return params.selectedMedia.includes(media._key);
-			}));
+			}))
+	);
+};
 
-	// Check if no CWs are selected or if there is a CW match
-	const cwMatch =
+const checkCWMatch = (artwork) => {
+	return (
 		params.selectedCW.length === 0 ||
 		(artwork.cw &&
 			artwork.cw.some((cw) => {
 				return params.selectedCW.includes(cw._key);
-			}));
+			}))
+	);
+};
 
-	// Check if the artwork year matches the selected year
-	const yearMatch =
+const checkYearMatch = (artwork) => {
+	return (
 		params.selectedYear.length === 0 ||
 		(Array.isArray(artwork.year) &&
 			artwork.year.some((year) => {
 				return params.selectedYear.includes(year);
 			})) ||
-		(!Array.isArray(artwork.year) &&
-			params.selectedYear.includes(artwork.year));
+		(!Array.isArray(artwork.year) && params.selectedYear.includes(artwork.year))
+	);
+};
 
-	// Return true if both character and media match, and year matches
-	return characterMatch && mediaMatch && yearMatch && cwMatch;
-});
+const filterArtworks = (artworks) => {
+	return artworks.filter((artwork) => {
+		return (
+			checkCharacterMatch(artwork) &&
+			checkMediaMatch(artwork) &&
+			checkYearMatch(artwork) &&
+			checkCWMatch(artwork)
+		);
+	});
+};
 </script>
 
 <svelte:head>
@@ -112,9 +162,13 @@ $: filteredArtworks = artworks.filter((artwork) => {
 				>
 					<option disabled selected label="select">(select year)</option>
 
-					{#each data.year.data as year}
-						<option value={year}>{year}</option>
-					{/each}
+					{#await data.year}
+						<option value="loading" disabled>loading…</option>
+					{:then years}
+						{#each years.data as year}
+							<option value={year}>{year}</option>
+						{/each}
+					{/await}
 				</select>
 			</div>
 			<div>
@@ -128,9 +182,13 @@ $: filteredArtworks = artworks.filter((artwork) => {
 				>
 					<option disabled selected label="select">(select media)</option>
 
-					{#each data.media.data as medium}
-						<option value={medium}>{medium}</option>
-					{/each}
+					{#await data.media}
+						<option value="loading" disabled>loading…</option>
+					{:then media}
+						{#each media.data as medium}
+							<option value={medium}>{medium}</option>
+						{/each}
+					{/await}
 				</select>
 			</div>
 			<div>
@@ -144,9 +202,13 @@ $: filteredArtworks = artworks.filter((artwork) => {
 				>
 					<option disabled selected label="select">(select characters)</option>
 
-					{#each data.characters.data as character}
-						<option value={character}>{character}</option>
-					{/each}
+					{#await data.characters}
+						<option value="loading" disabled>loading…</option>
+					{:then characters}
+						{#each characters.data as character}
+							<option value={character}>{character}</option>
+						{/each}
+					{/await}
 				</select>
 			</div>
 			<div>
@@ -162,9 +224,13 @@ $: filteredArtworks = artworks.filter((artwork) => {
 						>(select content warnings)</option
 					>
 
-					{#each data.cw.data as cw}
-						<option value={cw}>{cw}</option>
-					{/each}
+					{#await data.cw}
+						<option value="loading" disabled>loading…</option>
+					{:then cws}
+						{#each cws.data as cw}
+							<option value={cw}>{cw}</option>
+						{/each}
+					{/await}
 				</select>
 			</div>
 		</div>
@@ -172,24 +238,43 @@ $: filteredArtworks = artworks.filter((artwork) => {
 
 	<section data-sveltekit-preload-data="hover">
 		<div class="card-grid">
-			{#await filteredArtworks}
+			{#await data.options.initial}
 				<p>loading…</p>
-			{:then filteredArtworks}
-				{#each filteredArtworks as artwork}
-					{#if artwork.nsfw == true}
-						<Card
-							item={artwork}
-							baseURL="art/{artwork.year}"
-							text="false"
-							nsfw="true"
-						/>
-					{:else}
-						<Card item={artwork} baseURL="art/{artwork.year}" text="false" />
+			{:then artworks}
+				{#each artworks.data as artwork}
+					{#if checkYearMatch(artwork) && checkCharacterMatch(artwork) && checkMediaMatch(artwork) && checkCWMatch(artwork)}
+						{#if artwork.nsfw == true}
+							<Card
+								item={artwork}
+								baseURL="art/{artwork.year}"
+								text="false"
+								nsfw="true"
+							/>
+						{:else}
+							<Card item={artwork} baseURL="art/{artwork.year}" text="false" />
+						{/if}
 					{/if}
 				{/each}
 			{/await}
 		</div>
 	</section>
+
+	<!-- <section data-sveltekit-preload-data="hover">
+		<div class="card-grid">
+			{#each filteredArtworks as artwork}
+				{#if artwork.nsfw == true}
+					<Card
+						item={artwork}
+						baseURL="art/{artwork.year}"
+						text="false"
+						nsfw="true"
+					/>
+				{:else}
+					<Card item={artwork} baseURL="art/{artwork.year}" text="false" />
+				{/if}
+			{/each}
+		</div>
+	</section> -->
 </article>
 
 <style>

@@ -19,12 +19,16 @@ export const load: PageServerLoad = async (event) => {
 		selectedYear,
 	};
 
-	// const artworks = await loadQuery<Artwork[]>(artworksQuery, params);
+	// const tags = await loadQuery<Tag[]>(tagsQuery);
+	// const blogPosts = await loadQuery<BlogPost[]>(blogsQuery);
+	// const artworks = await loadQuery<Artwork[]>(artworksCompactQuery, params);
+	// const initial = await loadQuery<Post[]>(postsQuery);
 
 	// We pass the data in a format that is easy for `useQuery` to consume in the
 	// corresponding `+page.svelte` file, but you can return the data in any
 	// format you like.
 	return {
+		params,
 		tags: await loadQuery<Tag[]>(tagsQuery),
 		blogPosts: await loadQuery<BlogPost[]>(blogsQuery),
 		artworks: await loadQuery<Artwork[]>(artworksCompactQuery, params),
