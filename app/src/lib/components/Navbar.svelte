@@ -7,6 +7,7 @@ import OutClick from "svelte-outclick";
 
 export let currentURL;
 export let data;
+export let loading = false;
 
 let y = 0;
 let navbar = null;
@@ -98,15 +99,17 @@ function toggleModal() {
 	</div>
 	<div>
 		<p>
-			<Breadcrumb />
+			<Breadcrumb {currentURL} />
 		</p>
 		<p>
-			{#if $page.data.options.initial.data.myTags}
+			{#if $page.data.options.initial.data.myTags && currentURL != "/" && !loading}
 				<ul class="tags">
 					{#each $page.data.options.initial.data.myTags as tag (tag._key)}
 						<li class="tag"><a href="/tag/{tag._key}">{tag._key}</a></li>
 					{/each}
 				</ul>
+			{:else if loading}
+				<span>loading~</span>
 			{:else}
 				<span>---</span>
 			{/if}
@@ -122,6 +125,21 @@ function toggleModal() {
 <nav class="fake">
 	<div>
 		{#if currentURL === "/"}
+			<!-- <svg
+				id="pira-top-left"
+				class="txtfill"
+				version="1.1"
+				xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink"
+				x="0px"
+				y="0px"
+				viewBox="0 0 768 768"
+				xml:space="preserve"
+				><path
+					fill="rgb(var(--text-color))"
+					d="M282.3,244.4c-95.8,15-139.1,56.9-139.1,137.6c0,25.4,4.5,45.9,14.5,69.3C57.4,419.9,15,362.1,15,257.8 C15,83.3,136.6,0,384,0s369,83.3,369,257.8c0,104.2-42.4,162.1-142.6,193.5c10-23.4,14.5-43.9,14.5-69.3 c0-80.8-43.4-122.7-139.1-137.6l215.4,374h-175L612.4,768H455.3L384,644.3L312.7,768H155.6l86.3-149.6h-175L282.3,244.4z M316.7,543.6V408.9h-29.9v134.6H316.7z M481.2,543.6V408.9h-29.9v134.6H481.2z"
+				/></svg
+			> -->
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				xml:space="preserve"
@@ -134,8 +152,23 @@ function toggleModal() {
 				/>
 			</svg>
 		{:else}
-			<a href="/" class="clean"
-				><svg
+			<a href="/" class="clean">
+				<!-- <svg
+					id="pira-top-left"
+					class="txtfill"
+					version="1.1"
+					xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					x="0px"
+					y="0px"
+					viewBox="0 0 768 768"
+					xml:space="preserve"
+					><path
+						fill="rgb(var(--text-color))"
+						d="M282.3,244.4c-95.8,15-139.1,56.9-139.1,137.6c0,25.4,4.5,45.9,14.5,69.3C57.4,419.9,15,362.1,15,257.8 C15,83.3,136.6,0,384,0s369,83.3,369,257.8c0,104.2-42.4,162.1-142.6,193.5c10-23.4,14.5-43.9,14.5-69.3 c0-80.8-43.4-122.7-139.1-137.6l215.4,374h-175L612.4,768H455.3L384,644.3L312.7,768H155.6l86.3-149.6h-175L282.3,244.4z M316.7,543.6V408.9h-29.9v134.6H316.7z M481.2,543.6V408.9h-29.9v134.6H481.2z"
+					/>
+					</svg> -->
+				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					xml:space="preserve"
 					viewBox="0 0 24 24"
@@ -151,15 +184,17 @@ function toggleModal() {
 	</div>
 	<div>
 		<p>
-			<Breadcrumb />
+			<Breadcrumb {currentURL} />
 		</p>
 		<p>
-			{#if $page.data.options.initial.data.myTags}
+			{#if $page.data.options.initial.data.myTags && currentURL != "/" && !loading}
 				<ul class="tags">
 					{#each $page.data.options.initial.data.myTags as tag (tag._key)}
 						<li class="tag"><a href="/tag/{tag._key}">{tag._key}</a></li>
 					{/each}
 				</ul>
+			{:else if loading}
+				<span>loading~</span>
 			{:else}
 				<span>---</span>
 			{/if}

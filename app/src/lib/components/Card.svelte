@@ -38,6 +38,7 @@ export let nsfw = false;
 				width={`${baseURL ? 384 : 512}px`}
 				height={`${baseURL ? 384 : 512}px`}
 				style="aspect-ratio: 1 / 1"
+				loading="lazy"
 			/>
 		{:else if nsfw}
 			<img
@@ -51,6 +52,7 @@ export let nsfw = false;
 				width={`${baseURL ? 384 : 512}px`}
 				height={`${baseURL ? 384 : 512}px`}
 				style="aspect-ratio: 1 / 1"
+				loading="lazy"
 			/>
 			<span class="nsfw">nsfw</span>
 		{/if}

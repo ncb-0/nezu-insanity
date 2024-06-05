@@ -84,6 +84,7 @@ $: console.log(fileExtension);
 				alt={src.alt}
 				style="aspect-ratio: {getImageDimensions(src.asset._ref)
 					.width} / {getImageDimensions(src.asset._ref).height}"
+				loading="lazy"
 			/>
 			{#if src.caption}
 				<figcaption>

@@ -1,11 +1,13 @@
 <script lang="ts">
 import "$lib/styles/style.css";
 import "$lib/styles/fonts.css";
-import { page } from "$app/stores";
+import { navigating } from "$app/stores";
+import { fade } from "svelte/transition";
 import Navbar from "$lib/components/Navbar.svelte";
-import { onMount } from "svelte";
-
+import Loader from "../lib/components/Loader.svelte";
 export let data;
+
+$: currentURL = data.currentURL;
 </script>
 
 <svelte:head>
@@ -22,8 +24,28 @@ export let data;
 	/>
 </svelte:head>
 
-<Navbar {...data} />
+<!-- <Navbar currentURL="/" data="" />
+<Loader></Loader> -->
 
-<slot />
+{#key currentURL}
+	{#if $navigating}
+		<Navbar currentURL="/" data="" loading="true" />
+		<div
+			in:fade={{ duration: 50, delay: 0 }}
+			out:fade={{ duration: 100, delay: 50 }}
+		>
+			<Loader></Loader>
+		</div>
+	{:else}
+		<Navbar {...data} />
+		<div
+			in:fade={{ duration: 100, delay: 150 }}
+			out:fade={{ duration: 50, delay: 0 }}
+		>
+			<slot />
+		</div>
+		<div class="flowers-top"></div>
+	{/if}
+{/key}
 
-<div class="flowers-top"></div>
+<!-- <slot /> -->

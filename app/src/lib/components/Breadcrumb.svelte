@@ -1,11 +1,13 @@
 <script>
 import { page } from "$app/stores";
 
+export let currentURL = "/";
+
 let crumbs = [];
 
 $: {
 	// Remove zero-length tokens.
-	const tokens = $page.url.pathname.split("/").filter((t) => t !== "");
+	const tokens = currentURL.split("/").filter((t) => t !== "");
 
 	// Create { label, href } pairs for each token.
 	let tokenPath = "";
