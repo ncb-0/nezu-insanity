@@ -31,7 +31,7 @@ $: currentURL = data.currentURL;
 	{#if $navigating}
 		<Navbar currentURL="/" data="" loading="true" />
 		<div
-			in:fade={{ duration: 50, delay: 0 }}
+			in:fade={{ duration: 100, delay: 50 }}
 			out:fade={{ duration: 100, delay: 50 }}
 		>
 			<Loader></Loader>
@@ -40,7 +40,7 @@ $: currentURL = data.currentURL;
 		<Navbar {...data} />
 		<div
 			in:fade={{ duration: 100, delay: 150 }}
-			out:fade={{ duration: 50, delay: 0 }}
+			out:fade={{ duration: 100, delay: 0 }}
 		>
 			<slot />
 		</div>
