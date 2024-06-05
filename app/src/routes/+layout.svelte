@@ -2,10 +2,16 @@
 import "$lib/styles/style.css";
 import "$lib/styles/fonts.css";
 import { navigating } from "$app/stores";
+import { afterNavigate } from "$app/navigation";
 import { fade } from "svelte/transition";
 import Navbar from "$lib/components/Navbar.svelte";
 import Loader from "../lib/components/Loader.svelte";
 export let data;
+
+afterNavigate(() => {
+	// disableScrollHandling();
+	scrollTo({ top: 0, behavior: "instant" });
+});
 
 $: currentURL = data.currentURL;
 </script>
