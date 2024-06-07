@@ -9,7 +9,7 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			split: false,
+			split: true,
 		}),
 		paths: {
 			relative: false,
