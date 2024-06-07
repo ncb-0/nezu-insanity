@@ -8,9 +8,3 @@
 // 	// to the client by returning it here.
 // 	return { preview };
 // };
-
-export const config = {
-	isr: {
-		expiration: 60,
-	},
-};
