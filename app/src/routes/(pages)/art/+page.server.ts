@@ -32,10 +32,10 @@ export const load: PageServerLoad = async (event) => {
 
 	return {
 		params,
-		media: loadQuery<Tag[]>(mediaQuery),
-		year: loadQuery<Number[]>(yearsQuery),
-		characters: loadQuery<Tag[]>(charactersQuery),
-		cw: loadQuery<Tag[]>(cwQuery),
+		media: await loadQuery<Tag[]>(mediaQuery),
+		year: await loadQuery<Number[]>(yearsQuery),
+		characters: await loadQuery<Tag[]>(charactersQuery),
+		cw: await loadQuery<Tag[]>(cwQuery),
 		options: { initial: await loadQuery<Artwork[]>(query, params) },
 	};
 };
