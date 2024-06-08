@@ -15,6 +15,8 @@ import Button from "$lib/components/Button.svelte";
 export let data: PageData;
 $: q = useQuery(data);
 $: ({ data: post } = $q);
+
+$: console.log(data);
 </script>
 
 <svelte:head>
@@ -39,7 +41,7 @@ $: ({ data: post } = $q);
 
 <article class="narrow serif-2">
 	<h1>{post.title}</h1>
-	<h2><date datetime={post.date}>{post.date}</date></h2>
+	<!-- <h2><date datetime={post.date}>{post.date}</date></h2> -->
 
 	{#if post.body}
 		<PortableText

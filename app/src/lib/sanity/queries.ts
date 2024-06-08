@@ -58,7 +58,11 @@ export const tagQuery = groq`*[_type == "post" && myTags[].value match $tag] | o
   title, shortTitle, mainImage, slug, myTags
   }`;
 
-export const tagsQuery = groq`array::unique(*[_type == "post" && defined(myTags)].myTags[] | order(_key asc)._key)`;
+export const blogTagQuery = groq`*[_type == "blogPost" && myTags[].value match $tag] | order(slug.current asc){
+  title, shortTitle, mainImage, slug, date, year, _createdAt, excerpt, myTags,
+  }`;
+
+export const tagsQuery = groq`array::unique(*[defined(myTags)].myTags[] | order(_key asc)._key)`;
 
 export const mediaQuery = groq`array::unique(*[defined(media)].media[]._key | order(_key asc))`;
 

@@ -104,12 +104,21 @@ function toggleModal() {
 		<p>
 			{#if $page.data.options.initial.data.myTags && currentURL != "/" && !loading}
 				<ul class="tags">
+					{#if $page.data.options.initial.data._type === "blogPost"}
+						<date datetime={$page.data.options.initial.data.date}
+							>{$page.data.options.initial.data.date}</date
+						> |
+					{/if}
 					{#each $page.data.options.initial.data.myTags as tag (tag._key)}
 						<li class="tag"><a href="/tag/{tag._key}">{tag._key}</a></li>
 					{/each}
 				</ul>
 			{:else if loading}
 				<span>loading~</span>
+			{:else if $page.data.options.initial.data._type === "artwork"}
+				<date datetime={$page.data.options.initial.data.date}
+					>{$page.data.options.initial.data.date}</date
+				>
 			{:else}
 				<span>---</span>
 			{/if}
