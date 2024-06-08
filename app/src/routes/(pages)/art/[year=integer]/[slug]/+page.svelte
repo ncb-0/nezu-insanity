@@ -65,34 +65,34 @@ function getImageDimensions(id) {
 			}}
 			value={artwork.description}
 		/>
-	{/if}
 
-	<hr />
+		<hr />
+	{/if}
 
 	<p><b>Date:</b> {artwork.date}</p>
 
 	{#if artwork.media}
 		{#if artwork.media.length == 1}
-			<h4>Medium:</h4>
+			<p><b>Medium:</b> {artwork.media[0].label}</p>
 		{:else}
-			<h4>Media:</h4>
+			<h4>Media</h4>
+			<ul>
+				{#each artwork.media as medium}
+					<li>{medium.label}</li>
+				{/each}
+			</ul>
 		{/if}
-		<ul>
-			{#each artwork.media as media}
-				<li>{media.label}</li>
-			{/each}
-		</ul>
 	{/if}
 	{#if artwork.characters}
 		{#if artwork.characters.length == 1}
-			<h4>Character:</h4>
+			<p><b>Character:</b> {artwork.characters[0].label}</p>
 		{:else}
-			<h4>Characters:</h4>
+			<h4>Characters</h4>
+			<ul>
+				{#each artwork.characters as character}
+					<li>{character.label}</li>
+				{/each}
+			</ul>
 		{/if}
-		<ul>
-			{#each artwork.characters as character}
-				<li>{character.label}</li>
-			{/each}
-		</ul>
 	{/if}
 </article>
