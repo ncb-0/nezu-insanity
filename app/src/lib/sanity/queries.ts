@@ -8,6 +8,7 @@ export const postQuery = groq`*[_type == "post" && slug.current == $slug][0]`;
 
 export const postsQuery = groq`*[_type == "post" 
   && defined(slug.current)
+	&& myTags[].value match "work"
   && !(myTags[].value match "subpage") 
   && !(myTags[].value match "testing")] 
        | order(title asc) 

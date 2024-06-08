@@ -101,6 +101,14 @@ img {
 	cursor: pointer;
 	/* max-width: 100%; */
 }
+figure {
+	padding: 0;
+	line-height: 0;
+}
+figcaption {
+	margin-top: 0.5ex;
+	line-height: 2ex;
+}
 .lightbox {
 	display: none;
 	display: block;
