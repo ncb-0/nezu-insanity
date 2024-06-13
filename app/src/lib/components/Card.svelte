@@ -31,12 +31,12 @@ export let nsfw = false;
 			<img
 				src={urlFor(item.mainImage)
 					.format("jpg")
-					.width(baseURL ? 384 : 512)
-					.height(baseURL ? 384 : 512)
+					.width(512)
+					.height(512)
 					.bg("ffff")
 					.url()}
-				width={`${baseURL ? 384 : 512}px`}
-				height={`${baseURL ? 384 : 512}px`}
+				width="512px"
+				height="512px"
 				style="aspect-ratio: 1 / 1"
 				loading="lazy"
 			/>
@@ -44,13 +44,13 @@ export let nsfw = false;
 			<img
 				src={urlFor(item.mainImage)
 					.format("jpg")
-					.width(baseURL ? 384 : 512)
-					.height(baseURL ? 384 : 512)
+					.width(512)
+					.height(512)
 					.blur(128)
 					.bg("ffff")
 					.url()}
-				width={`${baseURL ? 384 : 512}px`}
-				height={`${baseURL ? 384 : 512}px`}
+				width="512px"
+				height="512px"
 				style="aspect-ratio: 1 / 1"
 				loading="lazy"
 			/>
