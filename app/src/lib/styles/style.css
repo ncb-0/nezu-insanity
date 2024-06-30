@@ -409,7 +409,7 @@ picture {
 	max-width: 100%;
 	height: auto;
 }
-article > figure img {
+article figure img {
 	width: 100%;
 }
 :is(h1, h2, h3, h4, h5, h6, p) + :is(img, picture, div, figure) {
