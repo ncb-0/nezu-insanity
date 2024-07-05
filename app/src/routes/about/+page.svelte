@@ -55,9 +55,9 @@ import Image from "$lib/components/Image.svelte";
 
 	<h2>availability</h2>
 	<p>
-		i am available for freelance work~ i do <a href="/dollhouse">flyers</a>,
-		<a href="/mutants">album covers</a>, etc. i’m mostly looking for bigger
-		jobs—i’m not really looking for art commissions.
+		i am available for freelance work~ i do <a href="/tag/flyer">flyers</a>,
+		<a href="/tag/album-art">album covers</a>, etc. i’m mostly looking for
+		bigger jobs—i’m not really looking for art commissions.
 	</p>
 
 	<h2>contact</h2>
