@@ -17,7 +17,7 @@ $: currentURL = data.currentURL;
 </script>
 
 <svelte:head>
-	<title>nezu.world</title>
+	<!-- <title>nezu.world</title> -->
 	<meta
 		name="theme-color"
 		media="(prefers-color-scheme: light)"

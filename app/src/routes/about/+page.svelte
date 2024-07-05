@@ -3,7 +3,7 @@ import Image from "$lib/components/Image.svelte";
 </script>
 
 <svelte:head>
-	<title>nezu.world</title>
+	<title>about | nezu.world</title>
 	<meta property="og:title" content="nezu.world" />
 	<meta
 		property="og:description"
