@@ -213,12 +213,13 @@ import Image from "$lib/components/Image.svelte";
 
 	<ul>
 		<li>Helvetica</li>
-		<li>
+		<!-- <li>
 			<a
 				href="https://github.com/weiweihuanghuang/fragment-mono"
 				target="_blank">Fragment Mono</a
 			> (Modified)
-		</li>
+		</li> -->
+		<li>River Mono (TBA)</li>
 		<li><a href="/type#tm-lagrange-mono">tm-lagrange-mono</a></li>
 	</ul>
 

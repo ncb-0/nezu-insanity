@@ -2,47 +2,13 @@
 /*              MONOSPACE             */
 /* :::::::::::::::::::::::::::::::::: */
 
-/* ······ nezu fragment gothic ······ */
+/* ··········· river mono ··········· */
 @font-face {
-	font-family: "Nezu Fragment Gothic";
-	src: url("/fonts/Nezu Fragment Gothic/NezuFragmentGothic-Regular.woff2")
-		format("woff2");
-	font-weight: 400;
-	font-style: normal;
-}
-@font-face {
-	font-family: "Nezu Fragment Gothic";
-	src: url("/fonts/Nezu Fragment Gothic/NezuFragmentGothic-Italic.woff2")
-		format("woff2");
-	font-weight: 400;
-	font-style: italic;
-}
-@font-face {
-	font-family: "Nezu Fragment Gothic";
-	src: url("/fonts/Nezu Fragment Gothic/NezuFragmentGothic-Bold.woff2")
-		format("woff2");
-	font-weight: 700;
-	font-style: normal;
-}
-
-/* ············ helv mono ··········· */
-@font-face {
-	font-family: "Nezu Fragment Mono";
-	src: url("/fonts/Helv Mono/HelvMono-Regular.woff2") format("woff2");
-	font-weight: 400;
-	font-style: normal;
-}
-@font-face {
-	font-family: "Nezu Fragment Mono";
-	src: url("/fonts/Helv Mono/HelvMono-Italic.woff2") format("woff2");
-	font-weight: 400;
-	font-style: italic;
-}
-@font-face {
-	font-family: "Nezu Fragment Mono";
-	src: url("/fonts/Helv Mono/HelvMono-Bold.woff2") format("woff2");
-	font-weight: 700;
-	font-style: normal;
+	font-family: "River Mono";
+	src: url("/fonts/River Mono/RiverMono-VF.woff2") format("woff2-variations");
+	font-weight: 450 700;
+	font-style: italic 0deg 12deg;
+	font-feature-settings: "ss01";
 }
 
 /* ·········· lagrange mono ········· */

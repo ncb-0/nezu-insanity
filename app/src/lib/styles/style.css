@@ -48,9 +48,9 @@ html {
 	/* --font-sans: "Pico A", sans-serif; */
 	--font-serif: "Job Clarendon Text", serif;
 	--font-serif-2: "Lagrange Mono", monospace;
-	--font-mono: "Nezu Fragment Gothic", monospace;
+	--font-mono: "River Mono", monospace;
 	/* --font-mono: "Pico A Mono", monospace; */
-	--font-mono-2: "Nezu Fragment Mono", monospace;
+	--font-mono-2: "River Mono", monospace;
 
 	font-size: 12px;
 	/* font-weight: 300; */
@@ -167,6 +167,16 @@ section + section {
 	opacity: 0.2;
 	/* color: var(--border-color); */
 	cursor: not-allowed;
+}
+i,
+em {
+	/* font-style: oblique 12deg; */
+	font-style: normal;
+	font-variation-settings: "ital" 100;
+}
+.serif-2 i,
+.serif-2 em {
+	font-style: italic;
 }
 
 /* ············ headings ············ */
