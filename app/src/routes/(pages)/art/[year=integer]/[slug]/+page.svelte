@@ -8,9 +8,13 @@ import ImageGrid from "$lib/components/ImageGrid.svelte";
 import ImageRow from "$lib/components/ImageRow.svelte";
 import Break from "$lib/components/Break.svelte";
 
-export let data: PageData;
-$: q = useQuery(data);
-$: ({ data: artwork } = $q);
+interface Props {
+	data: PageData;
+}
+
+let { data }: Props = $props();
+let q = $derived(useQuery(data));
+let { data: artwork } = $derived($q);
 
 console.log(data.options.initial.data.media);
 

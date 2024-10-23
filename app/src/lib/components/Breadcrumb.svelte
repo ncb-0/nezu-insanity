@@ -1,28 +1,26 @@
 <script>
 import { page } from "$app/stores";
 
-export let currentURL = "/";
+let { currentURL = "/" } = $props();
 
-let crumbs = [];
+let crumbs = $state([]);
 
-$: {
-	// Remove zero-length tokens.
-	const tokens = currentURL.split("/").filter((t) => t !== "");
+// Remove zero-length tokens.
+const tokens = currentURL.split("/").filter((t) => t !== "");
 
-	// Create { label, href } pairs for each token.
-	let tokenPath = "";
-	crumbs = tokens.map((t) => {
-		tokenPath += "/" + t;
-		t = t.charAt(0) + t.slice(1);
-		return {
-			label: $page.data.label || t,
-			href: tokenPath,
-		};
-	});
+// Create { label, href } pairs for each token.
+let tokenPath = "";
+crumbs = tokens.map((t) => {
+	tokenPath += "/" + t;
+	t = t.charAt(0) + t.slice(1);
+	return {
+		label: $page.data.label || t,
+		href: tokenPath,
+	};
+});
 
-	// Add a way to get home too.
-	crumbs.unshift({ label: "nezu.world", href: "/" });
-}
+// Add a way to get home too.
+crumbs.unshift({ label: "nezu.world", href: "/" });
 </script>
 
 {#each crumbs as c, i}

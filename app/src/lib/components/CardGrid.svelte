@@ -1,10 +1,7 @@
 <script>
 import Card from "$lib/components/Card.svelte";
 
-export let items;
-export let text = true;
-export let blog = false;
-export let baseURL = ".";
+let { items, text = true, blog = false, baseURL = "." } = $props();
 </script>
 
 {#if items.length}

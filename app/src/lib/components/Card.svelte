@@ -1,11 +1,16 @@
 <script lang="ts">
 import { urlFor } from "$lib/sanity/image";
+import type { Post } from "$lib/sanity/queries";
 
-// export let post: Post;
-export let item;
-export let baseURL = "";
-export let text = true;
-export let nsfw = false;
+interface Props {
+	post: Post;
+	item: Post;
+	baseURL?: string;
+	text?: boolean;
+	nsfw?: boolean;
+}
+
+let { item, baseURL = "", text = true, nsfw = false }: Props = $props();
 </script>
 
 <div class="card">
@@ -27,34 +32,24 @@ export let nsfw = false;
 		href={`${baseURL ? `${baseURL}/` : "/"}${item.slug.current}`}
 		title={item.title}
 	>
-		{#if item.mainImage && !nsfw}
+		{#if item.mainImage}
 			<img
 				src={urlFor(item.mainImage)
 					.format("jpg")
 					.width(512)
 					.height(512)
 					.bg("ffff")
+					.blur(nsfw ? 128 : 1)
 					.url()}
 				width="512px"
 				height="512px"
 				style="aspect-ratio: 1 / 1"
 				loading="lazy"
 			/>
-		{:else if nsfw}
-			<img
-				src={urlFor(item.mainImage)
-					.format("jpg")
-					.width(512)
-					.height(512)
-					.blur(128)
-					.bg("ffff")
-					.url()}
-				width="512px"
-				height="512px"
-				style="aspect-ratio: 1 / 1"
-				loading="lazy"
-			/>
-			<span class="nsfw">nsfw</span>
+
+			{#if nsfw}
+				<span class="nsfw">nsfw</span>
+			{/if}
 		{/if}
 
 		{#if item.mainImage}
@@ -74,7 +69,6 @@ export let nsfw = false;
 				<p>{item.excerpt}</p>
 			</div>
 		{/if}
-		<!-- <h3>{formatDate(item._createdAt)}</h3> -->
 	</a>
 </div>
 
@@ -85,15 +79,12 @@ export let nsfw = false;
 	width: fit-content;
 	background-color: rgb(var(--bg-color));
 	text-decoration: none;
-	/* padding: 0.5rem 0.5rem 0.25rem; */
 	padding: 0;
 	border: 1px solid rgba(var(--text-color), 0.3);
 	line-height: 0;
 	grid-column: span 1;
 }
 .card:hover {
-	/* background-color: rgba(var(--text-color), 0.1); */
-	/* background-color: rgba(var(--bg-color), 1); */
 	border: 1px solid rgba(var(--text-color), 1);
 }
 .card:hover .dogear {
@@ -101,7 +92,7 @@ export let nsfw = false;
 }
 .card a {
 	text-decoration: none;
-	/* line-height: 0; */
+
 	padding: 0;
 }
 .card a:hover {

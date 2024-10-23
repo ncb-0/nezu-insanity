@@ -1,14 +1,14 @@
 <script lang="ts">
-import { formatDate } from "$lib/utils";
-import { urlFor } from "$lib/sanity/image";
 import type { Post } from "$lib/sanity/queries";
-import { base } from "$app/paths";
 
-// export let post: Post;
-export let item;
-export let baseURL = "";
+interface Props {
+	post: Post;
+	item: Post;
+	baseURL?: string;
+	blog?: boolean;
+}
 
-export let blog = true;
+let { item, baseURL = "", blog = true }: Props = $props();
 
 let date = Date.parse(item._createdAt);
 
@@ -55,7 +55,7 @@ console.log(item._createdAt);
 	/* padding: 0.5rem 0.5rem 0.25rem; */
 	padding: 0;
 	border: 1px solid rgba(var(--text-color), 0.3);
-	line-height: 0;
+	/* line-height: 0; */
 	grid-column: span 2;
 }
 .card:hover {

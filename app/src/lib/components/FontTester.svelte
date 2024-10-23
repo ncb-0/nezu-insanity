@@ -1,24 +1,45 @@
 <script>
-export let fontSize = 24;
-export let fontStyles;
-export let fontStyle;
-export let fontTracking = 0;
-export let fontLeading = 1;
-export let fontFamily = "sans-serif";
-export let placeholderText = `${fontFamily}: AaGgRr/0123456789`;
+import { run } from "svelte/legacy";
 
-let textArea;
+let {
+	fontSize = $bindable(24),
+	fontStyles,
+	fontStyle = $bindable(),
+	fontTracking = $bindable(0),
+	fontLeading = $bindable(1),
+	fontFamily = "sans-serif",
+	placeholderText = `${fontFamily}: AaGgRr/0123456789`,
+} = $props();
 
-$: textArea && textArea.style.setProperty("font-size", `${fontSize}px`);
-$: textArea && textArea.style.setProperty("font-weight", fontStyle.weight);
-$: textArea && textArea.style.setProperty("font-style", fontStyle.style);
-$: textArea &&
+let textArea = $state();
+
+$effect(() => {
+	textArea;
+	textArea.style.setProperty("font-size", `${fontSize}px`);
+});
+$effect(() => {
+	textArea;
+	textArea.style.setProperty("font-weight", fontStyle.weight);
+});
+$effect(() => {
+	textArea;
+	textArea.style.setProperty("font-style", fontStyle.style);
+});
+$effect(() => {
+	textArea;
 	textArea.style.setProperty(
 		"letter-spacing",
 		`calc(${fontTracking} * 0.01em)`
 	);
-$: textArea && textArea.style.setProperty("line-height", fontLeading);
-$: textArea && textArea.style.setProperty("font-family", fontFamily);
+});
+$effect(() => {
+	textArea;
+	textArea.style.setProperty("line-height", fontLeading);
+});
+$effect(() => {
+	textArea;
+	textArea.style.setProperty("font-family", fontFamily);
+});
 </script>
 
 <div class="type-tester">

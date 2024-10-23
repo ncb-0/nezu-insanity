@@ -12,9 +12,13 @@ import Giscus from "@giscus/svelte";
 import CardGrid from "$lib/components/CardGrid.svelte";
 import Button from "$lib/components/Button.svelte";
 
-export let data: PageData;
-$: q = useQuery(data);
-$: ({ data: post } = $q);
+interface Props {
+	data: PageData;
+}
+
+let { data }: Props = $props();
+let q = $derived(useQuery(data));
+let { data: post } = $derived($q);
 </script>
 
 <svelte:head>

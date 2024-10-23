@@ -4,10 +4,14 @@ import Card from "$lib/components/Card.svelte";
 import TextCard from "$lib/components/TextCard.svelte";
 import { useQuery } from "@sanity/svelte-loader";
 import type { PageData } from "./$types";
-export let data: PageData;
+interface Props {
+	data: PageData;
+}
+
+let { data }: Props = $props();
 const q = useQuery(data);
 
-$: ({ data: blogPosts } = $q);
+let { data: blogPosts } = $derived($q);
 
 console.log(data);
 </script>

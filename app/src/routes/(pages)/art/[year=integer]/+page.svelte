@@ -3,12 +3,14 @@ import CardGrid from "$lib/components/CardGrid.svelte";
 import Card from "$lib/components/Card.svelte";
 import { useQuery } from "@sanity/svelte-loader";
 import type { PageData } from "./$types";
-export let data: PageData;
+interface Props {
+	data: PageData;
+}
+
+let { data }: Props = $props();
 const q = useQuery(data);
 
-$: ({ data: artworks } = $q);
-
-console.log(data.params);
+let { data: artworks } = $derived($q);
 </script>
 
 <svelte:head>

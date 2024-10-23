@@ -1,12 +1,16 @@
 <script>
+import { run } from "svelte/legacy";
+
 import { urlFor } from "$lib/sanity/image";
 import urlBuilder from "@sanity/image-url";
 import OutClick from "svelte-outclick";
 
-export let portableText;
-export let src = portableText.value;
-export let showLightbox = false;
-export let style = "";
+let {
+	portableText,
+	src = portableText.value,
+	showLightbox = $bindable(false),
+	style = "",
+} = $props();
 
 function getImageDimensions(id) {
 	const dimensions = id.split("-")[2];
@@ -30,19 +34,17 @@ function getFileExtension(filename) {
 }
 
 const fileExtension = getFileExtension(src.asset._ref);
-
-$: console.log(fileExtension);
 </script>
 
 <svelte:window
-	on:scroll={() => {
+	onscroll={() => {
 		showLightbox = false;
 	}}
 />
 
 <figure
 	class={src.floatLeft ? "float-left" : src.floatRight ? "float-right" : ""}
-	on:click={toggleLightbox}
+	onclick={toggleLightbox}
 	{style}
 >
 	<img
@@ -60,20 +62,8 @@ $: console.log(fileExtension);
 	{/if}
 </figure>
 
-<!-- {:else}
-	<img
-		src={urlFor(src).url()}
-		width={getImageDimensions(src.asset._ref).width}
-		height={getImageDimensions(src.asset._ref).height}
-		alt={src.alt}
-		style="aspect-ratio: {getImageDimensions(src.asset._ref)
-			.width} / {getImageDimensions(src.asset._ref).height}; {style}"
-		on:click={toggleLightbox}
-	/>
-{/if} -->
-
 {#if showLightbox == true}
-	<div class="shade" on:click={toggleLightbox}>
+	<div class="shade" onclick={toggleLightbox}>
 		<figure class="lightbox">
 			<img
 				src={fileExtension == "svg"

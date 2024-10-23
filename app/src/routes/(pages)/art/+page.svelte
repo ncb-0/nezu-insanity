@@ -4,64 +4,30 @@ import Card from "$lib/components/Card.svelte";
 import { useQuery } from "@sanity/svelte-loader";
 import { ssp, queryParam } from "sveltekit-search-params";
 import type { PageData } from "./$types";
-export let data: PageData;
+
+interface Props {
+	data: PageData;
+}
+
+let { data }: Props = $props();
 
 const test = queryParam("test");
 
-$: q = useQuery(data);
+let q = $derived(useQuery(data));
 
-$: ({ data: artworks } = $q);
+let { data: artworks } = $derived($q);
 
 let selectedCharacters: Tag[] = [];
 let selectedMedia: Tag[] = [];
 let selectedCW: Tag[] = [];
 let selectedYear: Number[] = [];
 
-const params = {
+const params = $state({
 	selectedCharacters,
 	selectedMedia,
 	selectedCW,
 	selectedYear,
-};
-
-// $: filteredArtworks = artworks.filter((artwork) => {
-// 	// Check if no characters are selected or if there is a character match
-// 	const characterMatch =
-// 		params.selectedCharacters.length === 0 ||
-// 		(artwork.characters &&
-// 			artwork.characters.some((character) => {
-// 				return params.selectedCharacters.includes(character._key);
-// 			}));
-
-// 	// Check if no media are selected or if there is a media match
-// 	const mediaMatch =
-// 		params.selectedMedia.length === 0 ||
-// 		(artwork.media &&
-// 			artwork.media.some((media) => {
-// 				return params.selectedMedia.includes(media._key);
-// 			}));
-
-// 	// Check if no CWs are selected or if there is a CW match
-// 	const cwMatch =
-// 		params.selectedCW.length === 0 ||
-// 		(artwork.cw &&
-// 			artwork.cw.some((cw) => {
-// 				return params.selectedCW.includes(cw._key);
-// 			}));
-
-// 	// Check if the artwork year matches the selected year
-// 	const yearMatch =
-// 		params.selectedYear.length === 0 ||
-// 		(Array.isArray(artwork.year) &&
-// 			artwork.year.some((year) => {
-// 				return params.selectedYear.includes(year);
-// 			})) ||
-// 		(!Array.isArray(artwork.year) &&
-// 			params.selectedYear.includes(artwork.year));
-
-// 	// Return true if both character and media match, and year matches
-// 	return characterMatch && mediaMatch && yearMatch && cwMatch;
-// });
+});
 
 const checkCharacterMatch = (artwork) => {
 	return (
@@ -258,23 +224,6 @@ const filterArtworks = (artworks) => {
 			{/await}
 		</div>
 	</section>
-
-	<!-- <section data-sveltekit-preload-data="hover">
-		<div class="card-grid">
-			{#each filteredArtworks as artwork}
-				{#if artwork.nsfw == true}
-					<Card
-						item={artwork}
-						baseURL="art/{artwork.year}"
-						text="false"
-						nsfw="true"
-					/>
-				{:else}
-					<Card item={artwork} baseURL="art/{artwork.year}" text="false" />
-				{/if}
-			{/each}
-		</div>
-	</section> -->
 </article>
 
 <style>

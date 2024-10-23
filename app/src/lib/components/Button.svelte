@@ -1,7 +1,12 @@
 <script>
-export let portableText;
+let {
+	portableText,
+	buttonText = portableText.value.buttonText,
+	href = portableText.value.href,
+	inline = portableText.value.inline,
+} = $props();
 
-export let { buttonText, href, inline } = portableText.value;
+// export let { buttonText, href, inline } = portableText.value;
 </script>
 
 {#if inline}

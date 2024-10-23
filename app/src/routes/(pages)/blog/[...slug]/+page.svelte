@@ -1,22 +1,20 @@
 <script lang="ts">
 import { PortableText } from "@portabletext/svelte";
 import { useQuery } from "@sanity/svelte-loader";
-import { formatDate } from "$lib/utils";
-import { urlFor } from "$lib/sanity/image";
 import type { PageData } from "./$types";
 import Image from "$lib/components/Image.svelte";
 import ImageGrid from "$lib/components/ImageGrid.svelte";
 import ImageRow from "$lib/components/ImageRow.svelte";
 import Break from "$lib/components/Break.svelte";
-import Giscus from "@giscus/svelte";
-import CardGrid from "$lib/components/CardGrid.svelte";
 import Button from "$lib/components/Button.svelte";
 
-export let data: PageData;
-$: q = useQuery(data);
-$: ({ data: post } = $q);
+interface Props {
+	data: PageData;
+}
 
-$: console.log(data);
+let { data }: Props = $props();
+let q = $derived(useQuery(data));
+let { data: post } = $derived($q);
 </script>
 
 <svelte:head>

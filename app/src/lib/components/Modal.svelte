@@ -1,10 +1,10 @@
 <script>
-export let shown = false;
+let { shown = false, children } = $props();
 </script>
 
 <!-- <div class="shade"></div> -->
 <div class="help" {shown}>
-	<slot />
+	{@render children?.()}
 </div>
 
 <style lang="postcss">

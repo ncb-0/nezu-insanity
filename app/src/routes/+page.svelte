@@ -5,10 +5,14 @@ import TextCard from "$lib/components/TextCard.svelte";
 import type { PageData } from "./$types";
 import { urlFor } from "$lib/sanity/image";
 
-export let data: PageData;
+interface Props {
+	data: PageData;
+}
+
+let { data }: Props = $props();
 const q = useQuery(data);
 
-$: ({ data: posts } = $q);
+let { data: posts } = $derived($q);
 </script>
 
 <svelte:head>

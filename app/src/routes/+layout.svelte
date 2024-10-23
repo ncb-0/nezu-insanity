@@ -6,14 +6,14 @@ import { afterNavigate } from "$app/navigation";
 import { fade } from "svelte/transition";
 import Navbar from "$lib/components/Navbar.svelte";
 import Loader from "../lib/components/Loader.svelte";
-export let data;
+let { data, children } = $props();
 
 afterNavigate(() => {
 	// disableScrollHandling();
 	scrollTo({ top: 0, behavior: "instant" });
 });
 
-$: currentURL = data.currentURL;
+let currentURL = $derived(data.currentURL);
 </script>
 
 <svelte:head>
@@ -48,7 +48,7 @@ $: currentURL = data.currentURL;
 			in:fade={{ duration: 100, delay: 150 }}
 			out:fade={{ duration: 100, delay: 0 }}
 		>
-			<slot />
+			{@render children?.()}
 		</div>
 		<div class="flowers-top"></div>
 	{/if}
