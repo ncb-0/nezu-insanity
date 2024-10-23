@@ -8,7 +8,7 @@ import Image from "$lib/components/Image.svelte";
 import ImageGrid from "$lib/components/ImageGrid.svelte";
 import ImageRow from "$lib/components/ImageRow.svelte";
 import Break from "$lib/components/Break.svelte";
-import Giscus from "@giscus/svelte";
+
 import CardGrid from "$lib/components/CardGrid.svelte";
 import Button from "$lib/components/Button.svelte";
 
