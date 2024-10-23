@@ -9,15 +9,15 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
-		paths: {
-			relative: false,
-		},
-		prerender: {
-			handleHttpError: "warn",
-		},
-		files: {
-			assets: "static",
-		},
+		// paths: {
+		// 	relative: false,
+		// },
+		// prerender: {
+		// 	handleHttpError: "warn",
+		// },
+		// files: {
+		// 	assets: "static",
+		// },
 	},
 };
 
