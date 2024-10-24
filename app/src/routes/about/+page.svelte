@@ -15,7 +15,7 @@ import Image from "$lib/components/Image.svelte";
 	/>
 	<meta
 		property="og:image"
-		content="https://nezu.world/icon/android-chrome-512x512.png"
+		content="https://nezu.world/android-chrome-512x512.png"
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://nezu.world/" />
@@ -32,7 +32,7 @@ import Image from "$lib/components/Image.svelte";
 	<meta property="twitter:url" content="https://nezu.world/" />
 	<meta
 		property="twitter:image"
-		content="https://nezu.world/icon/android-chrome-512x512.png"
+		content="https://nezu.world/android-chrome-512x512.png"
 	/>
 </svelte:head>
 

@@ -36,11 +36,11 @@ let { data: artworks } = $derived($q);
 	<meta property="twitter:url" content="https://nezu.world/{data.currentURL}" />
 	<meta
 		property="og:image"
-		content="https://nezu.world/icon/android-chrome-512x512.png"
+		content="https://nezu.world/android-chrome-512x512.png"
 	/>
 	<meta
 		property="twitter:image"
-		content="https://nezu.world/icon/android-chrome-512x512.png"
+		content="https://nezu.world/android-chrome-512x512.png"
 	/>
 </svelte:head>
 

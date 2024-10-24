@@ -18,11 +18,11 @@ export let data;
 	<meta property="twitter:creator" content="@ncb0_" />
 	<meta
 		property="og:image"
-		content="https://nezu.world/icon/android-chrome-512x512.png"
+		content="https://nezu.world/android-chrome-512x512.png"
 	/>
 	<meta
 		property="twitter:image"
-		content="https://nezu.world/icon/android-chrome-512x512.png"
+		content="https://nezu.world/android-chrome-512x512.png"
 	/>
 </svelte:head>
 
