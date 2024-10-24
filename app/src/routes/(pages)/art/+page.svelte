@@ -2,8 +2,9 @@
 import CardGrid from "$lib/components/CardGrid.svelte";
 import Card from "$lib/components/Card.svelte";
 import { useQuery } from "@sanity/svelte-loader";
-import { ssp, queryParam } from "sveltekit-search-params";
 import type { PageData } from "./$types";
+
+import type { Tag } from "$lib/sanity/queries";
 
 interface Props {
 	data: PageData;
@@ -11,7 +12,7 @@ interface Props {
 
 let { data }: Props = $props();
 
-const test = queryParam("test");
+// const test = queryParam("test");
 
 let q = $derived(useQuery(data));
 
@@ -28,6 +29,8 @@ const params = $state({
 	selectedCW,
 	selectedYear,
 });
+
+$inspect({ params });
 
 const checkCharacterMatch = (artwork) => {
 	return (
