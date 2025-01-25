@@ -84,7 +84,7 @@ function toggleModal() {
 			{:else if loading}
 				<span>loading~</span>
 			{:else if currentURL === "/"}
-				<span>&lt;/&gt; with &lt;3 by <a href="/about">lisa m</a>, 2024.</span>
+				<span>&lt;/&gt; with &lt;3 by <a href="/about">lisa m</a>, 2025.</span>
 			{:else if $page.data.options.initial.data._type === "artwork"}
 				<date datetime={$page.data.options.initial.data.date}
 					>{$page.data.options.initial.data.date}</date
