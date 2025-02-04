@@ -4,8 +4,6 @@ import { run } from "svelte/legacy";
 import { goto } from "$app/navigation";
 import { page } from "$app/stores";
 import Breadcrumb from "$lib/components/Breadcrumb.svelte";
-import Modal from "$lib/components/Modal.svelte";
-// import OutClick from "svelte-outclick";
 
 let { currentURL, data, loading = false } = $props();
 
@@ -185,53 +183,6 @@ function toggleModal() {
 		>
 	</div> -->
 </nav>
-
-<!-- <OutClick
-	on:outclick={() => {
-		if (shown === true) {
-			shown = false;
-		}
-	}}
-	excludeQuerySelectorAll="a"
->
-	<Modal {shown} {...data}>
-		<section>
-			<h2>
-				nezu.world is the homepage of lisa m., an artist & designer in toronto,
-				canada.
-			</h2>
-		</section>
-		<section>
-			<h3>availability</h3>
-			<p>i am available for freelance work~ i do flyers, album covers, etc.</p>
-		</section>
-		<section>
-			<h3>contact</h3>
-			<p>
-				forward complaints: <a href="mailto:lisa@nezu.world">lisa@nezu.world</a>
-			</p>
-		</section>
-	</Modal>
-</OutClick> -->
-
-<!-- <Modal {shown} {...data}>
-		<section>
-			<h2>
-				nezu.world is the homepage of lisa m., an artist & designer in toronto,
-				canada.
-			</h2>
-		</section>
-		<section>
-			<h3>availability</h3>
-			<p>i am available for freelance work~ i do flyers, album covers, etc.</p>
-		</section>
-		<section>
-			<h3>contact</h3>
-			<p>
-				forward complaints: <a href="mailto:lisa@nezu.world">lisa@nezu.world</a>
-			</p>
-		</section>
-	</Modal> -->
 
 <style>
 nav.real {

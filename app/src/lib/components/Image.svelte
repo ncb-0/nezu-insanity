@@ -3,7 +3,6 @@ import { run } from "svelte/legacy";
 
 import { urlFor } from "$lib/sanity/image";
 import urlBuilder from "@sanity/image-url";
-import OutClick from "svelte-outclick";
 
 let {
 	portableText,
