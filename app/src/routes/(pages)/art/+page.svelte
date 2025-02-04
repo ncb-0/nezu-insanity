@@ -3,6 +3,7 @@ import CardGrid from "$lib/components/CardGrid.svelte";
 import Card from "$lib/components/Card.svelte";
 import { useQuery } from "@sanity/svelte-loader";
 import type { PageData } from "./$types";
+import { queryParamsState } from "kit-query-params";
 
 import type { Tag } from "$lib/sanity/queries";
 
@@ -12,11 +13,17 @@ interface Props {
 
 let { data }: Props = $props();
 
-// const test = queryParam("test");
+let p = queryParamsState({
+	schema: {
+		character: ["string"],
+		media: ["string"],
+		year: ["number"],
+		cw: ["string"],
+	},
+	shallow: true,
+});
 
-let q = $derived(useQuery(data));
-
-let { data: artworks } = $derived($q);
+// let { data: artworks } = $derived($q);
 
 let selectedCharacters: Tag[] = [];
 let selectedMedia: Tag[] = [];
@@ -30,46 +37,44 @@ const params = $state({
 	selectedYear,
 });
 
-$inspect({ params });
-
 const checkCharacterMatch = (artwork) => {
 	return (
-		params.selectedCharacters.length === 0 ||
+		p.character?.length === 0 ||
 		(artwork.characters &&
 			artwork.characters.some((character) => {
-				return params.selectedCharacters.includes(character._key);
+				return p.character?.includes(character._key);
 			}))
 	);
 };
 
 const checkMediaMatch = (artwork) => {
 	return (
-		params.selectedMedia.length === 0 ||
+		p.media?.length === 0 ||
 		(artwork.media &&
 			artwork.media.some((media) => {
-				return params.selectedMedia.includes(media._key);
+				return p.media?.includes(media._key);
 			}))
 	);
 };
 
 const checkCWMatch = (artwork) => {
 	return (
-		params.selectedCW.length === 0 ||
+		p.cw?.length === 0 ||
 		(artwork.cw &&
 			artwork.cw.some((cw) => {
-				return params.selectedCW.includes(cw._key);
+				return p.cw?.includes(cw._key);
 			}))
 	);
 };
 
 const checkYearMatch = (artwork) => {
 	return (
-		params.selectedYear.length === 0 ||
+		p.year?.length === 0 ||
 		(Array.isArray(artwork.year) &&
 			artwork.year.some((year) => {
-				return params.selectedYear.includes(year);
+				return p.year?.includes(year);
 			})) ||
-		(!Array.isArray(artwork.year) && params.selectedYear.includes(artwork.year))
+		(!Array.isArray(artwork.year) && p.year?.includes(artwork.year))
 	);
 };
 
@@ -122,13 +127,7 @@ const filterArtworks = (artworks) => {
 		<div class="options">
 			<div>
 				<label for="year">year</label>
-				<select
-					name="Year"
-					id="year"
-					multiple
-					size="0"
-					bind:value={params.selectedYear}
-				>
+				<select name="Year" id="year" multiple size="0" bind:value={p.year}>
 					<option disabled selected label="select">(select year)</option>
 
 					{#await data.year}
@@ -142,13 +141,7 @@ const filterArtworks = (artworks) => {
 			</div>
 			<div>
 				<label for="media">media</label>
-				<select
-					name="Media"
-					id="media"
-					multiple
-					size="0"
-					bind:value={params.selectedMedia}
-				>
+				<select name="Media" id="media" multiple size="0" bind:value={p.media}>
 					<option disabled selected label="select">(select media)</option>
 
 					{#await data.media}
@@ -167,7 +160,7 @@ const filterArtworks = (artworks) => {
 					id="characters"
 					multiple
 					size="0"
-					bind:value={params.selectedCharacters}
+					bind:value={p.character}
 				>
 					<option disabled selected label="select">(select characters)</option>
 
@@ -187,7 +180,7 @@ const filterArtworks = (artworks) => {
 					id="cw"
 					multiple
 					size="0"
-					bind:value={params.selectedCW}
+					bind:value={p.cw}
 				>
 					<option disabled selected label="select"
 						>(select content warnings)</option

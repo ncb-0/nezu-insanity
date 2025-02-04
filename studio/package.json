@@ -15,23 +15,23 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/asset-utils": "^1.3.0",
-    "@sanity/vision": "^3.43.0",
+    "@sanity/asset-utils": "^1.3.2",
+    "@sanity/vision": "^3.72.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-is": "^18.3.1",
-    "sanity": "^3.43.0",
-    "sanity-plugin-tags": "^2.0.2",
+    "sanity": "^3.72.1",
+    "sanity-plugin-tags": "^2.1.1",
     "sanity-plugin-youtube-input": "^0.2.0",
-    "styled-components": "^6.1.11"
+    "styled-components": "^6.1.14"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^3.0.1",
-    "@types/node": "^18.19.33",
+    "@types/node": "^18.19.75",
     "@types/react": "^18.3.3",
-    "eslint": "^8.57.0",
-    "prettier": "^3.2.5",
-    "typescript": "^5.4.5"
+    "eslint": "^8.57.1",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3"
   },
   "prettier": {
     "semi": false,
