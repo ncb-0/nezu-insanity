@@ -26,8 +26,11 @@ html {
 	/* --bg-color-dark: 68, 51, 0;
 	--text-color-dark: 166, 135, 40; */
 
-	--bg-color-dark: 46, 23, 30;
-	--text-color-dark: 199, 144, 162;
+	/* --bg-color-dark: 46, 23, 30;
+	--text-color-dark: 199, 144, 162; */
+
+	--bg-color-dark: 39, 29, 36;
+	--text-color-dark: 147, 111, 137;
 
 	/* --bg-color-light: 255, 248, 225;
 	--text-color-light: 107, 80, 0; */
@@ -53,6 +56,7 @@ html {
 	--font-mono-2: "River Mono", monospace;
 
 	font-size: 12px;
+	font-feature-settings: "ss01";
 	/* font-weight: 300; */
 	font-family: var(--font-mono);
 	/* font-family: var(--font-sans); */
@@ -185,6 +189,7 @@ h1,
 	font-size: 3rem;
 	line-height: 1.75ex;
 	font-family: var(--font-sans);
+	font-feature-settings: "ss01" off;
 	/* font-weight: 700; */
 	/* letter-spacing: -1px; */
 	/* margin-bottom: 0.25ex; */
@@ -194,6 +199,7 @@ h2,
 	font-size: 2rem;
 	line-height: 1.75ex;
 	font-family: var(--font-sans);
+	font-feature-settings: "ss01" off;
 	/* font-weight: 700; */
 	/* letter-spacing: -0.5px; */
 	/* margin-bottom: 0.5ex; */
@@ -203,6 +209,7 @@ h3,
 	font-size: 1.5rem;
 	line-height: 1.75ex;
 	font-family: var(--font-sans);
+	font-feature-settings: "ss01" off;
 	/* font-weight: 700; */
 	/* margin-bottom: 0.5ex; */
 }

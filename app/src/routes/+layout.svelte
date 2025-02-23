@@ -26,7 +26,7 @@ let currentURL = $derived(data.currentURL);
 	<meta
 		name="theme-color"
 		media="(prefers-color-scheme: dark)"
-		content="rgb(46, 23, 30)"
+		content="rgb(39, 29, 36)"
 	/>
 </svelte:head>
 
