@@ -130,11 +130,9 @@ span.nsfw {
 	font-size: 2rem;
 	font-weight: 700;
 	font-family: var(--font-sans);
-	color: #fff;
-	text-shadow:
-		rgba(var(--text-color-light), 1) 0 0 6px,
-		rgba(var(--text-color-light), 1) 0 0 12px,
-		rgba(var(--text-color-light), 1) 0 0 24px;
+	/* color: #fff; */
+	color: rgb(var(--bg-color));
+	/* text-shadow: rgba(var(--text-color), 1) 0 1px 4px; */
 	position: absolute;
 	text-align: center;
 	left: 50%;
