@@ -47,11 +47,12 @@ html {
 	scrollbar-width: thin;
 	width: 100%;
 
-	--font-sans: "Helvetica", sans-serif;
+	--font-sans: "Helvetica", "Arial", "Hiragino Sans", "MS Gothic", "Meiryo",
+		sans-serif;
 	/* --font-sans: "Pico A", sans-serif; */
 	--font-serif: "Job Clarendon Text", serif;
 	--font-serif-2: "Lagrange Mono", monospace;
-	--font-mono: "River Mono", monospace;
+	--font-mono: "River Mono", "Hiragino Sans", "MS Gothic", "Meiryo", monospace;
 	/* --font-mono: "Pico A Mono", monospace; */
 	--font-mono-2: "River Mono", monospace;
 
@@ -59,6 +60,7 @@ html {
 	font-feature-settings: "ss01";
 	/* font-weight: 300; */
 	font-family: var(--font-mono);
+	font-feature-settings: "ss01" on;
 	/* font-family: var(--font-sans); */
 
 	line-height: 2.333ex;
@@ -114,6 +116,7 @@ section + section {
 }
 .mono {
 	font-family: var(--font-mono);
+	font-feature-settings: "ss01" on;
 }
 .mono-2 {
 	font-family: var(--font-mono-2);
@@ -134,6 +137,7 @@ section + section {
 .serif-2 strong,
 .serif-2 b {
 	font-family: var(--font-mono);
+	font-feature-settings: "ss01" on;
 	/* line-height: 0; */
 }
 .left {
@@ -301,6 +305,7 @@ blockquote {
 }
 kbd {
 	font-family: var(--font-mono);
+	font-feature-settings: "ss01" on;
 	font-size: inherit;
 	line-height: inherit;
 	font-weight: 400;
@@ -390,6 +395,7 @@ button {
 	border: 1px solid rgba(var(--text-color), 0.5);
 	padding: 4px 4px 2px;
 	font-family: var(--font-mono);
+	font-feature-settings: "ss01" on;
 	line-height: 2ex;
 	font-size: 1rem;
 	/* border-radius: 5px; */

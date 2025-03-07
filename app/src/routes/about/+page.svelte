@@ -67,7 +67,7 @@ import Image from "$lib/components/Image.svelte";
 
 	<h2>elsewhere</h2>
 	<h3>
-		<a target="_blank" href="https://twitter.com/ncb0_" class="button"
+		<a target="_blank" href="https://patreon.com/lovelynezu" class="button"
 			><svg
 				xmlns="http://www.w3.org/2000/svg"
 				xml:space="preserve"
@@ -76,10 +76,10 @@ import Image from "$lib/components/Image.svelte";
 			>
 				<path
 					fill="rgb(var(--text-color))"
-					d="M23.9 4.8c-.8.4-1.7.6-2.7.7 1-.6 1.7-1.5 2.1-2.6-.9.5-1.9.9-3 1.1-.9-.9-2.1-1.5-3.4-1.5-3 0-5.2 2.8-4.6 5.7C8.4 8.1 5 6.3 2.7 3.4 1.4 5.5 2 8.3 4.1 9.7c-.8-.1-1.5-.3-2.1-.6-.1 2.2 1.5 4.2 3.7 4.6-.7.2-1.4.2-2.1.1C4.2 15.7 6 17 8 17.1c-2 1.5-4.4 2.2-6.9 1.9 2.1 1.3 4.5 2.1 7.2 2.1 8.7 0 13.6-7.3 13.3-13.9.8-.7 1.6-1.5 2.3-2.4z"
+					d="M22 7.63c0-2.8-2.18-5.1-4.74-5.92a15.12 15.12 0 0 0-10.39.55C3.2 4 2.05 7.8 2 11.58c-.03 3.11.28 11.31 4.9 11.37 3.44.05 3.95-4.38 5.54-6.52 1.13-1.51 2.59-1.94 4.38-2.38 3.08-.77 5.18-3.2 5.18-6.42z"
 				/>
 			</svg>
-			Twitter</a
+			Patreon</a
 		>
 		<a target="_blank" href="https://bsky.app/profile/nezu.world" class="button"
 			><svg
@@ -109,6 +109,38 @@ import Image from "$lib/components/Image.svelte";
 			</svg>
 			Instagram</a
 		>
+		<a
+			target="_blank"
+			href="https://www.pixiv.net/en/users/63526507"
+			class="button"
+			><svg
+				xmlns="http://www.w3.org/2000/svg"
+				xml:space="preserve"
+				style="enable-background:new 0 0 24 24"
+				viewBox="0 0 24 24"
+				class="icon"
+			>
+				<path
+					fill="rgb(var(--text-color))"
+					d="M20.5 4.4C18.7 2.9 16.2 2 13.3 2 5.8 2 .7 7.7.7 7.7l1.4 2.2s.8.1.4-1.3C2.9 8 3.6 7.1 5 6v15c-.6.2-1.4.5-.9 1h4.1c.5-.5-.3-.9-.8-1v-3.5s2.8 1.1 5.9 1.1c2.7 0 5.1-.8 7-2.2 1.8-1.4 3-3.5 3-5.9 0-2.4-1-4.6-2.8-6.1zm-2.2 10.8a7.6 7.6 0 0 1-5.2 2c-2.4 0-4.3-.4-5.6-1.1V4.9c1.4-1 3.8-1.6 5.6-1.6 2.3 0 4.1.8 5.3 2.1 1.2 1.3 1.9 3 1.9 5 0 1.9-.7 3.5-2 4.8z"
+				/>
+			</svg>
+			Pixiv</a
+		>
+		<a target="_blank" href="https://twitter.com/ncb0_" class="button"
+			><svg
+				xmlns="http://www.w3.org/2000/svg"
+				xml:space="preserve"
+				viewBox="0 0 24 24"
+				class="icon"
+			>
+				<path
+					fill="rgb(var(--text-color))"
+					d="M23.9 4.8c-.8.4-1.7.6-2.7.7 1-.6 1.7-1.5 2.1-2.6-.9.5-1.9.9-3 1.1-.9-.9-2.1-1.5-3.4-1.5-3 0-5.2 2.8-4.6 5.7C8.4 8.1 5 6.3 2.7 3.4 1.4 5.5 2 8.3 4.1 9.7c-.8-.1-1.5-.3-2.1-.6-.1 2.2 1.5 4.2 3.7 4.6-.7.2-1.4.2-2.1.1C4.2 15.7 6 17 8 17.1c-2 1.5-4.4 2.2-6.9 1.9 2.1 1.3 4.5 2.1 7.2 2.1 8.7 0 13.6-7.3 13.3-13.9.8-.7 1.6-1.5 2.3-2.4z"
+				/>
+			</svg>
+			Twitter</a
+		>
 		<a target="_blank" href="https://lovelynezu.tumblr.com" class="button"
 			><svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -131,38 +163,6 @@ import Image from "$lib/components/Image.svelte";
 				/>
 			</svg>
 			Are.na</a
-		>
-		<a
-			target="_blank"
-			href="https://www.pixiv.net/en/users/63526507"
-			class="button"
-			><svg
-				xmlns="http://www.w3.org/2000/svg"
-				xml:space="preserve"
-				style="enable-background:new 0 0 24 24"
-				viewBox="0 0 24 24"
-				class="icon"
-			>
-				<path
-					fill="rgb(var(--text-color))"
-					d="M20.5 4.4C18.7 2.9 16.2 2 13.3 2 5.8 2 .7 7.7.7 7.7l1.4 2.2s.8.1.4-1.3C2.9 8 3.6 7.1 5 6v15c-.6.2-1.4.5-.9 1h4.1c.5-.5-.3-.9-.8-1v-3.5s2.8 1.1 5.9 1.1c2.7 0 5.1-.8 7-2.2 1.8-1.4 3-3.5 3-5.9 0-2.4-1-4.6-2.8-6.1zm-2.2 10.8a7.6 7.6 0 0 1-5.2 2c-2.4 0-4.3-.4-5.6-1.1V4.9c1.4-1 3.8-1.6 5.6-1.6 2.3 0 4.1.8 5.3 2.1 1.2 1.3 1.9 3 1.9 5 0 1.9-.7 3.5-2 4.8z"
-				/>
-			</svg>
-			Pixiv</a
-		>
-		<a target="_blank" href="https://patreon.com/lovelynezu" class="button"
-			><svg
-				xmlns="http://www.w3.org/2000/svg"
-				xml:space="preserve"
-				viewBox="0 0 24 24"
-				class="icon"
-			>
-				<path
-					fill="rgb(var(--text-color))"
-					d="M22 7.63c0-2.8-2.18-5.1-4.74-5.92a15.12 15.12 0 0 0-10.39.55C3.2 4 2.05 7.8 2 11.58c-.03 3.11.28 11.31 4.9 11.37 3.44.05 3.95-4.38 5.54-6.52 1.13-1.51 2.59-1.94 4.38-2.38 3.08-.77 5.18-3.2 5.18-6.42z"
-				/>
-			</svg>
-			Patreon</a
 		>
 		<a target="_blank" href="https://ko-fi.com/nezita" class="button"
 			><svg
@@ -201,6 +201,7 @@ import Image from "$lib/components/Image.svelte";
 					clip-rule="evenodd"
 				/>
 			</svg>
+
 			GitHub</a
 		>
 		<a target="_blank" href="https://www.youtube.com/@ncb0_" class="button"

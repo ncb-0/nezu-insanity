@@ -7,6 +7,7 @@ import Image from "$lib/components/Image.svelte";
 import ImageGrid from "$lib/components/ImageGrid.svelte";
 import ImageRow from "$lib/components/ImageRow.svelte";
 import Break from "$lib/components/Break.svelte";
+import { isCreateMutation } from "@sanity/types";
 
 interface Props {
 	data: PageData;
@@ -56,7 +57,14 @@ function getImageDimensions(id) {
 	<h1>{artwork.title}</h1>
 
 	<Image src={artwork.mainImage} />
-
+	<h3 style="margin-bottom: 0.5rem; margin-top: 0.5rem;">
+		<a href={urlFor(artwork.mainImage).url()} target="_blank" class="button"
+			>Fullres</a
+		>
+		<a href={urlFor(artwork.mainImage).forceDownload(true).url()} class="button"
+			>Download</a
+		>
+	</h3>
 	{#if artwork.description}
 		<PortableText
 			components={{
@@ -69,34 +77,46 @@ function getImageDimensions(id) {
 			}}
 			value={artwork.description}
 		/>
-
 		<hr />
 	{/if}
 
-	<p><b>Date:</b> {artwork.date}</p>
-
-	{#if artwork.media}
-		{#if artwork.media.length == 1}
-			<p><b>Medium:</b> {artwork.media[0].label}</p>
-		{:else}
-			<h4>Media</h4>
-			<ul>
-				{#each artwork.media as medium}
-					<li>{medium.label}</li>
-				{/each}
-			</ul>
+	<section>
+		<p><b>Date:</b> {artwork.date}</p>
+		{#if artwork.media}
+			{#if artwork.media.length == 1}
+				<p>
+					<b>Medium:</b>
+					<a href="/art?media.0={artwork.media[0]._key}"
+						>{artwork.media[0].label}</a
+					>
+				</p>
+			{:else}
+				<h4>Media</h4>
+				<ul>
+					{#each artwork.media as medium}
+						<li><a href="/art?media.0={medium._key}">{medium.label}</a></li>
+					{/each}
+				</ul>
+			{/if}
 		{/if}
-	{/if}
-	{#if artwork.characters}
-		{#if artwork.characters.length == 1}
-			<p><b>Character:</b> {artwork.characters[0].label}</p>
-		{:else}
-			<h4>Characters</h4>
-			<ul>
-				{#each artwork.characters as character}
-					<li>{character.label}</li>
-				{/each}
-			</ul>
+		{#if artwork.characters}
+			{#if artwork.characters.length == 1}
+				<p>
+					<b>Character:</b>
+					<a href="/art?character.0={artwork.characters[0]._key}">
+						{artwork.characters[0].label}
+					</a>
+				</p>
+			{:else}
+				<h4>Characters</h4>
+				<ul>
+					{#each artwork.characters as character}
+						<li>
+							<a href="/art?character.0={character._key}">{character.label}</a>
+						</li>
+					{/each}
+				</ul>
+			{/if}
 		{/if}
-	{/if}
+	</section>
 </article>

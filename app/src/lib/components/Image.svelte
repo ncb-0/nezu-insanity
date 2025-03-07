@@ -4,6 +4,10 @@ import { run } from "svelte/legacy";
 import { urlFor } from "$lib/sanity/image";
 import urlBuilder from "@sanity/image-url";
 
+import { devicePixelRatio } from "svelte/reactivity/window";
+
+const dpr = devicePixelRatio.current;
+
 let {
 	portableText,
 	src = portableText.value,
@@ -47,7 +51,12 @@ const fileExtension = getFileExtension(src.asset._ref);
 	{style}
 >
 	<img
-		src={urlFor(src).url()}
+		src={urlFor(src)
+			.width(1024 * (dpr ? dpr : 1))
+			.format("webp")
+			.quality(80)
+			.auto("format")
+			.url()}
 		width={getImageDimensions(src.asset._ref).width}
 		height={getImageDimensions(src.asset._ref).height}
 		alt={src.alt}
@@ -65,9 +74,12 @@ const fileExtension = getFileExtension(src.asset._ref);
 	<div class="shade" onclick={toggleLightbox}>
 		<figure class="lightbox">
 			<img
-				src={fileExtension == "svg"
-					? urlFor(src).format("png").url()
-					: urlFor(src).url()}
+				src={urlFor(src)
+					.width(1280 * (dpr ? dpr : 1))
+					.format("webp")
+					.quality(80)
+					.auto("format")
+					.url()}
 				width={getImageDimensions(src.asset._ref).width}
 				height={getImageDimensions(src.asset._ref).height}
 				alt={src.alt}
@@ -144,16 +156,17 @@ figcaption {
 	align-content: center; */
 
 	position: fixed;
-	padding: 3rem;
+	/* padding: 0.5rem; */
+	padding: 0;
 	margin: 0;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100dvh;
 	/* overflow: hidden; */
-	background: rgba(var(--bg-color), 0.8);
+	background: rgba(var(--bg-color), 0.95);
 	/* background: rgba(var(--bg-color-neutral), 0.8); */
-	backdrop-filter: blur(8px);
+	/* backdrop-filter: blur(8px); */
 	z-index: 99999998;
 	cursor: pointer;
 }

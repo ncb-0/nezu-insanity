@@ -1,6 +1,10 @@
 <script lang="ts">
+import { dev } from "$app/environment";
 import { urlFor } from "$lib/sanity/image";
 import type { Post } from "$lib/sanity/queries";
+import { devicePixelRatio } from "svelte/reactivity/window";
+
+const dpr = devicePixelRatio.current;
 
 interface Props {
 	post: Post;
@@ -35,16 +39,17 @@ let { item, baseURL = "", text = true, nsfw = false }: Props = $props();
 		{#if item.mainImage}
 			<img
 				src={urlFor(item.mainImage)
-					.format("jpg")
-					.width(512)
-					.height(512)
+					.auto("format")
+					.format("webp")
+					.quality(65)
+					.width(256 * (dpr ? dpr : 1))
+					.height(256 * (dpr ? dpr : 1))
 					.bg("ffff")
 					.blur(nsfw ? 128 : 1)
 					.url()}
 				width="512px"
 				height="512px"
 				style="aspect-ratio: 1 / 1"
-				loading="lazy"
 			/>
 
 			{#if nsfw}
