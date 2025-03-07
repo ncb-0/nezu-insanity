@@ -51,7 +51,7 @@ const fileExtension = getFileExtension(src.asset._ref);
 	{style}
 >
 	<img
-		src={fileExtension == "svg"
+		src={fileExtension == "svg" || fileExtension == "gif"
 			? urlFor(src).url()
 			: urlFor(src)
 					.width(1280 * (dpr ? dpr : 1))
