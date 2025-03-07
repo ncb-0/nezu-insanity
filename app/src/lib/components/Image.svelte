@@ -51,12 +51,14 @@ const fileExtension = getFileExtension(src.asset._ref);
 	{style}
 >
 	<img
-		src={urlFor(src)
-			.width(1024 * (dpr ? dpr : 1))
-			.format("webp")
-			.quality(80)
-			.auto("format")
-			.url()}
+		src={fileExtension == "svg"
+			? urlFor(src).url()
+			: urlFor(src)
+					.width(1280 * (dpr ? dpr : 1))
+					.format("webp")
+					.quality(80)
+					.auto("format")
+					.url()}
 		width={getImageDimensions(src.asset._ref).width}
 		height={getImageDimensions(src.asset._ref).height}
 		alt={src.alt}
