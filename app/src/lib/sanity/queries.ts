@@ -82,6 +82,20 @@ export const combinedQuery = groq`{
   artworks: *[_type == "artwork" && defined(slug.current) && media[].label match $selectedMedia && characters[].label match $selectedCharacters] | order(title asc) | order(date desc){ title, shortTitle, mainImage, slug, media, characters, year, date, cw, nsfw }
 }`;
 
+export interface Page {
+	_type: "post";
+	_createdAt: string;
+	year?: number;
+	date: Date;
+	title: string;
+	shortTitle: string;
+	slug: Slug;
+	excerpt?: string;
+	mainImage?: ImageAsset;
+	body: PortableTextBlock[];
+	children?: Array<Post>;
+}
+
 export interface Post {
 	_type: "post";
 	_createdAt: string;
