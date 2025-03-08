@@ -6,7 +6,8 @@ export default defineCliConfig({
     projectId,
     dataset,
   },
-  project: {
-    basePath: '/studio',
-  },
+  autoUpdates: true,
+  // project: {
+  //   basePath: '/studio',
+  // },
 })
