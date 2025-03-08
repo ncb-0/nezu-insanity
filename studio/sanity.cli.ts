@@ -8,6 +8,7 @@ export default defineCliConfig({
   },
   studioHost: process.env.SANITY_STUDIO_HOSTNAME,
   autoUpdates: true,
+
   // project: {
   //   basePath: '/studio',
   // },
