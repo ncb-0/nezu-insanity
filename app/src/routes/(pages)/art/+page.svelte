@@ -123,7 +123,7 @@ const filterArtworks = (artworks) => {
 	<!-- <CardGrid items={artworks} baseURL="art/{artworks[0].year}" /> -->
 
 	<section>
-		<h2>filters</h2>
+		<!-- <h2>filters</h2> -->
 		<div class="options">
 			<div>
 				<label for="year">year</label>
