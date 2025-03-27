@@ -51,7 +51,7 @@ let { data: post } = $derived($q);
 </svelte:head>
 
 <article class="narrow">
-	<h1>{post.title.en}</h1>
+	<h1>{post.title}</h1>
 
 	{#if post.body}
 		<PortableText
