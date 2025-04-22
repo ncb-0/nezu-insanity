@@ -83,11 +83,9 @@ let dpr = $derived(Math.ceil(devicePixelRatio.current ?? 1));
 		<figure class="lightbox">
 			<img
 				src={urlFor(src)
-					.width(
-						getImageDimensions(src.asset._ref).width < 1280
-							? getImageDimensions(src.asset._ref).width
-							: 1280 * (dpr ? dpr : 1)
-					)
+					.width(1280)
+					.fit("max")
+					.dpr(dpr)
 					.format("webp")
 					.quality(80)
 					.auto("format")
