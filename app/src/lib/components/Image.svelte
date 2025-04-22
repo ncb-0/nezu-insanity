@@ -6,8 +6,6 @@ import urlBuilder from "@sanity/image-url";
 
 import { devicePixelRatio } from "svelte/reactivity/window";
 
-const dpr = devicePixelRatio.current;
-
 let {
 	portableText,
 	src = portableText.value,
@@ -37,6 +35,12 @@ function getFileExtension(filename) {
 }
 
 const fileExtension = getFileExtension(src.asset._ref);
+
+let dpr = $derived(Math.ceil(devicePixelRatio.current ?? 1));
+// let dpr = $derived(devicePixelRatio.current);
+
+// $inspect(devicePixelRatio.current);
+// $inspect(`raw dpr: ${dpr}`);
 </script>
 
 <svelte:window
@@ -54,7 +58,9 @@ const fileExtension = getFileExtension(src.asset._ref);
 		src={fileExtension == "svg" || fileExtension == "gif"
 			? urlFor(src).url()
 			: urlFor(src)
-					.width(1280 * (dpr ? dpr : 1))
+					.width(1280)
+					.fit("max")
+					.dpr(dpr)
 					.format("webp")
 					.quality(80)
 					.auto("format")
@@ -77,7 +83,11 @@ const fileExtension = getFileExtension(src.asset._ref);
 		<figure class="lightbox">
 			<img
 				src={urlFor(src)
-					.width(1280 * (dpr ? dpr : 1))
+					.width(
+						getImageDimensions(src.asset._ref).width < 1280
+							? getImageDimensions(src.asset._ref).width
+							: 1280 * (dpr ? dpr : 1)
+					)
 					.format("webp")
 					.quality(80)
 					.auto("format")

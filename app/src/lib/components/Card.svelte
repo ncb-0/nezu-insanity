@@ -4,7 +4,7 @@ import { urlFor } from "$lib/sanity/image";
 import type { Post } from "$lib/sanity/queries";
 import { devicePixelRatio } from "svelte/reactivity/window";
 
-const dpr = devicePixelRatio.current;
+let dpr = $derived(Math.ceil(devicePixelRatio.current ?? 1));
 
 interface Props {
 	post: Post;
@@ -12,6 +12,15 @@ interface Props {
 	baseURL?: string;
 	text?: boolean;
 	nsfw?: boolean;
+}
+
+function getImageDimensions(id) {
+	const dimensions = id.split("-")[2];
+
+	const [width, height] = dimensions.split("x").map((num) => parseInt(num, 10));
+	const aspectRatio = width / height;
+
+	return { width, height, aspectRatio };
 }
 
 let { item, baseURL = "", text = true, nsfw = false }: Props = $props();
@@ -42,8 +51,10 @@ let { item, baseURL = "", text = true, nsfw = false }: Props = $props();
 					.auto("format")
 					.format("webp")
 					.quality(65)
-					.width(256 * (dpr ? dpr : 1))
-					.height(256 * (dpr ? dpr : 1))
+					.width(256)
+					.height(256)
+					.fit("max")
+					.dpr(dpr)
 					.bg("ffff")
 					.blur(nsfw ? 128 : 1)
 					.url()}

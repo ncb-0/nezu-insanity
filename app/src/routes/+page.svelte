@@ -6,7 +6,7 @@ import type { PageData } from "./$types";
 import { urlFor } from "$lib/sanity/image";
 import { devicePixelRatio } from "svelte/reactivity/window";
 
-const dpr = devicePixelRatio.current;
+let dpr = $derived(Math.ceil(devicePixelRatio.current ?? 1));
 
 interface Props {
 	data: PageData;
@@ -258,38 +258,23 @@ let { data: posts } = $derived($q);
 				{#each artworks.data as artwork}
 					<div class="thumb">
 						<a href="art/{artwork.year}/{artwork.slug.current}" class="clean">
-							{#if !artwork.nsfw}
-								<img
-									src={urlFor(artwork.mainImage)
-										.format("webp")
-										.quality(50)
-										.auto("format")
-										.bg("ffff")
-										.width(64 * (dpr ? dpr : 1))
-										.height(64 * (dpr ? dpr : 1))
-										.url()}
-									width="96px"
-									height="96px"
-									style="aspect-ratio: 1 / 1;"
-									title={artwork.title}
-								/>
-							{:else}
-								<img
-									src={urlFor(artwork.mainImage)
-										.format("webp")
-										.quality(50)
-										.auto("format")
-										.bg("ffff")
-										.width(64 * (dpr ? dpr : 1))
-										.height(64 * (dpr ? dpr : 1))
-										.blur(64)
-										.url()}
-									width="96px"
-									height="96px"
-									style="aspect-ratio: 1 / 1;"
-									title="{artwork.title} (NSFW)"
-								/>
-							{/if}
+							<img
+								src={urlFor(artwork.mainImage)
+									.format("webp")
+									.quality(50)
+									.auto("format")
+									.bg("ffff")
+									.width(64)
+									.height(64)
+									.fit("max")
+									.blur(artwork.nsfw ? 32 * dpr : 1)
+									.dpr(dpr)
+									.url()}
+								width="96px"
+								height="96px"
+								style="aspect-ratio: 1 / 1;"
+								title={artwork.nsfw ? `${artwork.title} (NSFW)` : artwork.title}
+							/>
 						</a>
 					</div>
 				{/each}
