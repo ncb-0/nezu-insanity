@@ -2,7 +2,7 @@ import { postsQuery, type Post } from "$lib/sanity/queries";
 import { blogsQuery, type BlogPost } from "$lib/sanity/queries";
 import { tagsQuery, type Tag } from "$lib/sanity/queries";
 import { artworksCompactQuery, type Artwork } from "$lib/sanity/queries";
-import type { PageServerLoad } from "../$types";
+import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async (event) => {
 	const { loadQuery } = event.locals;

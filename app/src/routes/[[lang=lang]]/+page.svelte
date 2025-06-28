@@ -236,86 +236,94 @@ let { data: posts } = $derived($q);
 		</h3>
 	</section>
 
-	<section data-sveltekit-preload-data="hover">
-		<h2>
-			{#if data.params.lang === "jp"}
-				ポートフォリオ
-			{:else}
-				portfolio
-			{/if}
-		</h2>
+	{#if data.options.initial.data.length}
+		<section data-sveltekit-preload-data="hover">
+			<h2>
+				{#if data.params.lang === "jp"}
+					ポートフォリオ
+				{:else}
+					portfolio
+				{/if}
+			</h2>
 
-		{#await data.options.initial then posts}
-			<CardGrid
-				items={posts.data}
-				baseURL={data.params.lang === "en" ? "" : data.params.lang}
-			/>
-		{/await}
-	</section>
-
-	<section>
-		<h2>
-			{#if data.params.lang === "jp"}
-				<a href="/jp/blog#">ブログ…</a>
-			{:else}
-				<a href="/blog#">blog…</a>
-			{/if}
-		</h2>
-		<div class="blog-grid">
-			{#await data.blogPosts then blogPosts}
-				{#each blogPosts.data as blogPost}
-					<TextCard
-						item={blogPost}
-						baseURL={data.params.lang === "en"
-							? "/blog"
-							: `/${data.params.lang}/blog`}
-					/>
-				{/each}
+			{#await data.options.initial then posts}
+				<CardGrid
+					items={posts.data}
+					baseURL={data.params.lang === "en" ? "" : data.params.lang}
+				/>
 			{/await}
-		</div>
-	</section>
+		</section>
+	{/if}
 
-	<section>
-		<h2>
-			{#if data.params.lang === "jp"}
-				<a href="/jp/art#">ギャラリー…</a>
-			{:else}
-				<a href="/art#">gallery…</a>
-			{/if}
-		</h2>
-		<div class="thumbs" data-sveltekit-preload-data="hover">
-			{#await data.artworks then artworks}
-				{#each artworks.data as artwork}
-					<div class="thumb">
-						<a
-							href={data.params.lang === "en"
-								? `art/${artwork.year}/${artwork.slug.current}`
-								: `/${data.params.lang}/art/${artwork.year}/${artwork.slug.current}`}
-							class="clean"
-						>
-							<img
-								src={urlFor(artwork.mainImage)
-									.format("webp")
-									.quality(50)
-									.auto("format")
-									.bg("ffff")
-									.width(64)
-									.height(64)
-									.fit("max")
-									.blur(artwork.nsfw ? 32 * dpr : 1)
-									.dpr(dpr)
-									.url()}
-								width="96px"
-								height="96px"
-								style="aspect-ratio: 1 / 1;"
-								title={artwork.nsfw ? `${artwork.title} (NSFW)` : artwork.title}
-							/>
-						</a>
-					</div>
-				{/each}
-			{/await}
-		</div>
-	</section>
+	{#if data.blogPosts.data.length}
+		<section>
+			<h2>
+				{#if data.params.lang === "jp"}
+					<a href="/jp/blog#">ブログ…</a>
+				{:else}
+					<a href="/blog#">blog…</a>
+				{/if}
+			</h2>
+			<div class="blog-grid">
+				{#await data.blogPosts then blogPosts}
+					{#each blogPosts.data as blogPost}
+						<TextCard
+							item={blogPost}
+							baseURL={data.params.lang === "en"
+								? "/blog"
+								: `/${data.params.lang}/blog`}
+						/>
+					{/each}
+				{/await}
+			</div>
+		</section>
+	{/if}
+
+	{#if data.artworks.data.length}
+		<section>
+			<h2>
+				{#if data.params.lang === "jp"}
+					<a href="/jp/art#">ギャラリー…</a>
+				{:else}
+					<a href="/art#">gallery…</a>
+				{/if}
+			</h2>
+			<div class="thumbs" data-sveltekit-preload-data="hover">
+				{#await data.artworks then artworks}
+					{#each artworks.data as artwork}
+						<div class="thumb">
+							<a
+								href={data.params.lang === "en"
+									? `art/${artwork.year}/${artwork.slug.current}`
+									: `/${data.params.lang}/art/${artwork.year}/${artwork.slug.current}`}
+								class="clean"
+							>
+								<img
+									src={urlFor(artwork.mainImage)
+										.format("webp")
+										.quality(50)
+										.auto("format")
+										.bg("ffff")
+										.width(64)
+										.height(64)
+										.fit("max")
+										.blur(artwork.nsfw ? 32 * dpr : 1)
+										.dpr(dpr)
+										.url()}
+									width="96px"
+									height="96px"
+									style="aspect-ratio: 1 / 1;"
+									title={artwork.nsfw
+										? `${artwork.title} (NSFW)`
+										: artwork.title}
+								/>
+							</a>
+						</div>
+					{/each}
+				{/await}
+			</div>
+		</section>
+	{/if}
 
 	<section>
 		<h2>
