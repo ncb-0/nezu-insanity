@@ -7,6 +7,7 @@ export const postQuery = groq`*[_type == "post" && slug.current == $slug][0]`;
 // export const postsQuery = groq`*[_type == "post" && defined(slug.current) && !(myTags[].value match "subpage") && !(myTags[].value match "testing")] | order(title asc) | order(date desc)`;
 
 export const postsQuery = groq`*[_type == "post" 
+	&& (language == $lang) 
   && defined(slug.current)
 	&& myTags[].value match "work"
   && !(myTags[].value match "subpage") 
@@ -18,7 +19,10 @@ export const postsQuery = groq`*[_type == "post"
 
 export const blogQuery = groq`*[_type == "blogPost" && slug.current == $slug][0]`;
 
-export const blogsQuery = groq`*[_type == "blogPost" && defined(slug.current)] | order(_createdAt desc){
+export const blogsQuery = groq`*[_type == "blogPost"
+&& (language == $lang)
+&& defined(slug.current)] 
+	| order(_createdAt desc){
     title, shortTitle, mainImage, slug, date, year, _createdAt, excerpt
   }`;
 

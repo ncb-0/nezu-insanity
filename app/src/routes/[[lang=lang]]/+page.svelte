@@ -56,7 +56,11 @@ let { data: posts } = $derived($q);
 	<section>
 		<h1>
 			<!-- <a href="/">nezu.world</a> is under construction. -->
-			i’m <a href="about">lisa m</a>, an artist & designer in toronto, canada.
+			{#if data.params.lang === "jp"}
+				ボク<a href="about">lisa m</a>です。トロント出身のアーティストです。
+			{:else}
+				i’m <a href="about">lisa m</a>, an artist & designer in toronto, canada.
+			{/if}
 		</h1>
 		<!-- <h2>
 			(current version: <a href="https://v1.nezu.world" target="_blank"
@@ -233,31 +237,62 @@ let { data: posts } = $derived($q);
 	</section>
 
 	<section data-sveltekit-preload-data="hover">
-		<h2>portfolio</h2>
+		<h2>
+			{#if data.params.lang === "jp"}
+				ポートフォリオ
+			{:else}
+				portfolio
+			{/if}
+		</h2>
 
 		{#await data.options.initial then posts}
-			<CardGrid items={posts.data} />
+			<CardGrid
+				items={posts.data}
+				baseURL={data.params.lang === "en" ? "" : data.params.lang}
+			/>
 		{/await}
 	</section>
 
 	<section>
-		<h2><a href="blog#">blog…</a></h2>
+		<h2>
+			{#if data.params.lang === "jp"}
+				<a href="/jp/blog#">ブログ…</a>
+			{:else}
+				<a href="/blog#">blog…</a>
+			{/if}
+		</h2>
 		<div class="blog-grid">
 			{#await data.blogPosts then blogPosts}
 				{#each blogPosts.data as blogPost}
-					<TextCard item={blogPost} baseURL="/blog" />
+					<TextCard
+						item={blogPost}
+						baseURL={data.params.lang === "en"
+							? "/blog"
+							: `/${data.params.lang}/blog`}
+					/>
 				{/each}
 			{/await}
 		</div>
 	</section>
 
 	<section>
-		<h2><a href="art#">gallery…</a></h2>
+		<h2>
+			{#if data.params.lang === "jp"}
+				<a href="/jp/art#">ギャラリー…</a>
+			{:else}
+				<a href="/art#">gallery…</a>
+			{/if}
+		</h2>
 		<div class="thumbs" data-sveltekit-preload-data="hover">
 			{#await data.artworks then artworks}
 				{#each artworks.data as artwork}
 					<div class="thumb">
-						<a href="art/{artwork.year}/{artwork.slug.current}" class="clean">
+						<a
+							href={data.params.lang === "en"
+								? `art/${artwork.year}/${artwork.slug.current}`
+								: `/${data.params.lang}/art/${artwork.year}/${artwork.slug.current}`}
+							class="clean"
+						>
 							<img
 								src={urlFor(artwork.mainImage)
 									.format("webp")
@@ -283,11 +318,23 @@ let { data: posts } = $derived($q);
 	</section>
 
 	<section>
-		<h2><a href="type#">type design…</a></h2>
+		<h2>
+			{#if data.params.lang === "jp"}
+				<a href="/jp/type#">書体デザイン…</a>
+			{:else}
+				<a href="/type#">type design…</a>
+			{/if}
+		</h2>
 	</section>
 
 	<section>
-		<h2><a href="tag#">tags…</a></h2>
+		<h2>
+			{#if data.params.lang === "jp"}
+				<a href="/jp/tag#">タグ…</a>
+			{:else}
+				<a href="/tag#">tags…</a>
+			{/if}
+		</h2>
 		{#if data.tags.data.length}
 			<ul class="tags">
 				{#each data.tags.data as tag}

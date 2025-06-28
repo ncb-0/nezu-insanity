@@ -5,7 +5,7 @@ import { navigating } from "$app/stores";
 import { afterNavigate } from "$app/navigation";
 import { fade } from "svelte/transition";
 import Navbar from "$lib/components/Navbar.svelte";
-import Loader from "../lib/components/Loader.svelte";
+import Loader from "$lib/components/Loader.svelte";
 let { data, children } = $props();
 
 afterNavigate(() => {

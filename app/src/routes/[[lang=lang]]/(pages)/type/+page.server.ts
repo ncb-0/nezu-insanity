@@ -4,7 +4,9 @@ import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async (event) => {
 	const { loadQuery } = event.locals;
-	const initial = await loadQuery<Post[]>(postsQuery);
+	const initial = await loadQuery<Post[]>(postsQuery, {
+		lang: event.params.lang || "en",
+	});
 	const tags = await loadQuery<Tag[]>(tagsQuery);
 
 	// We pass the data in a format that is easy for `useQuery` to consume in the

@@ -7,7 +7,7 @@ export const load: PageServerLoad = async (event) => {
 	const { loadQuery } = event.locals;
 	const { slug } = event.params;
 
-	const params = { slug };
+	const params = { slug, lang: event.params.lang || "en" };
 	const initial = await loadQuery<Post>(query, params);
 	const children = await loadQuery<Post>(childrenQuery, params);
 	const parents = await loadQuery<Post>(parentsQuery, params);
