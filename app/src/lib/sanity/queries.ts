@@ -8,6 +8,7 @@ export const postQuery = groq`*[_type == "post" && slug.current == $slug][0]`;
 
 export const postsQuery = groq`*[_type == "post" 
   && defined(slug.current)
+	&& (language == "en" || !defined(language))
 	&& myTags[].value match "work"
   && !(myTags[].value match "subpage") 
   && !(myTags[].value match "testing")] 
@@ -18,7 +19,7 @@ export const postsQuery = groq`*[_type == "post"
 
 export const blogQuery = groq`*[_type == "blogPost" && slug.current == $slug][0]`;
 
-export const blogsQuery = groq`*[_type == "blogPost" && defined(slug.current)] | order(_createdAt desc){
+export const blogsQuery = groq`*[_type == "blogPost" && defined(slug.current) && (language == "en" || !defined(language))] | order(_createdAt desc){
     title, shortTitle, mainImage, slug, date, year, _createdAt, excerpt
   }`;
 
@@ -32,20 +33,20 @@ export const artworksYearQuery = groq`*[_type == "artwork" && defined(slug.curre
 
 export const artworkQuery = groq`*[_type == "artwork" && slug.current == $slug][0]`;
 
-export const taggedPostsQuery = groq`*[_type == "post" && myTags[].value match $tag && defined(slug.current)] | order(slug.current asc){
+export const taggedPostsQuery = groq`*[_type == "post" && myTags[].value match $tag && defined(slug.current) && (language == "en" || !defined(language))] | order(slug.current asc){
   slug,
   title,
   shortTitle,
 }`;
 
-export const childrenQuery = groq`*[_type == "post" && defined(children) && slug.current == $slug].children[]->{
+export const childrenQuery = groq`*[_type == "post" && defined(children) && slug.current == $slug && (language == "en" || !defined(language))].children[]->{
   title, 
   shortTitle, 
 	slug, 
   mainImage,
 }`;
 
-export const parentsQuery = groq`*[_type == "post" && defined(slug.current) && slug.current == $slug]{
+export const parentsQuery = groq`*[_type == "post" && defined(slug.current) && slug.current == $slug && (language == "en" || !defined(language))]{
   "parent": *[references(^._id)]{
   title, 
   shortTitle, 
@@ -55,11 +56,11 @@ export const parentsQuery = groq`*[_type == "post" && defined(slug.current) && s
 
 // export const tagQuery = groq`*[_type == "post" && myTags[].value match $tag] | order(slug.current asc)`;
 
-export const tagQuery = groq`*[_type == "post" && myTags[].value match $tag] | order(slug.current asc){
+export const tagQuery = groq`*[_type == "post" && myTags[].value match $tag && (language == "en" || !defined(language))] | order(slug.current asc){
   title, shortTitle, mainImage, slug, myTags
   }`;
 
-export const blogTagQuery = groq`*[_type == "blogPost" && myTags[].value match $tag] | order(slug.current asc){
+export const blogTagQuery = groq`*[_type == "blogPost" && myTags[].value match $tag && (language == "en" || !defined(language))] | order(slug.current asc){
   title, shortTitle, mainImage, slug, date, year, _createdAt, excerpt, myTags,
   }`;
 
