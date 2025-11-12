@@ -36,18 +36,12 @@ let currentURL = $derived(data.currentURL);
 {#key currentURL}
 	{#if $navigating}
 		<Navbar currentURL="/" data="" loading="true" />
-		<div
-			in:fade={{ duration: 100, delay: 50 }}
-			out:fade={{ duration: 100, delay: 50 }}
-		>
+		<div>
 			<Loader></Loader>
 		</div>
 	{:else}
 		<Navbar {...data} />
-		<div
-			in:fade={{ duration: 100, delay: 150 }}
-			out:fade={{ duration: 100, delay: 0 }}
-		>
+		<div>
 			{@render children?.()}
 		</div>
 		<div class="flowers-top"></div>
