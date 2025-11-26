@@ -5,7 +5,7 @@ import { navigating } from "$app/stores";
 import { afterNavigate } from "$app/navigation";
 import { fade } from "svelte/transition";
 import Navbar from "$lib/components/Navbar.svelte";
-import Loader from "../lib/components/Loader.svelte";
+import Loader from "$lib/components/Loader.svelte";
 let { data, children } = $props();
 
 afterNavigate(() => {
@@ -36,18 +36,12 @@ let currentURL = $derived(data.currentURL);
 {#key currentURL}
 	{#if $navigating}
 		<Navbar currentURL="/" data="" loading="true" />
-		<div
-			in:fade={{ duration: 100, delay: 50 }}
-			out:fade={{ duration: 100, delay: 50 }}
-		>
+		<div>
 			<Loader></Loader>
 		</div>
 	{:else}
 		<Navbar {...data} />
-		<div
-			in:fade={{ duration: 100, delay: 150 }}
-			out:fade={{ duration: 100, delay: 0 }}
-		>
+		<div>
 			{@render children?.()}
 		</div>
 		<div class="flowers-top"></div>

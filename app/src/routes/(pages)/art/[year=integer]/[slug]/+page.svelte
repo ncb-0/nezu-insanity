@@ -17,7 +17,7 @@ let { data }: Props = $props();
 let q = $derived(useQuery(data));
 let { data: artwork } = $derived($q);
 
-console.log(data.options.initial.data.media);
+// $inspect(data);
 
 function getImageDimensions(id) {
 	const dimensions = id.split("-")[2];
@@ -56,10 +56,10 @@ function getImageDimensions(id) {
 <article class="narrow">
 	<h1>{artwork.title}</h1>
 
-	<Image src={artwork.mainImage} />
+	<Image src={artwork.mainImage} fullres />
 	<h3 style="margin-bottom: 0.5rem; margin-top: 0.5rem;">
 		<a href={urlFor(artwork.mainImage).url()} target="_blank" class="button"
-			>Fullres</a
+			>View</a
 		>
 		<a href={urlFor(artwork.mainImage).forceDownload(true).url()} class="button"
 			>Download</a

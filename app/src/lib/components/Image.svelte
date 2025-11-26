@@ -11,6 +11,7 @@ let {
 	src = portableText.value,
 	showLightbox = $bindable(false),
 	style = "",
+	fullres = false,
 } = $props();
 
 function getImageDimensions(id) {
@@ -55,7 +56,7 @@ let dpr = $derived(Math.ceil(devicePixelRatio.current ?? 1));
 	{style}
 >
 	<img
-		src={fileExtension == "svg" || fileExtension == "gif"
+		src={fileExtension == "svg" || fileExtension == "gif" || fullres == true
 			? urlFor(src).url()
 			: urlFor(src)
 					.width(1280)

@@ -1,7 +1,6 @@
 <script lang="ts">
 import CardGrid from "$lib/components/CardGrid.svelte";
 import Card from "$lib/components/Card.svelte";
-import { useQuery } from "@sanity/svelte-loader";
 import type { PageData } from "./$types";
 import { queryParamsState } from "kit-query-params";
 
@@ -241,6 +240,7 @@ label {
 }
 select {
 	font-family: var(--font-mono) !important;
+	font-feature-settings: "ss01" on !important;
 	background: rgb(var(--bg-color));
 	border: 1px solid rgb(var(--text-color), 0.3);
 	/* border: none; */

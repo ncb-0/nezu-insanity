@@ -40,8 +40,13 @@ import Image from "$lib/components/Image.svelte";
 	<h1>about</h1>
 
 	<figure class="float-right" style="margin-top: 0.5ex;">
-		<img src="/img/nezureal.jpg" alt="Lisa in her mouse-human hybrid form…" />
-		<figcaption>Lisa in her mouse-human hybrid form…</figcaption>
+		<img
+			src="/img/bunnysuit.jpg"
+			alt="Lisa in bunny form."
+			width="1500"
+			height="2000"
+		/>
+		<figcaption>Lisa in bunny form.</figcaption>
 	</figure>
 
 	<p style="margin-top: 0.5ex;">
@@ -56,8 +61,12 @@ import Image from "$lib/components/Image.svelte";
 	<h2>availability</h2>
 	<p>
 		i am available for freelance work~ i do <a href="/tag/flyer">flyers</a>,
-		<a href="/tag/album-art">album covers</a>, etc. i’m mostly looking for
-		bigger jobs—i’m not really looking for art commissions.
+		<a href="/tag/album-art">album covers</a>, etc.
+	</p>
+	<p>
+		if you want to commission me to draw your character, contact me with a style
+		example from my <a href="/art/">gallery</a> and a reference pic, and i’ll get
+		back to you with a quote~.
 	</p>
 
 	<h2>contact</h2>
