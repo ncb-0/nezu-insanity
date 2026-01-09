@@ -179,6 +179,7 @@ nav.real {
 }
 nav.fake {
 	box-sizing: border-box;
+	height: 30px;
 	/* position: fixed; */
 	position: relative;
 	top: 0;
