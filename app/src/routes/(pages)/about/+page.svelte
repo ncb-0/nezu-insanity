@@ -227,7 +227,7 @@ import Image from "$lib/components/Image.svelte";
 
 	<hr style="clear: none;" />
 
-	<p>&lt;/&gt; WITH &lt;3 BY LISA M (C) 2025.</p>
+	<p>&lt;/&gt; WITH &lt;3 BY LISA M (C) 2026.</p>
 
 	<h4 id="fonts">Fonts</h4>
 
