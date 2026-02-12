@@ -41,9 +41,9 @@ import Image from "$lib/components/Image.svelte";
 
 	<figure class="float-right" style="margin-top: 0.5ex;">
 		<img
-			src="/img/bunnysuit.jpg"
+			src="/img/bunnylisa.webp"
 			alt="Lisa in bunny form."
-			width="1500"
+			width="1200"
 			height="2000"
 		/>
 		<figcaption>Lisa in bunny form.</figcaption>
