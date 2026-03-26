@@ -16,11 +16,13 @@
 		"@sanity/svelte-loader": "^1.13.12",
 		"@sanity/visual-editing": "^2.12.11",
 		"@sveltejs/adapter-vercel": "^5.6.1",
+		"@types/rss": "^0.0.32",
 		"@vercel/analytics": "^1.4.1",
 		"@vercel/speed-insights": "^1.1.0",
 		"groq": "^3.72.1",
 		"groq-js": "^1.15.0",
 		"kit-query-params": "^0.0.26",
+		"rss": "^1.2.2",
 		"svelte-body": "^2.0.0",
 		"svelte-preprocess": "^6.0.3",
 		"vercel": "^40.1.0"

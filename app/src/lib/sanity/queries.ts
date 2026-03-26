@@ -20,7 +20,7 @@ export const postsQuery = groq`*[_type == "post"
 export const blogQuery = groq`*[_type == "blogPost" && slug.current == $slug][0]`;
 
 export const blogsQuery = groq`*[_type == "blogPost" && defined(slug.current) && (language == "en" || !defined(language))] | order(_createdAt desc){
-    title, shortTitle, mainImage, slug, date, year, _createdAt, excerpt
+    title, shortTitle, mainImage, slug, date, year, _createdAt, excerpt, myTags
   }`;
 
 // export const artworksQuery = groq`*[_type == "artwork" && defined(slug.current) && media[].label match $selectedMedia && characters[].label match $selectedCharacters] | order(title asc) | order(date desc)`;
